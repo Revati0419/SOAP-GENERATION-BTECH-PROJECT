@@ -1,0 +1,15 @@
+#large dataset folders
+data/
+References/
+
+#cache files
+__pycache__/
+*.pyc
+
+#large files
+*.zip
+*.csv
+*.json
+
+#OS files
+.DS_Store
