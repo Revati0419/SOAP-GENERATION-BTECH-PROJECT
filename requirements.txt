@@ -1,3 +1,33 @@
+# SOAP Generation Pipeline - Dependencies
+# All open-source packages
+
+# Core
 requests>=2.31.0
 tqdm>=4.66.0
+pyyaml>=6.0
+
+# NLP & ML
+torch>=2.0.0
+transformers>=4.30.0
+sentence-transformers>=2.2.0
+
+# Translation (Open-source)
+# IndicTrans2 - Best for Indian languages (AI4Bharat)
+# Install: pip install git+https://github.com/AI4Bharat/IndicTrans2.git
+# Or use NLLB-200 (included in transformers)
+
+# Vector Database (RAG)
+chromadb>=0.4.0
+
+# Optional: Lightweight offline translation
+# argostranslate>=1.9.0
+
+# Legacy (keeping for old pipeline scripts)
 deep-translator>=1.11.4
+
+# Development
+pytest>=7.0.0
+
+# Jupyter (for notebooks)
+jupyter>=1.0.0
+ipykernel>=6.0.0

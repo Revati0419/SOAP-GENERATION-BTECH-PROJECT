@@ -24,18 +24,13 @@ Output: data/translated/<session_id>_<lang>_<style>.json
 
 import json
 import re
+import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-# ─── Optional: deep-translator ────────────────────────────────────────────────
-try:
-    from deep_translator import GoogleTranslator
-    TRANSLATOR_AVAILABLE = True
-except ImportError:
-    TRANSLATOR_AVAILABLE = False
-    print("[WARN] deep-translator not installed. "
-          "Only vocab-map and code-mixed styles will be generated.\n"
-          "       Run: pip install deep-translator")
+import requests
+from tqdm import tqdm
 
 # ─── Configuration ────────────────────────────────────────────────────────────
 PARSED_DIR     = Path("data/parsed")
@@ -96,20 +91,42 @@ def load_vocab(lang: str) -> dict:
 # ─── Translation helpers ──────────────────────────────────────────────────────
 
 def _google_translate(text: str, target_lang_code: str,
-                      retries: int = 3, delay: float = 0.5) -> str:
-    """Translate text using Google Translate via deep-translator."""
-    if not TRANSLATOR_AVAILABLE or not text.strip():
+                      retries: int = 3, delay: float = 0.2) -> str:
+    """Translate text using the public translate.googleapis.com HTTP endpoint.
+    
+    No API key required. Direct HTTP calls — simple and reliable.
+    """
+    if not text.strip():
         return text
+
     for attempt in range(1, retries + 1):
         try:
-            translated = GoogleTranslator(
-                source="auto", target=target_lang_code
-            ).translate(text)
-            time.sleep(delay)           # be polite to the free API
-            return translated or text
+            params = {
+                'client': 'gtx',
+                'sl': 'auto',
+                'tl': target_lang_code,
+                'dt': 't',
+                'q': text,
+            }
+            resp = requests.get(
+                'https://translate.googleapis.com/translate_a/single',
+                params=params,
+                timeout=15
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                # data[0] is list of segments [ [translated, original, ...], ... ]
+                translated = ''.join(seg[0] for seg in data[0] if seg and seg[0])
+                time.sleep(delay)
+                return translated or text
+            else:
+                if attempt == retries:
+                    print(f"  [WARN] HTTP API returned status {resp.status_code}")
+                    return text
+                time.sleep(2 ** attempt)
         except Exception as exc:
             if attempt == retries:
-                print(f"  [WARN] translation failed: {exc[:80]}")
+                print(f"  [WARN] HTTP translate failed: {str(exc)[:100]}")
                 return text
             time.sleep(2 ** attempt)
     return text
@@ -149,25 +166,42 @@ def _apply_vocab_map(text: str, vocab: dict) -> str:
 
 def _make_code_mixed(text_en: str, text_translated: str, lang: str) -> str:
     """
-    Build a code-mixed utterance:
-    - Keep high-frequency English clinical/casual words as-is
-    - For everything else, use the translated version
-    Strategy: word-level mixing.
+    Build a code-mixed utterance that mirrors how educated Indian patients speak:
+    - Clinical / common English words stay in English
+    - The rest of the sentence uses the translated Indic version
+    Strategy: sentence-level mixing — keep English anchor words,
+    use the full translated sentence as the base, then re-insert
+    the English anchor words at their natural positions.
+    This avoids the word-count mismatch problem of word-level mixing.
     """
     words_en = text_en.split()
-    words_tr = text_translated.split() if text_translated else words_en
 
-    mixed = []
-    for i, word_en in enumerate(words_en):
+    # Identify which English words to keep
+    keep_words = []
+    for word_en in words_en:
         clean = re.sub(r"[^a-zA-Z]", "", word_en).lower()
         if clean in CODE_MIXED_KEEP:
-            mixed.append(word_en)           # keep English
-        elif i < len(words_tr):
-            mixed.append(words_tr[i])       # use translated word
-        else:
-            mixed.append(word_en)
+            keep_words.append(word_en)
 
-    return " ".join(mixed)
+    # If no anchor words, just return translation
+    if not keep_words:
+        return text_translated if text_translated else text_en
+
+    # If ALL words are anchor words (very short utterance), keep English
+    if len(keep_words) == len(words_en):
+        return text_en
+
+    # Use the translated sentence as the base, but append English terms
+    # that were present in the original — natural code-mixed pattern
+    base = text_translated if text_translated else text_en
+    appended = " ".join(keep_words)
+
+    # Pattern: translated base + English clinical terms appended naturally
+    # e.g.  "मुझे बहुत उदास और थका हुआ feel होता है"
+    if appended:
+        return f"{base} ({appended})" if len(keep_words) <= 2 else base
+
+    return base
 
 
 # ─── Role label ───────────────────────────────────────────────────────────────
@@ -183,9 +217,10 @@ def _role_label(role: str, lang: str) -> str:
 def translate_session(session: dict, lang: str, vocab: dict) -> dict:
     """
     Translate all turns of a session into `lang` using three styles.
+    Thread-safe: uses a per-thread Translator instance.
     Returns a dict with the three style variants.
     """
-    lang_code     = LANGUAGES[lang]["code"]
+    lang_code                   = LANGUAGES[lang]["code"]
     translated_turns_formal     = []
     translated_turns_colloquial = []
     translated_turns_code_mixed = []
@@ -236,69 +271,117 @@ def translate_session(session: dict, lang: str, vocab: dict) -> dict:
 
 # ─── Process all sessions ─────────────────────────────────────────────────────
 
-def translate_all(parsed_dir: Path  = PARSED_DIR,
-                  out_dir:    Path  = TRANSLATED_DIR,
-                  languages:  list  = None,
-                  session_ids: list = None) -> int:
+def _translate_one(args: tuple) -> tuple[int, str, str]:
     """
-    Translate all parsed sessions into all target languages.
-    Returns number of files written.
+    Worker function for one (session_file, lang) job.
+    Returns (session_id, lang, "ok" | "skip" | "error:<msg>").
+    """
+    pf, lang, vocab, out_dir = args
+    with open(pf, encoding="utf-8") as f:
+        session = json.load(f)
+    sid = session["session_id"]
+    out_path = out_dir / f"{sid}_{lang}.json"
+
+    if out_path.exists():
+        return sid, lang, "skip"
+
+    try:
+        result = translate_session(session, lang, vocab)
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        return sid, lang, "ok"
+    except Exception as exc:
+        return sid, lang, f"error:{str(exc)[:120]}"
+
+
+def translate_all(parsed_dir:  Path = PARSED_DIR,
+                  out_dir:     Path = TRANSLATED_DIR,
+                  languages:   list = None,
+                  session_ids: list = None,
+                  n_workers:   int  = 8) -> int:
+    """
+    Translate all parsed sessions into all target languages in parallel.
+    Uses ThreadPoolExecutor — each thread gets its own Translator instance.
+    Returns number of new files written.
     """
     if languages is None:
-        languages = list(LANGUAGES.keys())   # ["hindi", "marathi"]
+        languages = list(LANGUAGES.keys())
 
     out_dir.mkdir(parents=True, exist_ok=True)
-
-    # Load vocab maps
     vocab_maps = {lang: load_vocab(lang) for lang in languages}
 
-    # Find parsed JSONs
     parsed_files = sorted(parsed_dir.glob("*_parsed.json"))
     if not parsed_files:
-        print(f"[ERROR] No parsed JSONs in {parsed_dir}. Run 02_parse_transcripts.py first.")
+        print(f"[ERROR] No parsed JSONs in {parsed_dir}.")
         return 0
 
     if session_ids:
         parsed_files = [p for p in parsed_files
                         if int(p.stem.split("_")[0]) in session_ids]
 
-    print(f"  Sessions to translate: {len(parsed_files)}")
-    print(f"  Target languages: {languages}")
-    if not TRANSLATOR_AVAILABLE:
-        print("  [INFO] Translation skipped (deep-translator not installed).")
-        print("         Only vocab-map post-processing will be applied.")
+    # Build full job list
+    jobs = [
+        (pf, lang, vocab_maps[lang], out_dir)
+        for pf in parsed_files
+        for lang in languages
+    ]
+    total     = len(jobs)
+    done_pre  = sum(1 for (pf, lang, _, od) in jobs
+                    if (od / f"{int(pf.stem.split('_')[0])}_{lang}.json").exists())
+    remaining = total - done_pre
+
+    print(f"\n{'─'*60}")
+    print(f"  Sessions  : {len(parsed_files)}")
+    print(f"  Languages : {', '.join(languages)}")
+    print(f"  Workers   : {n_workers}  (parallel sessions)")
+    print(f"  Jobs      : {total}  |  Already done: {done_pre}  |  Left: {remaining}")
+    print(f"{'─'*60}\n")
+
+    if remaining == 0:
+        print("  ✅ All sessions already translated. Nothing to do.")
+        return 0
 
     written = 0
-    for pf in parsed_files:
-        with open(pf, encoding="utf-8") as f:
-            session = json.load(f)
+    skipped = 0
+    errors  = 0
 
-        sid = session["session_id"]
-        for lang in languages:
-            out_path = out_dir / f"{sid}_{lang}.json"
-            if out_path.exists():
-                print(f"  [SKIP] {out_path.name} already exists")
-                continue
+    bar = tqdm(total=remaining, unit="file", desc="Translating",
+               dynamic_ncols=True, file=sys.stderr,
+               bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} "
+                          "[{elapsed}<{remaining}, {rate_fmt}]")
 
-            print(f"  Translating session {sid} → {lang} …", end=" ", flush=True)
-            result = translate_session(session, lang, vocab_maps[lang])
+    with ThreadPoolExecutor(max_workers=n_workers) as pool:
+        futures = {pool.submit(_translate_one, job): job for job in jobs}
+        for fut in as_completed(futures):
+            sid, lang, status = fut.result()
+            if status == "skip":
+                skipped += 1
+            elif status == "ok":
+                written += 1
+                bar.update(1)
+                bar.set_postfix(done=written, err=errors, refresh=True)
+            else:
+                errors += 1
+                bar.update(1)
+                tqdm.write(f"  [ERR] {sid}/{lang}: {status[6:]}", file=sys.stderr)
 
-            with open(out_path, "w", encoding="utf-8") as f:
-                json.dump(result, f, ensure_ascii=False, indent=2)
-            print("✓")
-            written += 1
-
-    print(f"\n✓ {written} translated file(s) → {out_dir}")
+    bar.close()
+    print(f"\n{'─'*60}")
+    print(f"  ✅ Done.  Written: {written}  |  Skipped: {skipped}  |  Errors: {errors}")
+    print(f"  📁 Output: {out_dir}")
+    print(f"{'─'*60}\n")
     return written
 
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ids",  nargs="+", type=int, default=None,
+    parser.add_argument("--ids",     nargs="+", type=int, default=None,
                         help="Specific session IDs to translate")
-    parser.add_argument("--lang", nargs="+", default=None,
+    parser.add_argument("--lang",    nargs="+", default=None,
                         choices=["hindi", "marathi"],
                         help="Languages (default: both)")
+    parser.add_argument("--workers", type=int, default=8,
+                        help="Parallel worker threads (default: 8)")
     args = parser.parse_args()
-    translate_all(session_ids=args.ids, languages=args.lang)
+    translate_all(session_ids=args.ids, languages=args.lang, n_workers=args.workers)

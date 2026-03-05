@@ -1,0 +1,105 @@
+# SOAP Generation for Indic Languages
+# Project Configuration
+
+# ============================================================
+# MODEL CONFIGURATIONS
+# ============================================================
+
+models:
+  # NER Model for Medical Entity Extraction
+  ner:
+    name: "ai4bharat/IndicNER"
+    fallback: "dslim/bert-base-NER"
+    device: "cpu"  # or "cuda" if GPU available
+    
+  # LLM for SOAP Generation
+  generation:
+    name: "gemma2:2b"  # Ollama model
+    fallback: "llama3.1:8b"
+    temperature: 0.3
+    max_tokens: 1500
+    
+  # Translation Model (Open-source)
+  translation:
+    name: "ai4bharat/indictrans2-en-indic-1B"
+    fallback: "facebook/nllb-200-distilled-600M"
+    source_lang: "eng_Latn"
+    target_lang: "mar_Deva"  # Marathi
+    device: "cpu"
+    
+  # Embeddings for RAG
+  embeddings:
+    name: "sentence-transformers/all-MiniLM-L6-v2"
+    device: "cpu"
+
+# ============================================================
+# RAG CONFIGURATION
+# ============================================================
+
+rag:
+  vector_db: "chromadb"
+  collection_name: "clinical_terms"
+  top_k: 5  # Number of similar terms to retrieve
+  similarity_threshold: 0.7
+
+# ============================================================
+# PATHS
+# ============================================================
+
+paths:
+  data_dir: "data"
+  raw_dir: "data/raw"
+  parsed_dir: "data/parsed"
+  translated_dir: "data/translated"
+  dialect_dir: "data/dialect_marathi"
+  soap_dir: "data/soap_notes"
+  vocab_dir: "vocab"
+  models_cache: ".cache/models"
+  vector_db: ".cache/vector_db"
+
+# ============================================================
+# SOAP NOTE STRUCTURE
+# ============================================================
+
+soap_sections:
+  - subjective
+  - objective
+  - assessment
+  - plan
+
+# ============================================================
+# SUPPORTED LANGUAGES & DIALECTS
+# ============================================================
+
+languages:
+  marathi:
+    code: "mr"
+    indictrans_code: "mar_Deva"
+    dialects:
+      - standard_pune
+      - mumbai
+      - vidarbha
+      - marathwada
+      - konkan
+      
+  hindi:
+    code: "hi"
+    indictrans_code: "hin_Deva"
+    dialects:
+      - standard_hindi
+      - mumbai_hindi
+      - bhojpuri
+
+# ============================================================
+# CLINICAL ENTITY TYPES
+# ============================================================
+
+entity_types:
+  - SYMPTOM
+  - MEDICATION
+  - DURATION
+  - FREQUENCY
+  - SEVERITY
+  - BODY_PART
+  - CONDITION
+  - TREATMENT
