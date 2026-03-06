@@ -1,36 +1,82 @@
-# SOAP Generation for Indic Languages
-# Project Configuration
+# SOAP Generation for Mental Health - Complete System
+# Bilingual Clinical Documentation (English + Marathi/Hindi)
+# Version: 2.0 | Last Updated: March 5, 2026
 
 # ============================================================
 # MODEL CONFIGURATIONS
 # ============================================================
 
 models:
-  # NER Model for Medical Entity Extraction
-  ner:
-    name: "ai4bharat/IndicNER"
-    fallback: "dslim/bert-base-NER"
-    device: "cpu"  # or "cuda" if GPU available
-    
-  # LLM for SOAP Generation
+  # PRIMARY: SOAP Generation (Main LLM)
   generation:
-    name: "gemma2:2b"  # Ollama model
-    fallback: "llama3.1:8b"
-    temperature: 0.3
+    primary: "gemma2:2b"  # Ollama model - ACTIVE
+    fallback: null  # Llama 3.1 8B removed to free space
+    ollama_url: "http://localhost:11434/api/generate"
+    temperature: 0.3  # Clinical accuracy (low creativity)
     max_tokens: 1500
+    timeout: 300  # 5 minutes per generation
+    device: "cpu"
+    status: "✅ ACTIVE"
+    size_gb: 1.6
     
-  # Translation Model (Open-source)
+  # TRANSLATION: English → Marathi/Hindi
   translation:
-    name: "ai4bharat/indictrans2-en-indic-1B"
+    primary: "ai4bharat/indictrans2-en-indic-1B"
     fallback: "facebook/nllb-200-distilled-600M"
     source_lang: "eng_Latn"
-    target_lang: "mar_Deva"  # Marathi
+    target_lang: "mar_Deva"  # Marathi (Devanagari script)
     device: "cpu"
+    batch_size: 8
+    status: "🔄 TO INSTALL"
+    size_gb: 1.2
+    install_command: "pip install indictrans"
     
-  # Embeddings for RAG
-  embeddings:
-    name: "sentence-transformers/all-MiniLM-L6-v2"
+  # NER: Medical Entity Extraction
+  ner:
+    primary: "ai4bharat/IndicNER"
+    fallback: "dslim/bert-base-NER"
     device: "cpu"
+    max_length: 512
+    batch_size: 16
+    entity_types:
+      - SYMPTOM
+      - MEDICATION
+      - CONDITION
+      - DURATION
+      - FREQUENCY
+    status: "🔄 TO INSTALL"
+    size_mb: 550
+    install_command: "pip install transformers sentencepiece"
+    
+  # EMBEDDINGS: For RAG Vector Search
+  embeddings:
+    primary: "sentence-transformers/all-MiniLM-L6-v2"
+    fallback: "all-mpnet-base-v2"
+    device: "cpu"
+    max_length: 384
+    status: "🔄 TO INSTALL"
+    size_mb: 80
+    install_command: "pip install sentence-transformers"
+    
+  # QLORA: Training Infrastructure (Phase 2)
+  training:
+    base_model: "gemma2:2b"  # Will be quantized to 4-bit
+    quantization: "4bit"  # NF4 (NormalFloat4)
+    lora_rank: 8
+    lora_alpha: 16
+    lora_dropout: 0.05
+    target_modules:
+      - "q_proj"
+      - "k_proj"
+      - "v_proj"
+      - "o_proj"
+      - "gate_proj"
+      - "up_proj"
+      - "down_proj"
+    trainable_params: 8388608  # 8M params (0.1% of 8B)
+    adapter_size_mb: 16
+    status: "⏭️ PHASE 2"
+    install_command: "pip install peft bitsandbytes accelerate trl"
 
 # ============================================================
 # RAG CONFIGURATION
@@ -38,34 +84,112 @@ models:
 
 rag:
   vector_db: "chromadb"
-  collection_name: "clinical_terms"
-  top_k: 5  # Number of similar terms to retrieve
-  similarity_threshold: 0.7
+  collection_name: "clinical_terms_marathi"
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  top_k: 5  # Number of similar terms to retrieve per query
+  similarity_threshold: 0.7  # Minimum cosine similarity
+  chunk_size: 256
+  chunk_overlap: 50
+  persist_directory: ".cache/vector_db/clinical_terms"
+  vocab_files:
+    - "vocab/clinical_vocab_marathi.json"
+    - "vocab/clinical_vocab_hindi.json"
+  status: "🔄 TO INSTALL"
+  install_command: "pip install chromadb"
 
 # ============================================================
 # PATHS
 # ============================================================
 
 paths:
+  # Data Directories
   data_dir: "data"
-  raw_dir: "data/raw"
-  parsed_dir: "data/parsed"
-  translated_dir: "data/translated"
-  dialect_dir: "data/dialect_marathi"
-  soap_dir: "data/soap_notes"
+  raw_dir: "data/raw"  # Original DAIC-WOZ transcripts
+  parsed_dir: "data/parsed"  # DELETED (cleanup)
+  translated_dir: "data/translated"  # English → Marathi base translations
+  dialect_dir: "data/dialect_marathi"  # 5 dialect variations (910 files)
+  soap_dir: "data/soap_notes"  # Generated bilingual SOAP notes
+  
+  # Vocabulary & Knowledge Base
   vocab_dir: "vocab"
-  models_cache: ".cache/models"
-  vector_db: ".cache/vector_db"
+  clinical_vocab: "vocab/clinical_vocab_marathi.json"
+  
+  # Model Caches
+  models_cache: ".cache/models"  # HuggingFace model cache
+  vector_db: ".cache/vector_db"  # ChromaDB persistence
+  ollama_models: "/usr/share/ollama/.ollama/models"  # System Ollama cache
+  
+  # Pipeline Outputs
+  logs_dir: "logs"
+  validation_dir: "data/validation"
+  review_list: "data/validation/review_list.json"
+  manual_review_log: "data/validation/manual_review_log.json"
+  
+  # Backups
+  backups_dir: "backup_old_files"
+
+# ============================================================
+# PIPELINE CONFIGURATION
+# ============================================================
+
+pipeline:
+  # Stage 1: Entity Extraction (NER)
+  ner_enabled: true  # Extract medical entities from conversation
+  ner_batch_size: 16
+  
+  # Stage 2: Knowledge Retrieval (RAG)
+  rag_enabled: true  # Retrieve relevant clinical terms
+  rag_top_k: 5
+  
+  # Stage 3: SOAP Generation (LLM)
+  generation_enabled: true
+  generation_temperature: 0.3
+  generation_max_tokens: 1500
+  
+  # Stage 4: Translation (IndicTrans2)
+  translation_enabled: true
+  translation_batch_size: 8
+  
+  # Output Format
+  output_format: "bilingual"  # Options: bilingual, english_only, marathi_only
+  include_entities: true  # Append extracted entities to SOAP
+  include_confidence: true  # Add confidence scores
 
 # ============================================================
 # SOAP NOTE STRUCTURE
 # ============================================================
 
 soap_sections:
-  - subjective
-  - objective
-  - assessment
-  - plan
+  - subjective      # Patient's reported symptoms and concerns
+  - objective       # Observable data (affect, speech patterns, behavior)
+  - assessment      # Clinical evaluation and diagnosis
+  - plan            # Treatment recommendations and follow-up
+
+soap_template: |
+  # SOAP CLINICAL NOTE
+  **Patient ID:** {patient_id}
+  **Session Date:** {session_date}
+  **Language:** Bilingual (English + {target_language})
+  
+  ## SUBJECTIVE (रुग्णाचे विधान)
+  {subjective_en}
+  
+  {subjective_mr}
+  
+  ## OBJECTIVE (वस्तुनिष्ठ निरीक्षण)
+  {objective_en}
+  
+  {objective_mr}
+  
+  ## ASSESSMENT (मूल्यांकन)
+  {assessment_en}
+  
+  {assessment_mr}
+  
+  ## PLAN (उपचार योजना)
+  {plan_en}
+  
+  {plan_mr}
 
 # ============================================================
 # SUPPORTED LANGUAGES & DIALECTS
@@ -75,16 +199,19 @@ languages:
   marathi:
     code: "mr"
     indictrans_code: "mar_Deva"
+    script: "Devanagari"
     dialects:
-      - standard_pune
-      - mumbai
-      - vidarbha
-      - marathwada
-      - konkan
+      - standard_pune      # Standard Marathi (Pune-based)
+      - mumbai            # Mumbai Marathi
+      - vidarbha          # Vidarbha region
+      - marathwada        # Marathwada region
+      - konkan            # Konkan coastal Marathi
+    total_files: 910  # 182 sessions × 5 dialects
       
   hindi:
     code: "hi"
     indictrans_code: "hin_Deva"
+    script: "Devanagari"
     dialects:
       - standard_hindi
       - mumbai_hindi
@@ -95,11 +222,49 @@ languages:
 # ============================================================
 
 entity_types:
-  - SYMPTOM
-  - MEDICATION
-  - DURATION
-  - FREQUENCY
-  - SEVERITY
-  - BODY_PART
-  - CONDITION
-  - TREATMENT
+  mental_health:
+    - SYMPTOM          # "feeling sad", "anxious", "difficulty sleeping"
+    - EMOTION          # "depressed", "hopeless", "irritable"
+    - DURATION         # "for 2 weeks", "since last month"
+    - FREQUENCY        # "every day", "occasionally", "rarely"
+    - SEVERITY         # "mild", "moderate", "severe"
+    - TRIGGER          # "after breakup", "work stress"
+    - COPING           # "talking to friends", "exercising"
+    
+  clinical:
+    - CONDITION        # "Major Depressive Disorder", "Anxiety"
+    - MEDICATION       # "antidepressants", "therapy"
+    - TREATMENT        # "CBT", "counseling", "medication"
+    - BODY_PART        # "head", "chest", "stomach" (for somatic symptoms)
+
+# ============================================================
+# VALIDATION STRATEGY
+# ============================================================
+
+validation:
+  # Automated Quality Checks
+  automated:
+    check_completeness: true  # All SOAP sections present
+    check_language_quality: true  # Proper Marathi script/grammar
+    check_bilingual_alignment: true  # English-Marathi consistency
+    check_entity_coverage: true  # Extracted entities used in SOAP
+    
+  # Manual Review Strategy (Stratified Sampling)
+  manual:
+    sample_size: 20  # Sessions to review (11% of 182)
+    confidence_interval: 0.95  # Statistical confidence
+    max_error: 0.05  # 5% margin of error
+    stratification:
+      - high_complexity  # Long conversations, multiple symptoms
+      - medium_complexity  # Typical sessions
+      - low_complexity  # Short, clear conversations
+    
+  # Quality Metrics
+  metrics:
+    min_soap_length: 200  # Minimum characters per section
+    max_soap_length: 1000  # Maximum to avoid verbosity
+    required_keywords:
+      subjective: ["reports", "states", "describes"]
+      objective: ["observed", "noted", "appeared"]
+      assessment: ["diagnosis", "condition", "suggests"]
+      plan: ["recommend", "advised", "follow-up"]
