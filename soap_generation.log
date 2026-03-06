@@ -1,0 +1,1262 @@
+nohup: ignoring input
+▶️  Processing session 311...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:05<00:00, 185.09s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:05<00:00, 185.09s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 311
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+❌ Session 311: Error: Request timed out
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 0 | ❌ Errors: 1
+============================================================
+
+▶️  Processing session 312...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:57<00:00, 177.07s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:57<00:00, 177.07s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 312
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4300 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3926 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_312_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 313...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:03<00:00, 183.17s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:03<00:00, 183.17s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 313
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4946 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4607 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_313_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 314...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:55<00:00, 175.33s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:55<00:00, 175.33s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 314
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4144 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3967 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_314_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 315...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:54<00:00, 174.60s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:54<00:00, 174.60s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 315
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4335 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4117 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_315_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 316...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:45<00:00, 165.43s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:45<00:00, 165.43s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 316
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4229 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3902 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_316_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 317...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:27<00:00, 147.75s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:27<00:00, 147.75s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 317
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 3775 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3541 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_317_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 318...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:47<00:00, 167.67s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:47<00:00, 167.67s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 318
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4387 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4134 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_318_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 319...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:29<00:00, 149.29s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:29<00:00, 149.29s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 319
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4281 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3912 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_319_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 320...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:09<00:00, 189.61s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:09<00:00, 189.61s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 320
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4119 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3728 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_320_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 321...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:12<00:00, 192.14s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:12<00:00, 192.14s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 321
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4965 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4382 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_321_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 322...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:01<00:00, 241.71s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:01<00:00, 241.71s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 322
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4907 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4443 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_322_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 323...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:41<00:00, 221.62s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:41<00:00, 221.62s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 323
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4415 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3990 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_323_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 324...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [02:58<00:00, 178.95s/it]Generating SOAP notes: 100%|██████████| 1/1 [02:58<00:00, 178.95s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 324
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 3296 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3114 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_324_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 325...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:23<00:00, 263.05s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:23<00:00, 263.05s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 325
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 5124 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4782 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_325_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 326...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:55<00:00, 295.38s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:55<00:00, 295.38s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 326
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 5218 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 5514 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_326_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 327...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:02<00:00, 242.50s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:02<00:00, 242.50s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 327
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4449 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3995 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_327_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 328...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:10<00:00, 250.93s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:10<00:00, 250.94s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 328
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4700 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4402 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_328_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 329...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:45<00:00, 225.29s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:45<00:00, 225.29s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 329
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4468 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4171 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_329_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 330...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:02<00:00, 242.85s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:02<00:00, 242.85s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 330
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4810 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4623 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_330_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 331...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:39<00:00, 219.37s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:39<00:00, 219.37s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 331
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4419 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4335 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_331_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 332...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:16<00:00, 256.82s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:16<00:00, 256.82s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 332
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4604 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4227 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_332_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 333...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [05:21<00:00, 321.94s/it]Generating SOAP notes: 100%|██████████| 1/1 [05:21<00:00, 321.94s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 333
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 5808 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 5405 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_333_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 334...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:17<00:00, 257.44s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:17<00:00, 257.44s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 334
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 5157 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4794 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_334_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 335...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:42<00:00, 282.63s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:42<00:00, 282.63s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 335
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 5080 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4631 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_335_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 336...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:16<00:00, 256.01s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:16<00:00, 256.01s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 336
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4378 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4132 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_336_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 337...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:36<00:00, 216.74s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:36<00:00, 216.74s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 337
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 3815 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3585 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_337_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 338...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:32<00:00, 212.13s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:32<00:00, 212.13s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 338
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4305 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4018 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_338_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 339...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:56<00:00, 236.51s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:56<00:00, 236.51s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 339
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4140 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3850 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_339_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 340...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [03:38<00:00, 218.05s/it]Generating SOAP notes: 100%|██████████| 1/1 [03:38<00:00, 218.05s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 340
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4171 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 3928 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_340_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 341...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:09<00:00, 250.00s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:09<00:00, 250.00s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 341
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4611 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4383 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_341_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 342...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Generating SOAP notes: 100%|██████████| 1/1 [00:00<00:00, 7145.32it/s]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 342
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+❌ Session file not found. Tried:
+   - data/dialect_marathi/standard_pune/342_P.json
+   - data/dialect_marathi/342_marathi.json
+   - data/dialect_marathi/342.json
+❌ Session 342: Session data not found
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 0 | ❌ Errors: 1
+============================================================
+
+▶️  Processing session 343...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Device set to use cpu
+Generating SOAP notes: 100%|██████████| 1/1 [04:17<00:00, 257.19s/it]Generating SOAP notes: 100%|██████████| 1/1 [04:17<00:00, 257.19s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 343
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+✅ NER model loaded successfully
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+✅ Created new collection: clinical_terms_marathi
+   Added 10 default clinical terms
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+   Generated 4577 characters
+🌐 Stage 4: Translating to Marathi...
+🔧 Loading translation model: facebook/nllb-200-distilled-600M
+✅ Translation model loaded on cpu
+   Translated 4168 characters
+✅ Pipeline complete!
+
+💾 Saved: soap_343_standard_pune_v3.json
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 1 | ❌ Errors: 0
+============================================================
+
+▶️  Processing session 344...
+Generating SOAP notes:   0%|          | 0/1 [00:00<?, ?it/s]Some weights of the model checkpoint at dslim/bert-base-NER were not used when initializing BertForTokenClassification: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+- This IS expected if you are initializing BertForTokenClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForTokenClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Generating SOAP notes: 100%|██████████| 1/1 [01:29<00:00, 89.89s/it]Generating SOAP notes: 100%|██████████| 1/1 [01:29<00:00, 89.89s/it]
+
+============================================================
+  SOAP Generation Pipeline v3 - Session 344
+  Dialect: standard_pune | Model: gemma2:2b
+  NER: ✅ | RAG: ✅
+============================================================
+
+📂 Loading session data...
+🔍 Stage 1: Extracting medical entities (NER)...
+🔧 Loading NER model: dslim/bert-base-NER
+⚠️  NER model loading failed: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /api/models/dslim/bert-base-NER/tree/main/additional_chat_templates?recursive=False&expand=False (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x78c5f2872560>: Failed to resolve \'huggingface.co\' ([Errno -3] Temporary failure in name resolution)"))'), '(Request ID: 2a5bc7aa-ce21-4e9c-9879-b0dd35459543)')
+   Using rule-based extraction only...
+   Found 0 entities
+📚 Stage 2: Retrieving clinical terminology (RAG)...
+🔧 Initializing ChromaDB for RAG...
+⚠️  ChromaDB initialization failed: (MaxRetryError('HTTPSConnectionPool(host=\'huggingface.co\', port=443): Max retries exceeded with url: /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=False&expand=False (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x78c5f039ec50>: Failed to resolve \'huggingface.co\' ([Errno -3] Temporary failure in name resolution)"))'), '(Request ID: f837aba0-8f4e-455b-9bf6-a2fea4dc63a4)')
+   Continuing without RAG...
+   Retrieved relevant terms
+🤖 Stage 3: Generating English SOAP note (LLM)...
+❌ Session 344: Error: Could not connect to Ollama. Is it running?
+
+============================================================
+  PIPELINE COMPLETE
+  ✅ Success: 0 | ❌ Errors: 1
+============================================================
+

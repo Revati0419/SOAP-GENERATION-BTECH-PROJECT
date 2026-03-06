@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 def parse_soap_note(filepath: Path) -> Dict:
     """
-    Parse a bilingual SOAP note markdown file.
+    Parse a bilingual SOAP note JSON file (v3 format).
     
     Extracts:
       - session_id
@@ -49,35 +49,19 @@ def parse_soap_note(filepath: Path) -> Dict:
       - conversation (if available)
     """
     try:
-        content = filepath.read_text(encoding='utf-8')
+        # Load JSON file
+        data = json.loads(filepath.read_text(encoding='utf-8'))
         
-        # Extract metadata from header
-        session_match = re.search(r'Session (\d+)', content)
-        dialect_match = re.search(r'\*\*Dialect:\*\* (\w+)', content)
-        phq_match = re.search(r'\*\*PHQ-8:\*\* (\d+)', content)
+        session_id = str(data.get('session_id', ''))
+        dialect = data.get('dialect', 'unknown')
+        phq8 = int(data.get('phq8_score', 0))
         
-        session_id = session_match.group(1) if session_match else None
-        dialect = dialect_match.group(1) if dialect_match else 'unknown'
-        phq8 = int(phq_match.group(1)) if phq_match else 0
+        # Get SOAP notes
+        english_soap = data.get('soap_english', '')
+        marathi_soap = data.get('soap_marathi', '')
         
-        # Extract English version (between "## ENGLISH VERSION" and "## मराठी आवृत्ती")
-        english_match = re.search(
-            r'## ENGLISH VERSION\s+(.*?)\s+---\s+## मराठी आवृत्ती',
-            content,
-            re.DOTALL
-        )
-        english_soap = english_match.group(1).strip() if english_match else ""
-        
-        # Extract Marathi version (between "## मराठी आवृत्ती" and "## EXTRACTED ENTITIES" or end)
-        marathi_match = re.search(
-            r'## मराठी आवृत्ती \(MARATHI VERSION\)\s+(.*?)(?:\s+---\s+## EXTRACTED ENTITIES|$)',
-            content,
-            re.DOTALL
-        )
-        marathi_soap = marathi_match.group(1).strip() if marathi_match else ""
-        
-        # Try to load conversation from dialect file
-        conversation = load_conversation(session_id, dialect) if session_id else ""
+        # Load conversation from dialect file
+        conversation = load_conversation(session_id, dialect)
         
         return {
             'session_id': session_id,
@@ -97,23 +81,49 @@ def parse_soap_note(filepath: Path) -> Dict:
 def load_conversation(session_id: str, dialect: str) -> str:
     """Load conversation from dialect file."""
     try:
-        dialect_file = Path(f'data/dialect_marathi/{session_id}_{dialect}.json')
-        if not dialect_file.exists():
+        # Try different filename patterns
+        possible_files = [
+            Path(f'data/dialect_marathi/{session_id}_marathi.json'),
+            Path(f'data/dialect_marathi/{session_id}_{dialect}.json'),
+            Path(f'data/translated/{session_id}_marathi.json'),
+        ]
+        
+        dialect_file = None
+        for f in possible_files:
+            if f.exists():
+                dialect_file = f
+                break
+        
+        if not dialect_file:
+            logger.debug(f"No conversation file found for session {session_id}")
             return ""
         
         data = json.loads(dialect_file.read_text(encoding='utf-8'))
         
-        # Format conversation turns
-        turns = []
-        for turn in data.get('turns', []):
-            speaker = turn.get('speaker', 'Unknown')
-            text = turn.get('value', '')
-            turns.append(f"{speaker}: {text}")
+        # Check if it's the new dialect format
+        if 'dialects' in data and dialect in data['dialects']:
+            turns = data['dialects'][dialect]
+            conversation_turns = []
+            for turn in turns:
+                role = turn.get('role', 'Unknown')
+                text_en = turn.get('text_en', '')
+                conversation_turns.append(f"{role}: {text_en}")
+            return "\n".join(conversation_turns)
         
-        return "\n".join(turns)
+        # Fallback: old format with 'turns' key
+        if 'turns' in data:
+            turns = []
+            for turn in data['turns']:
+                speaker = turn.get('speaker', 'Unknown')
+                text = turn.get('value', '')
+                turns.append(f"{speaker}: {text}")
+            return "\n".join(turns)
+        
+        logger.debug(f"Unknown format in {dialect_file}")
+        return ""
     
     except Exception as e:
-        logger.warning(f"Could not load conversation for {session_id}_{dialect}: {e}")
+        logger.warning(f"Could not load conversation for {session_id}: {e}")
         return ""
 
 
@@ -172,9 +182,9 @@ def prepare_training_data(
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    # Find all SOAP note files
-    soap_files = list(soap_dir.glob('soap_*_v3.md'))
-    logger.info(f"Found {len(soap_files)} SOAP note files")
+    # Find all SOAP note files (v3 format is JSON)
+    soap_files = list(soap_dir.glob('soap_*_v3.json'))
+    logger.info(f"Found {len(soap_files)} SOAP note files (v3 JSON format)")
     
     if not soap_files:
         logger.error(f"No SOAP note files found in {soap_dir}")
@@ -208,13 +218,19 @@ def prepare_training_data(
         logger.error("No valid training examples created")
         return 0, 0
     
-    # Shuffle and split
-    random.seed(42)
-    random.shuffle(examples)
-    
-    split_idx = int(len(examples) * train_split)
-    train_examples = examples[:split_idx]
-    val_examples = examples[split_idx:]
+    # For small datasets (< 10 examples), put all in training, create minimal validation
+    if len(examples) < 10:
+        logger.warning(f"Small dataset ({len(examples)} examples) - using all for training, duplicating 1 for validation")
+        train_examples = examples
+        val_examples = examples[:1]  # Duplicate first example for validation
+    else:
+        # Shuffle and split for larger datasets
+        random.seed(42)
+        random.shuffle(examples)
+        
+        split_idx = int(len(examples) * train_split)
+        train_examples = examples[:split_idx]
+        val_examples = examples[split_idx:]
     
     # Write JSONL files
     train_file = output_dir / 'train.jsonl'

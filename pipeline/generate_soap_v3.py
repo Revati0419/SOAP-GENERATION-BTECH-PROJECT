@@ -657,26 +657,8 @@ def save_soap_note(result: Dict, output_dir: Path = Path("data/soap_notes")):
     with open(json_file, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     
-    # Save Markdown (bilingual format)
-    md_file = output_dir / f"soap_{session_id}_{dialect}_v3.md"
-    with open(md_file, 'w', encoding='utf-8') as f:
-        f.write(f"# SOAP CLINICAL NOTE - Session {session_id}\n\n")
-        f.write(f"**Dialect:** {dialect} | **PHQ-8:** {result['phq8_score']} ({result['severity']})\n\n")
-        f.write(f"**Generated:** {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
-        f.write(f"**Model:** {result['model']} | **Version:** {result['version']}\n\n")
-        f.write("---\n\n")
-        f.write("## ENGLISH VERSION\n\n")
-        f.write(result['soap_english'])
-        f.write("\n\n---\n\n")
-        f.write("## मराठी आवृत्ती (MARATHI VERSION)\n\n")
-        f.write(result['soap_marathi'])
-        
-        if result.get('entities'):
-            f.write("\n\n---\n\n")
-            f.write("## EXTRACTED ENTITIES\n\n")
-            f.write(result['entities'])
-    
-    print(f"💾 Saved: {json_file.name} and {md_file.name}")
+    print(f"💾 Saved: {json_file.name}")
+
 
 
 # ============================================================
