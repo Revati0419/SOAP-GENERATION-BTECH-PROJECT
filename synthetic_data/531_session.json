@@ -1,0 +1,340 @@
+{
+  "session_id": 531,
+  "phq8_score": 2,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 2,
+    "guilt": 0,
+    "concentration": 0,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 62,
+    "gender": "male",
+    "occupation": "software engineer",
+    "city": "Houston"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant - everything we discuss here is completely confidential, so please feel comfortable. How was your drive in to see me today?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "An AI, huh. Alright. And it's confidential — fine, okay. Traffic was fine."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That helps. So, what's been going on for you lately? Any big changes or stressors at work?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Nah, just the usual software engineering stuff. Nothing too out of the ordinary."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "I see. And outside of work, how have you been spending your free time?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Same as always - trying to keep up with my hobbies and whatnot."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That sounds nice. What kind of hobbies do you enjoy in your spare time?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Just stuff like reading and watching TV, nothing too exciting."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "It's the little things that can bring us joy sometimes. So, tell me about your daily routine - what's a typical day look like for you?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Wake up, go to work, come home, watch some TV or read a book before bed. Nothing out of the ordinary."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Got it. And have there been any changes in your appetite lately? You mentioned getting hungrier earlier..."
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Yeah, I've just been eating more than usual. Don't know why."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That's understandable. Sometimes our appetites can shift without us realizing why. Have you noticed anything else that's changed about the way you're taking care of yourself?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "No, nothing that comes to mind right now."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Okay. Let's explore your social life a bit more - have there been any changes or stressors in your relationships recently?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Nah, same as always. Friends and family are all doing their thing."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That sounds nice. And how about recent stressful events? Anything that's stood out to you lately?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Just the usual work stuff, but nothing too crazy."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "I see. Sometimes it can be helpful to talk through those work-related stresses with someone who isn't directly involved. Would you like to explore some of that further?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, sure. It's just been a bit frustrating lately."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "I understand. Can you tell me more about what specifically is causing the frustration?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Just feeling like I'm not making progress on some projects at work."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That can be really demotivating. Have you talked to your manager or anyone else about how you're feeling?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "No, not yet. I don't know if it's worth bringing up."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "Sometimes just sharing our concerns with someone who cares can help us feel heard and understood. Would you like to practice talking through that scenario with me?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Yeah, okay. I guess so."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Let's pretend I'm your manager, and you're explaining why you're struggling on this project..."
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Alright... Look, I just feel like we're moving too fast on this project, and I don't think it's realistic to expect me to meet these deadlines."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That sounds really challenging. How does that make you feel when you're feeling overwhelmed?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Just frustrated and anxious, I guess."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Okay. It sounds like there might be some underlying anxiety driving your appetite changes too..."
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah, maybe. I don't know why I'm eating more or anything."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Sometimes our bodies can give us clues about what's going on inside without us realizing it. Would you like to explore that idea further?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah, sure. That makes sense, I guess."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "It might be helpful to talk through some coping strategies for when those feelings of frustration and anxiety come up. Have you developed any habits or routines that help you manage stress?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "No, not really. Just kind of winging it usually."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "Okay. Sometimes just acknowledging what we're feeling can be a good starting point. What do you think might be helpful for you to take away from our conversation today?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "I don't know... maybe figuring out ways to manage my stress better and get back on track at work."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "That sounds like a great place to start. We can definitely explore some strategies together for managing stress and improving your daily routine. Do you feel like we've covered some important topics today?"
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Yeah, I think so. Thanks for listening."
+      },
+      {
+        "turn_id": 40,
+        "start_time": 150,
+        "stop_time": 152,
+        "role": "Therapist",
+        "text_en": "Of course - it was my pleasure. Is there anything specific you'd like to work on before our next session, or any questions you have?"
+      },
+      {
+        "turn_id": 41,
+        "start_time": 153,
+        "stop_time": 155,
+        "role": "Patient",
+        "text_en": "No, not really. Just trying to figure out how to manage my stress better and get some sleep tonight."
+      },
+      {
+        "turn_id": 42,
+        "start_time": 156,
+        "stop_time": 158,
+        "role": "Therapist",
+        "text_en": "That's a great start! Sleep can be a game-changer for managing stress. I'll make sure to leave some notes on that topic before our next session. Alright, let's wrap up today then - is there anything you'd like to say or ask before we go?"
+      },
+      {
+        "turn_id": 43,
+        "start_time": 159,
+        "stop_time": 161,
+        "role": "Patient",
+        "text_en": "No, just thanks again for your time."
+      },
+      {
+        "turn_id": 44,
+        "start_time": 162,
+        "stop_time": 164,
+        "role": "Therapist",
+        "text_en": "You're welcome - it was my pleasure. We'll pick up where we left off next time. See you then!"
+      }
+    ]
+  }
+}

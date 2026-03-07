@@ -1,0 +1,284 @@
+{
+  "session_id": 514,
+  "phq8_score": 1,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 1,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 25,
+    "gender": "female",
+    "occupation": "administrative assistant",
+    "city": "Austin"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How's your morning been so far?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "An AI, huh. Alright. And it's confidential — fine, okay. Traffic was fine."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "So, you're from Austin originally? What do you like most about living there?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, I love the food trucks and live music scene here. It's really vibrant."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That sounds great! As an administrative assistant, what's your typical workday like?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "It's pretty routine, to be honest. Just trying to stay on top of tasks and meet deadlines."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "Deadlines can be tough sometimes. How do you prioritize your tasks?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "I try to break them down into smaller chunks and tackle one thing at a time."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That makes sense. Do you have any big projects or goals coming up at work?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Actually, yeah! We're launching a new software system in the next few weeks, so that's been keeping me pretty busy."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Sounds like it requires some concentration and focus. How do you manage your time and energy levels during those long days?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Honestly, I'm just trying to power through and get everything done on my to-do list."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That can be exhausting. Have you noticed any changes in your daily routine or habits lately that might be affecting your mood or motivation?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Well, I've been having some trouble concentrating lately. Sometimes it takes me a bit longer to finish tasks than usual."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Concentration issues can be frustrating. Can you think of any specific situations where this has happened recently?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Yeah, actually! Last week, I had to present a report to my team and I kept getting stuck on one slide. It took me ages to get through it."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That must have been stressful! How did your team react when you finally finished the presentation?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "They were understanding, but I could tell they were all a bit annoyed that I was running behind schedule."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That can be tough to deal with. Have you noticed any patterns or triggers that might contribute to these concentration issues?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Honestly, I'm not sure. Maybe it's just stress from the new software launch? Or maybe it's something else entirely."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "It's okay if we don't figure it out right away. Just exploring the possibilities can be helpful. How do you usually handle stressful situations like this in the past?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Usually, I try to push through and get everything done as quickly as possible. But lately, that hasn't been working so well."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That's understandable. Sometimes our usual coping strategies need a refresh. What are some things you enjoy doing outside of work to relax and unwind?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Well, I love hiking on the weekends. It helps me clear my head and get some exercise."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That sounds amazing! Do you have any favorite trails or spots in Austin that you like to visit?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Yeah, there's this one spot near Barton Springs that has a great view of the city. It's really peaceful."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That sounds lovely. Have you had any meaningful conversations with friends or family members recently that might help us better understand what's going on for you right now?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Actually, yeah! My best friend and I had a really good conversation last weekend about our goals and aspirations. It was really helpful to hear her perspective."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That's great to hear! Sometimes just having someone to talk to can be incredibly grounding. What are some of your personal goals or aspirations that you're working towards right now?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly, I've been feeling a bit stuck in my career lately. I'm not sure what direction I want to take next."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That's totally normal! It sounds like we might have some work to do on exploring those feelings and identifying what's important to you. What are your thoughts on that?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah, that would be helpful. I guess I just need to start exploring different options and seeing what resonates with me."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That sounds like a great starting point. Before we wrap up today, is there anything in particular you'd like to work on or discuss further before our next session?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Actually, yeah! Can we talk about some strategies for improving my concentration and focus at work?"
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Absolutely! We can definitely explore some techniques together. And don't forget, everything we discuss here is completely confidential."
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Got it. Thanks for reminding me!"
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "You're welcome! It was great chatting with you today. I'll see you in our next session!"
+      }
+    ]
+  }
+}

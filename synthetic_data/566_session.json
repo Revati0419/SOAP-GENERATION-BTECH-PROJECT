@@ -1,0 +1,291 @@
+{
+  "session_id": 566,
+  "phq8_score": 7,
+  "severity": "mild",
+  "symptom_profile": {
+    "sleep": 1,
+    "energy": 1,
+    "interest": 2,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 2,
+    "concentration": 0,
+    "psychomotor": 1
+  },
+  "persona": {
+    "age": 27,
+    "gender": "female",
+    "occupation": "lab technician",
+    "city": "San Diego"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How was your Fourth of July weekend?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Oh wow, okay, an AI — I wasn't sure what to expect honestly, but knowing it stays between us does help. The drive home from my sister's house was a bit stressful actually."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That sounds like a lot to deal with. Can you tell me a little about your job as a lab technician? How's that going?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, it's been keeping me busy! I mean, we're always short-staffed so I've had to pick up some extra shifts, but it's not too bad."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That sounds like a lot of responsibility. What do you like about your job?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Honestly, I love the science-y part of it – figuring out what's going on with these samples and trying to help people get answers."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That's really cool! It sounds like you're passionate about it. How have you been sleeping lately?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Sleep-wise, it's been kind of hit-or-miss. Some nights I wake up at 3 am wide awake, but then other days I sleep fine and feel rested."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "I see. And what about your energy levels? Do you find yourself getting tired easily or having more pep in your step?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Hmm, that's a good question. Sometimes I do get these huge crashes where I just want to crawl back into bed, but other days I have plenty of energy and can keep going all day."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds like a rollercoaster! How about your mood lately? Have you noticed any changes in how you're feeling?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Guilt is probably the biggest thing that's been bugging me. I mean, I feel like I should be doing more for my friends and family, but I just can't seem to get it all done."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Can you tell me a little bit about what's making you feel guilty?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Like, there was this one time when my friend cancelled plans at the last minute and I didn't even bother reaching out to reschedule – but then I saw on social media that they were having a blast with someone else."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Ah, I see. It sounds like you're beating yourself up over something small. What do you think would happen if you did reach out to your friend now?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Honestly, I'm not sure what would happen – maybe we'd make plans and it would be great? But then again, maybe they're just really busy or whatever."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That's a really good question. It sounds like you're having some trouble predicting the outcome. Have you noticed anything else going on in your life that might be contributing to this guilt?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Yeah, my sister is getting married soon and I haven't been as involved in the planning process as she would have liked – but it's not really my thing."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That can be tough! It sounds like there are a lot of expectations on you right now. What do you think you would need to feel more at peace about all this?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "I guess just knowing that everything will work out in the end? And maybe being more proactive with my sister and making an effort to help out."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That sounds like a really important goal for you. Let's make a note to work on that some more as we go along. Is there anything else that's been going on in your life that's been causing you stress or anxiety?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Actually, my lab is getting audited soon and I'm really nervous about it – what if they find something wrong with our procedures?"
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Ah, that can be a huge source of worry! What do you think would happen if the audit doesn't go well?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "I guess we'd have to make some changes or maybe even face consequences – but honestly, I'm just not sure how to prepare for it all."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That sounds really overwhelming. Can you tell me a little bit more about what's been going on at work that's causing this anxiety?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Well, there was this one time when we had an issue with some test results and I got yelled at by our supervisor – ever since then, I've just been worried it'll happen again."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Ah, I see. It sounds like you're expecting the worst-case scenario. What do you think would be the best-case outcome if your lab gets audited?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Maybe we could get some feedback on how to improve our procedures and move forward from there?"
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That's a really healthy way to approach it! Let's make a note to work on reframing those thoughts. Is there anything else that's been going on in your life that you think is worth exploring?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly, I've just been feeling kind of stuck lately – like I'm not making progress anywhere and everything feels stagnant."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. What do you think would need to happen for you to feel like you're moving forward?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Maybe if I could just get some momentum going somehow? Or maybe find a new hobby or something to take my mind off things."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That's a great idea! Let's make a note to brainstorm some ways for you to get that momentum. How about we take a deep breath and move forward from here?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah, sounds good."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "One last question – what are your hopes or goals for our work together in the next few sessions?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Honestly, I just hope I can feel better and have some tools to deal with my anxiety and guilt. Maybe even find a way to make my sister's wedding stress-free!"
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "That sounds like a really great goal! I think we're off to a fantastic start here. Let's take a deep breath and look forward to our next session."
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "Yeah, thanks!"
+      }
+    ]
+  }
+}
