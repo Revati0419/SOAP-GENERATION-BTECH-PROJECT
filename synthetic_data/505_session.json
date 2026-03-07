@@ -1,0 +1,326 @@
+{
+  "session_id": 505,
+  "phq8_score": 3,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 1,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 2,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 43,
+    "gender": "male",
+    "occupation": "social worker",
+    "city": "Seattle"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How was your week?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "An AI, huh. Alright. And it's confidential — fine, okay. Traffic was fine."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's good to know. So, what's been going on in your life lately that's made you consider seeking help?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Honestly, just feeling a bit worn out. Work's been a grind and I'm having trouble focusing."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "I see. It sounds like work might be taking a toll on you. Can you tell me more about what's going on at your job that's causing stress?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Yeah, I'm just really struggling to stay motivated. We're getting new software updates and it's been a huge learning curve."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That can be overwhelming. Have you found any ways to manage your workload or take breaks when you need them?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly, no. I've just been pushing through and hoping things get better."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Sometimes that works out okay, but not always. How about your social life? Are there any changes you've noticed recently?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Not really. Same old same old. Just trying to keep up with everything."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "It sounds like you're feeling a bit stuck right now. Can you think of anything you used to enjoy doing that you haven't had time for lately?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Yeah, I used to love hiking on the weekends, but it's been ages since I've gone."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That sounds like something you might want to revisit when things settle down a bit. In the meantime, are there any changes you think would help with your focus at work?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Maybe getting more organized or delegating some tasks."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Those are both great ideas. What do you think would be the first step in making that happen?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "I guess just prioritizing my tasks better and setting realistic goals for myself."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That sounds like a solid plan. How's your energy level been lately? Have you noticed any changes there?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Actually, yeah – it's been pretty low. I mean, some days are better than others, but overall... meh."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "Okay. It can be tough to feel that way. Have you tried doing anything to boost your energy levels or take care of yourself physically?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Not really. Just trying to make it through the day, to be honest."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Sometimes we need to prioritize self-care before things get out of hand. Are there any changes you've noticed in your daily routine that might be contributing to this fatigue?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Honestly, no – just feeling like I'm stuck in a rut."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "It's understandable to feel that way. Can you think of anything that might help shake things up and get you moving forward again?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Maybe setting some bigger goals for myself or finding a hobby to take my mind off work."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "Those are both great ideas! Sometimes having something to look forward to can make all the difference. What do you think would be a first step in making that happen?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Just taking some time to brainstorm and figure out what I'm passionate about."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That sounds like a great place to start. Are there any support systems in your life right now – friends, family, or colleagues – that might help with motivation and energy?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah, my girlfriend is always trying to get me to take breaks and do stuff on the weekends. And my boss has been pretty understanding when I've needed extra time."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That's wonderful! Having a support system can make all the difference. What are some things you're looking forward to in the coming weeks or months?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly, just getting through this current project and taking a break afterwards."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "It sounds like having that goal to work towards might be helpful for your motivation right now. Are there any self-care practices or habits you've been doing regularly that help with your overall well-being?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah, I try to exercise a few times a week and eat pretty healthily."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That's great! Exercise can be a huge mood-booster. Have you noticed any changes in your physical sensations lately – like tension or relaxation?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Actually, yeah – my back has been acting up a bit from sitting at my desk all day."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Okay. It sounds like taking care of that might be important for your overall well-being. Are there any changes you'd like to make to prioritize self-care and improve your mental health moving forward?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Yeah, just getting more organized and prioritizing my tasks better – and maybe taking some time off when I need it."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "That sounds like a great plan! It's amazing how often taking care of ourselves physically can have a positive impact on our mental well-being too. Is there anything you'd like to share or work on in this session that we haven't touched on yet?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "No, I think we covered everything. Just feeling a bit better knowing it's all confidential and stuff."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "That's completely understandable! Remember, this is a safe space for us to explore your thoughts and feelings. And don't worry – everything discussed here stays between us. Thanks for opening up today. What do you hope to get out of our next session?"
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Just maybe some more concrete steps on how to prioritize my tasks better and get more organized."
+      },
+      {
+        "turn_id": 40,
+        "start_time": 150,
+        "stop_time": 152,
+        "role": "Therapist",
+        "text_en": "That sounds like a great place to start! I'll make sure to bring those ideas to our next session. For now, is there anything else you'd like to add or ask before we wrap up?"
+      },
+      {
+        "turn_id": 41,
+        "start_time": 153,
+        "stop_time": 155,
+        "role": "Patient",
+        "text_en": "Nope, that's it for me. Thanks again, I guess!"
+      },
+      {
+        "turn_id": 42,
+        "start_time": 156,
+        "stop_time": 158,
+        "role": "Therapist",
+        "text_en": "You're welcome! It was great chatting with you today. Let's schedule the next session for [insert date and time]. Take care of yourself in the meantime, okay?"
+      }
+    ]
+  }
+}

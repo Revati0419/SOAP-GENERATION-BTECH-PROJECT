@@ -1,0 +1,270 @@
+{
+  "session_id": 498,
+  "phq8_score": 0,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 0,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 55,
+    "gender": "male",
+    "occupation": "truck driver",
+    "city": "Charlotte"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant – everything we discuss here is completely confidential, so please feel comfortable. How's your week been so far?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Oh wow, okay, an AI – I wasn't sure what to expect honestly, but knowing it stays between us does help. The drive was a bit stressful actually."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That makes sense. What was stressing you out about the drive?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Just traffic and road construction – you know how it is."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "Yeah, Charlotte's roads can be a real challenge! Do you have any fun plans for the upcoming holidays?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Nah, just the usual family gatherings and stuff."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "Sounds nice. So, what's been going on in your life lately that's got you feeling stressed out about the drive?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly, it's just been one of those weeks – everything feels like it's piled up."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "I get it. Sometimes things can feel overwhelming. Can you tell me a bit more about what's piling up for you?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Just work and some personal stuff – nothing too crazy."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Okay, sounds like you're juggling a few balls in the air. How do you usually cope with stress at work?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Um, I just try to stay focused and get everything done on time."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That's great that you prioritize getting things done! Do you find yourself doing anything outside of work for enjoyment?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Yeah, I mean, I love watching sports and spending time with my friends."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That sounds like a great way to unwind. What's been going through your mind lately when it comes to your relationships?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Honestly, just feeling like things are getting a little stale – you know, same old routine."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "I hear that. Sometimes we need a little shake-up in our lives. Have you noticed any changes in your appetite or eating habits recently?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Nah, I mean, I still eat regular and everything."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "Okay, so no major changes there. What about your physical sensations? Any bodily feelings that stand out to you?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Actually, yeah – my back's been acting up a bit lately."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that! Have you tried any exercises or stretches to help with that?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Yeah, I've been doing some yoga and stuff – it helps a little."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That's great that you're taking proactive steps. What do you think would make your life feel more fulfilling right now?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Hmm, honestly, just feeling like I'm getting ahead of myself in my career, maybe making some changes there."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "I get that – it sounds like you're looking for some sense of accomplishment. Have you had any recent stressful life events that might be contributing to these feelings?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Yeah, actually – we just sold our old house and are moving into a new one."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That can be a big adjustment! How's the transition been going so far?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "It's been okay, I guess. Just trying to get everything settled in."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Okay, sounds like you're taking it one step at a time. What kind of support system do you have around you right now?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Oh, yeah – my family and friends are always there for me."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That's wonderful! Do you find yourself using any coping strategies to deal with stress?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah, I mean, I just try to take things one day at a time and focus on the positive."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That's great that you have those tools. What are your hopes for our work together in this session?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Honestly, I just want to figure out what's going on with me and how to make some changes."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Sounds like you're looking forward to exploring that further!"
+      }
+    ]
+  }
+}

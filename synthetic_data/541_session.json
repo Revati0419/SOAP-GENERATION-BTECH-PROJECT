@@ -1,0 +1,284 @@
+{
+  "session_id": 541,
+  "phq8_score": 8,
+  "severity": "mild",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 1,
+    "interest": 3,
+    "depressed": 0,
+    "appetite": 1,
+    "guilt": 0,
+    "concentration": 3,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 67,
+    "gender": "female",
+    "occupation": "electrician",
+    "city": "Charlotte"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How was your week?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "An AI, huh. Alright. And it's confidential — fine, okay. Traffic was fine."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "Great! So, what brings you in today? Is there something specific that's been going on that's causing you concern or stress?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, well... work has just been a real grind lately. I'm an electrician and we're slammed with projects. My interest is just... zoned out, you know?"
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That makes sense. It sounds like you're feeling a bit overwhelmed. Can you tell me more about what's happening at work that's causing your lack of interest?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Honestly? I just can't seem to focus on anything anymore. Last week I missed two deadlines and my boss was not happy."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I see. So, it sounds like you're feeling a bit stuck and struggling to concentrate. How has your appetite been handling all this stress?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Oh, good question... it's actually been pretty meh. I mean, I still eat, but no excitement or pleasure in food for me lately."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Okay, that makes sense. Sometimes when we're under a lot of pressure, our usual habits and routines can suffer. What do you usually do to relax and unwind?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Um... nothing really. Used to play some guitar, but haven't picked it up in months. Just feel like I'm running on empty all the time."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. It's great that you had a hobby previously – maybe we can explore ways to get you back into doing something you enjoy?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Yeah, yeah... sure thing. Just don't know where to start anymore."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "No worries! We'll work on that together. What about your daily routine? Have you noticed any changes in that area as well?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Honestly, my whole life feels like it's been put on pause. I mean, I still wake up at the same time every day and go through the motions, but... there's no excitement or energy to do anything."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That sounds really difficult. It's almost like you're feeling stuck in neutral. Can you tell me more about what that's like for you?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Yeah... it's like I'm just going through the motions, you know? No spark, no motivation... just existing."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Okay, got it. So, even though your energy levels are low, there might be things you're still doing out of habit or obligation. Can you give me some examples?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Yeah... like I said, waking up at the same time every day and just going through the motions. Even simple tasks feel like climbing a mountain."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That's really tough. It sounds like even small accomplishments might be a challenge for you right now. What do you think would make things better?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Honestly? I don't know... maybe getting my energy back? Feeling like I can tackle stuff again?"
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay, that makes sense. So, what are some things that usually give you energy and motivation in the past?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Um... music, I guess. When I'm playing guitar or listening to good tunes, it gets me pumped."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That's great! We can definitely work on incorporating more of those things into your daily routine. Are there any other hobbies or activities that you've enjoyed in the past?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Yeah... hiking was a big one for me. But even thinking about it now just feels overwhelming – I don't know where to start."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "Okay, let's not worry too much about getting back into hiking right away. How about we focus on small steps towards getting you started again? Maybe something as simple as taking a short walk around the block?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Yeah... that doesn't sound so bad, I guess."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Great! Sometimes just taking those first few steps can make all the difference. What do you say we set a goal to get you outside for a 10-minute walk tomorrow morning? Would that be something you'd be willing to try?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah... okay, sure thing. Thanks for listening and understanding."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Of course! You're welcome. Remember, this is a safe space and everything discussed here stays confidential. What's one thing you want to take away from our session today?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "I guess just knowing that someone gets it – my situation isn't crazy or anything. Maybe feeling like I'm not alone in all this."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That's wonderful! You're definitely not alone, and we'll work together to help you get your energy back and tackle those challenges. Alright, let's wrap things up for today. Is there anything else you'd like to add before we close?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "No... I think that's it. Thanks again."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "You're welcome! Remember our next session is in a week from now. Are there any specific goals or areas you'd like to focus on by then?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah... maybe getting my energy back, and actually enjoying my guitar playing again? Maybe even trying to get outside more?"
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "That sounds great! I'll make sure to work those into our next session. Take care of yourself until we meet again."
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Will do. Thanks again."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "You're welcome!"
+      }
+    ]
+  }
+}
