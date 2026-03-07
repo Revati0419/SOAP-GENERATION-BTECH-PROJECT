@@ -1,0 +1,270 @@
+{
+  "session_id": 678,
+  "phq8_score": 23,
+  "severity": "severe",
+  "symptom_profile": {
+    "sleep": 3,
+    "energy": 3,
+    "interest": 3,
+    "depressed": 2,
+    "appetite": 3,
+    "guilt": 3,
+    "concentration": 3,
+    "psychomotor": 3
+  },
+  "persona": {
+    "age": 47,
+    "gender": "female",
+    "occupation": "school counsellor",
+    "city": "Indianapolis"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How was the commute over?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "An AI, huh. Alright. And it's confidential — fine, okay. Traffic was fine."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "I'm glad to hear that. So, what's been going on in your world lately? Any big changes or stressors?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Nah, not too much. Just the usual school counselor stuff. You know how it is."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "Yeah, I do. So, let's start with your daily routine then. What's a typical day like for you?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Well, I usually wake up around 6:30, get my coffee going, and head to work by 8."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "And how are you feeling about your job lately? Any challenges or frustrations?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly, yeah. The kids can be tough sometimes, and it's hard to keep up with all the paperwork."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That sounds overwhelming. How do you unwind after a long day at work?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Um, well... I used to like painting, but lately, even that feels too exhausting. I just wanna collapse on the couch."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "I understand. It sounds like you're really struggling with energy levels right now. Have you noticed any changes in your sleep patterns?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Sleep? Ha! That's a joke. I'm up all night worrying about work and then crash early morning, feeling like I've been hit by a truck."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "I see. And how is your appetite doing? Are you eating regularly?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Appetite? Forget about it. I'm lucky if I can stomach a granola bar. Everything tastes like cardboard."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Okay. It sounds like you're really struggling with food cravings or lack thereof. Have you noticed any changes in your interest levels? Do things that usually bring you joy feel more draining than usual?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Yeah, it's all just feels so... grey. Like, I used to love reading before bed, but now it takes me an hour just to get through a chapter."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. And what about your mood? Are you feeling more down or anxious lately?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Down? Down is not even the half of it. It's like... have you ever felt like you're stuck in quicksand and can't move? That's where I am right now."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "Okay, let's try to break that down a bit. Have you noticed any physical sensations or body feelings that might be contributing to your mood?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Actually, yeah. My shoulders feel like lead weights, and my back hurts all the time from just sitting at my desk."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "I see. And what about your relationships? Are there any changes or stressors in those areas of your life?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Well, work is always stressful, but with friends... I don't know, it's like they're all getting married and having kids, and I'm just stuck in this rut."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That can be really tough to deal with. What about your support system? Do you have anyone you feel comfortable talking to about these feelings?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly? My sister is always there for me, but sometimes it feels like she's trying to fix everything instead of just listening."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "I understand. It sounds like you're feeling a bit isolated right now. What are your goals for our time together today?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Just... just help me figure out how to get my energy back and stop feeling so stuck, I guess."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay, let's work on that. How do you think we can start to tackle some of these issues?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Honestly? I have no idea. But I'm willing to try anything at this point."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That's a great place to start. Well, before we wrap up today, is there anything else you'd like to share or any specific concerns you have about our sessions together?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Just... thank you for listening, I guess. It feels good just to get all this out."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "You're welcome. And remember, everything discussed here stays confidential and between us. Is that okay with you?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah, that's fine. Thanks again."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "No problem at all. We'll work together to tackle these challenges, one step at a time. I want to give you some homework assignments for our next session. Can you commit to doing those?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah... yeah, sure thing."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Great! Just remember, it's okay to not have all the answers right now. We'll take things one step at a time and work towards getting your energy back up."
+      }
+    ]
+  }
+}

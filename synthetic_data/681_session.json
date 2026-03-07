@@ -1,0 +1,284 @@
+{
+  "session_id": 681,
+  "phq8_score": 20,
+  "severity": "severe",
+  "symptom_profile": {
+    "sleep": 2,
+    "energy": 2,
+    "interest": 3,
+    "depressed": 3,
+    "appetite": 3,
+    "guilt": 3,
+    "concentration": 2,
+    "psychomotor": 2
+  },
+  "persona": {
+    "age": 51,
+    "gender": "male",
+    "occupation": "construction worker",
+    "city": "Charlotte"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant - everything we discuss here is completely confidential, so please feel comfortable. How was the commute over?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "An AI, huh. Alright. And it's confidential — fine, okay. Traffic was fine."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "So, how's your week been? Anything stand out to you as particularly good or challenging?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Just the usual construction work, nothing special. Although, I did have a meeting with my foreman about that project that's been giving me headaches."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "What kind of headaches are we talking about - literally or figuratively?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Ha! Literally, yeah. My neck's been killing me from all the heavy lifting."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That sounds frustrating. Do you have any time for self-care to help with that?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Self-care? Nah, I don't really do that stuff. Just try to grit my teeth and get through it."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Okay, no judgment here! What's your daily routine been like recently?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Same old, same old - wake up early, head to the site, come home tired..."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds exhausting. Do you have any hobbies or activities that bring you joy?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Honestly? Not really. I mean, I used to love fishing, but lately, it feels like a chore too."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "You mentioned your project's been giving you headaches - can you tell me more about that?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Just trying to meet some impossible deadlines and dealing with micromanaging from the boss."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That sounds really stressful. Have you noticed any changes in your appetite or sleep patterns recently?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Yeah, my appetite's been shot lately. I mean, I just don't feel like eating much of anything."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Okay, that can be tough. How about your energy levels? Do you feel like you're getting enough rest?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "No, not really. I'm always tired, and it takes me forever to wind down at night."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That sounds really challenging. Have you noticed any changes in your mood or emotional state recently?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Honestly? Yeah, I've been feeling pretty down. Like everything's just getting on my nerves."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay, that can be really tough. Are there any relationships or social connections that are important to you right now?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Just my coworkers, but even they're starting to get on my nerves. It feels like everyone's always asking me for something."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That sounds overwhelming. Have you noticed any changes in your concentration or ability to focus lately?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Yeah, definitely. I mean, I'll be trying to concentrate and just feel like my brain is foggy, you know?"
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "Okay, that can be really frustrating. Are there any physical sensations or body feelings that are concerning you right now?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Just this constant fatigue and these weird aches in my muscles."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay, I'm here to listen. What do you think is the most stressful part of your daily life right now?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Definitely trying to meet those impossible deadlines and dealing with the pressure from my boss."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Are there any support systems or coping strategies that have been helpful for you in the past?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Nah, not really. I mean, I've tried some meditation apps and stuff, but it never seems to stick."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Okay, well we can definitely explore those options again if you'd like. What are your goals for our sessions together?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Honestly? Just trying to get my life back on track. Stop feeling so stuck."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That sounds like a great place to start. What's one small step you could take this week to move towards that goal?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "I don't know... Maybe try to actually eat something for breakfast instead of just coffee, haha!"
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! And finally, what do you think is the most important thing for me as your AI therapist to understand about you right now?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Just that I'm really struggling and need some help getting my head above water."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "I hear you, and we're going to work together to get there. Thanks for opening up today - that's a great start."
+      }
+    ]
+  }
+}
