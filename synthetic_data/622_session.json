@@ -1,0 +1,270 @@
+{
+  "session_id": 622,
+  "phq8_score": 19,
+  "severity": "moderately_severe",
+  "symptom_profile": {
+    "sleep": 3,
+    "energy": 3,
+    "interest": 2,
+    "depressed": 2,
+    "appetite": 2,
+    "guilt": 3,
+    "concentration": 1,
+    "psychomotor": 3
+  },
+  "persona": {
+    "age": 49,
+    "gender": "male",
+    "occupation": "data analyst",
+    "city": "Miami"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How was your morning commute over?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Oh, it's weird to talk to an AI actually, but knowing it's private helps. Traffic was okay, took a bit longer than usual."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That makes sense. Can you tell me a little bit about your daily routine? What do you usually do in the morning?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "I'm a data analyst, so I get up early and check my emails, then head to the office. It's pretty standard stuff."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "Okay, got it. And how has work been treating you lately? Any notable projects or stressors?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Yeah, we're in the middle of a big project at work, and it's keeping me up late sometimes. But overall, it's manageable, I guess."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I see. You mentioned staying up late - have you noticed any changes in your sleep patterns lately?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Actually, yeah... I've been having trouble sleeping pretty consistently. I mean, I just can't seem to wind down, you know?"
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Yeah, that sounds tough. Do you find yourself getting energized and then crashing later on?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Yeah, it's like my energy levels are all over the place. Sometimes I'm fine, other times... not so much."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That can be really frustrating. Have you noticed any changes in your appetite or interest in things you used to enjoy?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Honestly, no... I still eat pretty normally and enjoy some hobbies, but maybe not as much as I should. And don't get me wrong, I'm grateful for what I have, but it's just... hard."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That makes sense. What do you think is the most challenging part of your daily routine right now?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Probably just getting out of bed in the morning and facing everything all at once. It feels like a mountain to climb some days."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "I can understand that. Have you noticed any changes in your concentration or ability to focus lately?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "A bit, yeah... it's like my brain is stuck on repeat sometimes. Hard to explain."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That sounds like it could be pretty challenging. Can you tell me more about what you mean by \"stuck on repeat\"?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "I guess just that I get these thoughts in my head and they won't go away, you know? It's like my mind is stuck on this one thing and can't move forward."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Have you noticed any changes in your social life or relationships recently?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "No... everything seems pretty normal on that front, thank goodness."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay, good to hear. What do you think has been the most stressful part of your recent life?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Definitely work-related stuff mostly. We had some major deadlines and it was just a lot to handle."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That sounds intense. How did you find ways to cope with that stress?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly, I don't know if I've really found any healthy coping mechanisms. Just trying to power through sometimes."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "It can be hard to find the right strategies. Have you noticed any changes in your guilt or self-blame lately?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Actually, yeah... I've been beating myself up over some stuff, feeling like I should have done things differently."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Can you tell me more about what's causing that sense of guilt and self-blame?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Just feeling like I let someone down or didn't meet their expectations, you know? It's hard to shake off those feelings sometimes."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Yeah, it can be really difficult to let go of those kinds of feelings. What are some things you're looking forward to in the coming weeks or months?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly, not a lot... just getting through each day and hoping for better times ahead."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That's understandable. Are there any goals or changes you'd like to make moving forward?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "I guess so... maybe prioritize self-care more, take breaks when I need them. Not sure yet, still figuring things out."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That sounds like a good starting point. What do you think is the most important thing for us to work on in this session?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Probably just getting everything off my chest and finding ways to deal with these feelings... maybe finding some direction too."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Okay, that's a great place to start."
+      }
+    ]
+  }
+}

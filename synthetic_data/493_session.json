@@ -1,0 +1,284 @@
+{
+  "session_id": 493,
+  "phq8_score": 0,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 0,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 32,
+    "gender": "male",
+    "occupation": "dental hygienist",
+    "city": "Chicago"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. Have you been to this part of town before?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "An AI, huh. Alright. And it's confidential — fine, okay. Traffic was fine. Yeah, I work nearby, actually."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's convenient! What do you usually do after work each day?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Oh, I head home and just kind of crash on the couch for a bit. Sometimes my girlfriend is there too, so we watch TV or something."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "Sounds like you have some downtime. How was your week at work as a dental hygienist?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "It's been okay, I guess. Just the usual stuff – cleaning teeth, taking X-rays... You know how it is."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "Yeah, I do! Are there any particular patients or situations that stand out to you during your shifts?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly? Not really. Just the same old routine every day. Maybe if someone's got a tough appointment, but nothing too crazy."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That makes sense. Do you have many social plans this week or is it mostly just relaxation time for you?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Uh, yeah... I've got a friend's birthday party on Saturday, so that's gonna be fun. Other than that, not much going on."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Nice! How do you usually handle parties and gatherings? Are you the life of the party or more of an observer?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Um, yeah... I mean, I try to have a good time, but sometimes it can get overwhelming if there's too many people. You know how it is when you just want to chill with one person instead of being around a big group."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "Yeah, totally! So what are some things that make you feel overwhelmed in those situations?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "I don't know... Just too much noise, I guess? Too many conversations going on at once. Sometimes it feels like everyone's trying to get my attention all the time."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That can be tough. Do you have any strategies for coping with those feelings when they come up?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Well, I usually just try to find a quiet spot and take a few deep breaths or something. It helps calm me down a bit."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That's great that you've found something that works! Can you tell me more about your relationship with your girlfriend? How did you two meet?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Oh, yeah... We met through mutual friends actually. She's really nice – we have some good times together."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "Aw, that's sweet! What do you enjoy doing together?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Um, we like going out to eat sometimes or just hanging out at home watching movies. Nothing too crazy, but it's nice to have someone to share things with."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That sounds lovely. Have there been any significant changes in your daily routine recently that might be contributing to these feelings of overwhelm?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Hmm... Well, I did just start a new project at work, so that's been keeping me pretty busy. But it's not like it's stressing me out or anything – it's just a lot of details to keep track of."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Okay! So it sounds like you're managing the workload okay. What's one thing you've enjoyed about this new project?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Yeah, actually... I really liked getting to work with some new colleagues and learning from them. It was nice to feel like I'm a part of something bigger than just my usual routine."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That's great! So it sounds like there are some positives in your professional life right now. How do you think this project might be affecting your social life or personal relationships?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Honestly? I don't know... Maybe I'm just more tired after work and don't have as much energy to go out with friends as often. But I mean, it's not like my girlfriend is complaining or anything – she's really understanding."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That's good to hear! It sounds like you're prioritizing your relationships and recognizing the importance of having a support system. What are some things that make you feel more confident in your daily life?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Um... I guess just doing a good job at work, feeling accomplished when I finish a project or something. And having my girlfriend there for me, too – she's always been really supportive."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That makes sense! So it sounds like you're recognizing some strengths and sources of confidence in your life. What do you think are the biggest challenges you face moving forward?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Hmm... I don't know... Just maybe getting overwhelmed with work stuff or feeling like I'm stuck in a routine and need to shake things up. But I mean, those aren't necessarily big problems – just minor annoyances."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Okay! It sounds like you're recognizing some potential areas for growth and self-reflection. What are some small steps you can take this week to prioritize your own needs and well-being?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah... Um, maybe just taking a little extra time on the weekends to relax or do something I enjoy – that kind of thing."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That sounds like a great plan! Finally, what's one thing you're looking forward to in the next few weeks or months?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Oh, yeah... My friend's birthday party is coming up, so I'm looking forward to that. And maybe just taking some time off work to recharge and have some fun."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Sounds like you've got a good balance of social and personal activities on the horizon! Is there anything else you'd like to add or explore in this session?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "No, I think that's it for now. Thanks for listening – it was helpful talking about all this stuff."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "You're welcome! It was great chatting with you too. Remember, our sessions are confidential and a safe space for you to express yourself."
+      }
+    ]
+  }
+}

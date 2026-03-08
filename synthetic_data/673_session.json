@@ -1,0 +1,270 @@
+{
+  "session_id": 673,
+  "phq8_score": 21,
+  "severity": "severe",
+  "symptom_profile": {
+    "sleep": 3,
+    "energy": 3,
+    "interest": 3,
+    "depressed": 2,
+    "appetite": 3,
+    "guilt": 1,
+    "concentration": 3,
+    "psychomotor": 3
+  },
+  "persona": {
+    "age": 42,
+    "gender": "male",
+    "occupation": "retail store manager",
+    "city": "Nashville"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How was your week, and are you feeling any sense of relief now that the holiday season is approaching?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Oh wow, okay, an AI — I wasn't sure what to expect honestly, but knowing it stays between us does help. The drive was a bit stressful actually. Traffic's been really bad lately."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "I'm glad we're having this conversation in a safe space. Can you tell me more about what's been stressing you out on your daily commute?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, just the usual stuff — people cutting me off, lane changes, and then construction on the highway. It's like, I get it, they need to fix the road, but can't they do it at night or something? You know, when there's less traffic."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That does sound frustrating. Have you noticed any changes in your daily routine or work situation lately that might be contributing to this stress?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Well, my store's been really busy with holiday shoppers, and I'm having a hard time keeping up. I mean, it's not like the end of the world, but sometimes I feel like I'm just trying to keep my head above water."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That sounds overwhelming. Have you had any social plans or activities that have brought you some joy recently?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly? Not really. Work has been taking up most of my time and energy. I do miss going out with friends, but it feels like I'm just too exhausted to even think about it."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "It can be tough to find balance when work is demanding. How have you been sleeping lately?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Sleep's been... terrible. I mean, I used to sleep fine before all this, but now I'm waking up multiple times a night and having trouble falling back asleep. And when I do get some rest, it feels like I've got an alarm clock going off in my head at 4 am."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds like it's really affecting your quality of life. Have you noticed any changes in your appetite or eating habits?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Yeah, I've been having trouble eating because my stomach's always in knots from stress. And when I do eat, it's usually something fast and processed, which isn't doing me any favors."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That can be tough to deal with. Are there any hobbies or activities that you used to enjoy but haven't had time for lately?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Honestly? No, not really. Work's been taking up so much of my mental energy that I just feel like I'm running on empty most of the time."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That sounds exhausting. Have you noticed any physical sensations or body feelings that might be related to your stress levels?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Sometimes my neck and shoulders get super tight, especially after a long day at work. And sometimes my hands feel numb or tingly like I've fallen asleep on them without realizing it."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "It's interesting how our bodies can react to stress in different ways. What about your motivation levels? Do you find yourself wanting to do things that bring you pleasure and joy?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Yeah, honestly? Not really. Even small tasks feel like they're too much effort sometimes. And when I am motivated, it feels short-lived and fleeting."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That can be a real challenge. Have you noticed any patterns or cycles in your mood lately? Do you find yourself feeling more anxious or down certain times of the day?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, definitely. I tend to feel worse in the mornings when I'm still waking up from the night before. And sometimes after lunch, I get this sinking feeling like everything's just going to go wrong."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Are there any recent stressful life events or situations that might be contributing to your mood?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Well, my boss has been riding me pretty hard about meeting sales targets, and it feels like nothing I do is ever good enough. And on top of that, we've had some store closures recently, which makes me worried about job security."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That sounds really stressful. What kind of support system do you have in place to help you cope with these challenges?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly? Not much, just my family and friends, but they're all so busy with their own lives that it's hard for them to be there for me like I need."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "It can be tough to feel supported when everyone else is going through their own struggles. What are some things you hope we can work on together in these sessions?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "I guess just finding ways to manage my stress and anxiety better, and maybe getting some energy back. And figuring out how to get my motivation levels up again."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Those are all great goals to work towards. Remember, this is a safe space for you to express yourself without judgment. What's one thing that's been on your mind lately?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "I guess just feeling like I'm stuck in a rut and don't know how to get out of it. Like, I'm just going through the motions every day and feeling like I'm not living up to my potential."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That can be really tough to deal with. What do you think is one thing that's preventing you from making changes or taking action towards your goals?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly? I don't know where to start sometimes, and it feels like I've got so much on my plate already. And then I just kind of freeze up."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "It sounds like you might be feeling a bit overwhelmed by the sheer amount of tasks and responsibilities on your plate. What do you think would be the most helpful step in getting started?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Maybe just breaking things down into smaller, more manageable chunks? Like, instead of looking at my to-do list as a whole, focusing on one thing at a time."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That's a great idea! Breaking things down into smaller steps can really help make things feel less daunting. Let's work on doing that and seeing what other strategies we can come up with for managing your stress and anxiety. What do you think is something that would be a good starting point?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "I guess just getting some sleep? And maybe finding ways to relax when I'm not working."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Those are great goals! Let's work on setting those as priorities and see how we can make them more achievable."
+      }
+    ]
+  }
+}

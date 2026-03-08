@@ -1,0 +1,270 @@
+{
+  "session_id": 550,
+  "phq8_score": 7,
+  "severity": "mild",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 1,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 2,
+    "guilt": 1,
+    "concentration": 0,
+    "psychomotor": 3
+  },
+  "persona": {
+    "age": 25,
+    "gender": "male",
+    "occupation": "school counsellor",
+    "city": "Atlanta"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm an AI mental health assistant — everything we discuss here is completely confidential, so please feel comfortable. How was your week leading up to today?"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Oh, I didn't realise you were an AI, but okay, that's good to know it's private too. Traffic was fine."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "So, what's been going on this past week? Any notable events or stressors?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, my schedule has been pretty packed with school counseling sessions and meetings. I'm a school counselor myself, actually."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That can be overwhelming. How do you typically handle your workload during peak periods?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Honestly, I just kind of power through and try to stay organized. But sometimes it feels like my energy levels are draining quickly."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "Can you tell me more about what you mean by \"draining\" energy levels? What does that look like in your daily life?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Well, I find myself getting really tired after lunchtime, even if I just had a nap earlier. And sometimes I just need to take an extra-long break."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That sounds challenging. Have you noticed any changes in your appetite or eating habits as well?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Yeah, I've been snacking more frequently throughout the day. It's like my body is craving something to give me a boost."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "How has your work situation been? Are there any specific challenges or stressors you're facing right now?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "To be honest, it's just feeling really overwhelming trying to keep up with all these demands and responsibilities. Sometimes I feel like I'm barely staying on top of things."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That sounds frustrating. Have you talked to anyone about how you're feeling? Do you have a support system in place?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Yeah, my colleagues are great, but sometimes it feels like they don't quite get it. My family's been trying to be more understanding, though."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "It can be tough to find people who truly understand what we're going through. What do you think your goals are for this session or in the next few weeks?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "I guess just to figure out some coping strategies and maybe get a better handle on my energy levels. That would be a good starting point."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Let's work together to find some strategies that might help. Can you tell me more about your daily routine? What are some things that bring you joy or relaxation?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Um, I guess just taking long walks after dinner or reading a book before bed sometimes. It's not much, but it helps."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That sounds like a great way to unwind. Have you experienced any physical sensations or body feelings that might be related to your energy levels or mood?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, sometimes my hands get all tingly and I feel this weird buzzing sensation. It's hard to explain."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay, I'm going to make a note of that. Can you tell me more about what's been on your mind lately? Any specific worries or concerns?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Honestly, just feeling like I'm drowning in responsibilities and unsure how to prioritize things anymore."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "It can be tough to know where to start when we're feeling overwhelmed. What do you think might happen if you were able to manage those responsibilities better?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Well, maybe I could get ahead on some tasks or at least feel more confident about meeting deadlines."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That's a great goal to work towards. Let's brainstorm some strategies for you to start implementing today. Can you tell me what you think might help with your energy levels and motivation?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Maybe taking short breaks throughout the day or finding ways to make my tasks more engaging."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Those are both great ideas! Have you noticed any patterns or triggers that might be contributing to these energy crashes?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah, sometimes it feels like I get hit with a wall of exhaustion after lunch. It's like my body just gives up."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Okay, let's explore that further. What do you think might happen if we could work on building up your energy levels during those post-lunch hours?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Maybe I could power through the rest of the day without feeling so exhausted."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That sounds like a great outcome. How can we make sure you prioritize taking breaks and self-care throughout the day?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Um, maybe setting reminders or finding someone to hold me accountable."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Those are both great ideas! Let's schedule some follow-up appointments for you to check in on your progress and implement these strategies."
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Sounds good. Thanks for listening, I feel like I've been able to process some things a bit better now."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "You're welcome! It was my pleasure to help."
+      }
+    ]
+  }
+}
