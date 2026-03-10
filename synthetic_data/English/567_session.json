@@ -1,0 +1,270 @@
+{
+  "session_id": 567,
+  "phq8_score": 8,
+  "severity": "mild",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 3,
+    "depressed": 0,
+    "appetite": 2,
+    "guilt": 2,
+    "concentration": 0,
+    "psychomotor": 1
+  },
+  "persona": {
+    "age": 36,
+    "gender": "male",
+    "occupation": "personal trainer",
+    "city": "Indianapolis"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. What did you do to manage the stress of dealing with that traffic?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Honestly, I just got home and collapsed on the couch. Watched some TV, maybe got a little lost in the show."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That sounds like a nice way to unwind. Do you have any hobbies or activities that bring you joy?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Yeah, I mean, I love working out with my clients at the gym. It's what gets me going in the morning."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That's great! You mentioned earlier that traffic was a nightmare. Did it feel like something specific triggered your stress levels?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Nah, just the usual Friday afternoon commute chaos. But, you know, I did miss a workout class this week because I was so drained after work."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. What's been going on at work that might be contributing to those feelings of exhaustion?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Just trying to keep up with demand and meet the expectations of my boss. It's like, no matter how much I do, it's never enough, you know?"
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds frustrating. How have your relationships with friends and family been lately?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "They're okay, I guess. I mean, we don't really hang out as much since work has gotten so crazy."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "It can be tough to balance work and personal life. Have you found yourself avoiding social situations or plans recently?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Yeah, actually. Last night was supposed to be a friends' game night, but I ended up bailing at the last minute because I just didn't feel like putting on a happy face."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That can be really tough. What do you think is driving that avoidance behavior?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Honestly, I don't know. Maybe it's just easier to hide out and not deal with everything."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "It sounds like there might be some feelings of guilt or shame tied up in that avoidance. Can you tell me more about what's been going on for you?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Guilt? Um, yeah... maybe. I don't know if it's justified, but sometimes I feel like I'm letting people down by not being there."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That can be a heavy burden to carry. Have you found yourself feeling guilty or responsible for things that aren't necessarily your fault?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, definitely. Like when my boss calls me out for missing a deadline and I just feel like I've failed again."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "It sounds like there might be some negative self-talk going on. Can you tell me more about what that's like for you?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Yeah... it's like this constant nagging voice in the back of my head, telling me I'm not good enough or competent enough."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That can be really tough to deal with. Have you tried to challenge those negative thoughts or reframe them in a more positive light?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly? No. It just seems too overwhelming to even try."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That's okay. Sometimes it's hard to know where to start. What do you think would make things easier for you right now?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Maybe just knowing that someone is listening and doesn't judge me, I guess."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "You're in a safe space here. I'm listening without judgment. Can we talk about your appetite lately? Have you noticed any changes?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah... I've been eating more out of habit than actual hunger, to be honest."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That can be tough. What do you think is driving that change in your eating habits?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Maybe just trying to cope with everything else going on. Like, if I'm not feeling good enough, maybe I won't feel as bad about stuffing my face."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "It sounds like there might be some emotional eating going on. Can we explore what's behind that for you?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah... it's hard to put into words, but sometimes I just need something to make me feel better, you know?"
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Yeah, I think many people can relate to that. What are your goals for our time together today? Is there anything specific you'd like to work on or achieve?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Honestly? Just feeling less stuck, maybe figuring out what's going on and why I'm so miserable all the time."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "That sounds like a great starting point. We can definitely explore those questions further."
+      }
+    ]
+  }
+}

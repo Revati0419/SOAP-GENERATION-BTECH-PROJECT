@@ -1,0 +1,564 @@
+{
+  "session_id": 561,
+  "phq8_score": 8,
+  "severity": "mild",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 3,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 1,
+    "guilt": 2,
+    "concentration": 2,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 52,
+    "gender": "female",
+    "occupation": "registered nurse",
+    "city": "Memphis"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that the commute was stressful. What's been going on lately that's got you feeling anxious?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Honestly, just everything feels overwhelming, you know? Work's been crazy, and I've been trying to get some things done at home too. It's like my brain's constantly racing."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Can you tell me a little bit about what's going on at work that's causing so much stress?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Yeah, just the usual hospital stuff – patient loads are up, and our team is short-staffed. I've been trying to juggle a million things at once, and it feels like nothing gets done."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I understand. It sounds like you're shouldering a lot of responsibility right now. How's your social life been handling all this stress?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly? It's been really tough to keep up with friends – we've just had a bunch of birthdays and holidays, and I feel guilty saying no."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That can be really isolating. Have you noticed any changes in your appetite or eating habits lately?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Yeah, sometimes I'll get so caught up in work that I forget to eat until dinner time. Other times, I just don't feel like cooking anything, so it's been a mix."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Okay. And how about your energy levels? Do you find yourself getting tired or fatigued easily?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Oh, yeah – I'm exhausted all the time. Last week, I missed two deadlines because I was too spent to even look at my computer."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That's really frustrating. Can you tell me more about what it's like when you're feeling so drained?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "It feels like I've got this crushing weight on my chest – like nothing can be done, and I just want to crawl back into bed."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Okay. And how have you been handling those feelings of guilt and overwhelm? Do you find yourself ruminating on things or trying to push them away?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Um, yeah... sometimes I'll replay conversations in my head over and over again, wondering if I should've said this or that. It's like my brain won't let me off the hook."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That sounds really exhausting. Have you thought about any coping strategies that might help with those feelings?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Honestly? I'm not sure what to try – it feels like everything I do makes things worse."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "Okay, well, let's explore some options together. Maybe we can brainstorm some ways to prioritize your self-care and reduce that overwhelm."
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "That sounds... okay, yeah. I guess that could help."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Great! Let's start by talking about what you enjoy doing in your free time – what kind of hobbies or activities bring you joy?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Honestly? Nothing lately. Work's been taking up all my energy and attention."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Okay. That makes sense. What do you think would be a small step towards reclaiming some of that joy and relaxation for yourself?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Um... I guess maybe just setting aside 30 minutes each day to read or something? Something relaxing, you know?"
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That sounds like a great starting point! What's the biggest challenge you see in actually making time for that self-care?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Just prioritizing it – feeling guilty about taking time for myself when there's so much else to do."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay. Let's work on reframing that guilt into something more positive. Can you think of a way to reframe those feelings of guilt and prioritize your own self-care?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Um... maybe by reminding myself that taking care of myself actually makes me a better nurse in the long run?"
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That's a great start! How do you feel about exploring some ways to make that happen – small steps, manageable goals?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Yeah, okay. I think that could help."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Great! What's one thing you can commit to starting this week? Something small but meaningful for your self-care?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Um... maybe just taking a 10-minute walk outside during my lunch break?"
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! How do you feel about exploring some additional coping strategies or tools to support your mental health?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah, that might be helpful. I just don't know where to start."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "We can definitely work on that together. What are some other stressors or challenges in your life that we haven't touched on yet?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Um... my family – they're always calling and asking for favors, but it's hard to say no without feeling guilty."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Can you tell me more about what it's like when you're trying to navigate those requests?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "It feels like I'm stuck between a rock and a hard place – I don't want to hurt their feelings, but saying yes always leaves me feeling drained."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "Okay. And how have you been handling that guilt and pressure? Do you find yourself people-pleasing or trying to avoid those conversations?"
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Yeah... sometimes I'll just agree to do things because it's easier than saying no – then I feel resentful afterwards."
+      },
+      {
+        "turn_id": 40,
+        "start_time": 150,
+        "stop_time": 152,
+        "role": "Therapist",
+        "text_en": "That sounds really exhausting. Have you thought about setting some boundaries with your family to prioritize your own needs and energy levels?"
+      },
+      {
+        "turn_id": 41,
+        "start_time": 153,
+        "stop_time": 155,
+        "role": "Patient",
+        "text_en": "Um... maybe? It feels like they wouldn't understand or would get upset if I said no."
+      },
+      {
+        "turn_id": 42,
+        "start_time": 156,
+        "stop_time": 158,
+        "role": "Therapist",
+        "text_en": "Okay. Let's work on reframing that concern. What do you think would be a first step in having those conversations with your family?"
+      },
+      {
+        "turn_id": 43,
+        "start_time": 159,
+        "stop_time": 161,
+        "role": "Patient",
+        "text_en": "Um... maybe just setting some clear boundaries and communicating what my limits are?"
+      },
+      {
+        "turn_id": 44,
+        "start_time": 162,
+        "stop_time": 164,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! What's one thing you can commit to doing differently this week to take care of yourself around these requests from your family?"
+      },
+      {
+        "turn_id": 45,
+        "start_time": 165,
+        "stop_time": 167,
+        "role": "Patient",
+        "text_en": "Um... maybe saying \"I need time to recharge\" instead of agreeing to do things on the spot?"
+      },
+      {
+        "turn_id": 46,
+        "start_time": 168,
+        "stop_time": 170,
+        "role": "Therapist",
+        "text_en": "That's a great start! How do you feel about exploring some additional coping strategies or tools to support your mental health – maybe online resources, journaling, or mindfulness practices?"
+      },
+      {
+        "turn_id": 47,
+        "start_time": 171,
+        "stop_time": 173,
+        "role": "Patient",
+        "text_en": "Yeah, that might be helpful. I just don't know where to start."
+      },
+      {
+        "turn_id": 48,
+        "start_time": 174,
+        "stop_time": 176,
+        "role": "Therapist",
+        "text_en": "We can definitely work on that together. What are some other goals or changes you'd like to make in the coming weeks or months?"
+      },
+      {
+        "turn_id": 49,
+        "start_time": 177,
+        "stop_time": 179,
+        "role": "Patient",
+        "text_en": "Um... I guess maybe getting back into my old hobbies and interests – I used to love reading, but it's been years since I picked up a book."
+      },
+      {
+        "turn_id": 50,
+        "start_time": 180,
+        "stop_time": 182,
+        "role": "Therapist",
+        "text_en": "That sounds really great! What's one step you can take this week to start exploring that hobby again?"
+      },
+      {
+        "turn_id": 51,
+        "start_time": 183,
+        "stop_time": 185,
+        "role": "Patient",
+        "text_en": "Um... maybe just buying a new book or magazine and committing to reading for 10 minutes each day?"
+      },
+      {
+        "turn_id": 52,
+        "start_time": 186,
+        "stop_time": 188,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! How do you feel about setting some specific, achievable goals around this goal of getting back into your hobbies?"
+      },
+      {
+        "turn_id": 53,
+        "start_time": 189,
+        "stop_time": 191,
+        "role": "Patient",
+        "text_en": "Yeah, I think that could be helpful. It feels good to have something concrete to work towards."
+      },
+      {
+        "turn_id": 54,
+        "start_time": 192,
+        "stop_time": 194,
+        "role": "Therapist",
+        "text_en": "Great! What's one thing you can commit to doing differently this week to take care of yourself and prioritize your mental health?"
+      },
+      {
+        "turn_id": 55,
+        "start_time": 195,
+        "stop_time": 197,
+        "role": "Patient",
+        "text_en": "Um... maybe just taking a few deep breaths before responding to emails or texts – practicing some self-compassion in my daily interactions?"
+      },
+      {
+        "turn_id": 56,
+        "start_time": 198,
+        "stop_time": 200,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! How do you feel about exploring some additional coping strategies or tools to support your mental health?"
+      },
+      {
+        "turn_id": 57,
+        "start_time": 201,
+        "stop_time": 203,
+        "role": "Patient",
+        "text_en": "Yeah, that might be helpful. I just don't know where to start."
+      },
+      {
+        "turn_id": 58,
+        "start_time": 204,
+        "stop_time": 206,
+        "role": "Therapist",
+        "text_en": "We can definitely work on that together. Is there anything else that's been on your mind lately – any other stressors or concerns that we haven't touched on yet?"
+      },
+      {
+        "turn_id": 59,
+        "start_time": 207,
+        "stop_time": 209,
+        "role": "Patient",
+        "text_en": "Um... my job performance – I've been worried about making mistakes and not living up to expectations."
+      },
+      {
+        "turn_id": 60,
+        "start_time": 210,
+        "stop_time": 212,
+        "role": "Therapist",
+        "text_en": "Okay. And how have you been handling those feelings of anxiety and self-doubt? Do you find yourself ruminating on worst-case scenarios or trying to push them away?"
+      },
+      {
+        "turn_id": 61,
+        "start_time": 213,
+        "stop_time": 215,
+        "role": "Patient",
+        "text_en": "Yeah... sometimes I'll replay conversations in my head, wondering what I could've done differently – it's like I'm beating myself up."
+      },
+      {
+        "turn_id": 62,
+        "start_time": 216,
+        "stop_time": 218,
+        "role": "Therapist",
+        "text_en": "Okay. And how have you been taking care of yourself around those feelings of self-doubt and anxiety?"
+      },
+      {
+        "turn_id": 63,
+        "start_time": 219,
+        "stop_time": 221,
+        "role": "Patient",
+        "text_en": "Um... not very well. I just kind of push through and hope everything turns out okay."
+      },
+      {
+        "turn_id": 64,
+        "start_time": 222,
+        "stop_time": 224,
+        "role": "Therapist",
+        "text_en": "Okay. Let's work on reframing that approach. What do you think would be a more compassionate way to handle those feelings of self-doubt and anxiety?"
+      },
+      {
+        "turn_id": 65,
+        "start_time": 225,
+        "stop_time": 227,
+        "role": "Patient",
+        "text_en": "Um... maybe just acknowledging the feeling instead of trying to suppress it, and then taking small steps towards addressing the root cause?"
+      },
+      {
+        "turn_id": 66,
+        "start_time": 228,
+        "stop_time": 230,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! How do you feel about exploring some additional coping strategies or tools to support your mental health around these feelings of self-doubt and anxiety?"
+      },
+      {
+        "turn_id": 67,
+        "start_time": 231,
+        "stop_time": 233,
+        "role": "Patient",
+        "text_en": "Yeah, that might be helpful. I just don't know where to start."
+      },
+      {
+        "turn_id": 68,
+        "start_time": 234,
+        "stop_time": 236,
+        "role": "Therapist",
+        "text_en": "We can definitely work on that together. What's one thing you can commit to doing differently this week to take care of yourself around those feelings of self-doubt and anxiety?"
+      },
+      {
+        "turn_id": 69,
+        "start_time": 237,
+        "stop_time": 239,
+        "role": "Patient",
+        "text_en": "Um... maybe just taking a few minutes each day to acknowledge my emotions and remind myself that it's okay not to be perfect?"
+      },
+      {
+        "turn_id": 70,
+        "start_time": 240,
+        "stop_time": 242,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! How do you feel about exploring some additional coping strategies or tools to support your mental health in the coming weeks or months?"
+      },
+      {
+        "turn_id": 71,
+        "start_time": 243,
+        "stop_time": 245,
+        "role": "Patient",
+        "text_en": "Yeah, I think that could be helpful. It feels good to have something concrete to work towards."
+      },
+      {
+        "turn_id": 72,
+        "start_time": 246,
+        "stop_time": 248,
+        "role": "Therapist",
+        "text_en": "Great! What's one thing you can commit to doing differently this week to take care of yourself and prioritize your mental health?"
+      },
+      {
+        "turn_id": 73,
+        "start_time": 249,
+        "stop_time": 251,
+        "role": "Patient",
+        "text_en": "Um... maybe just setting aside 10 minutes each day to practice some gentle stretches or meditation?"
+      },
+      {
+        "turn_id": 74,
+        "start_time": 252,
+        "stop_time": 254,
+        "role": "Therapist",
+        "text_en": "That sounds like a great start! How do you feel about exploring some additional coping strategies or tools to support your mental health?"
+      },
+      {
+        "turn_id": 75,
+        "start_time": 255,
+        "stop_time": 257,
+        "role": "Patient",
+        "text_en": "Yeah, that might be helpful. I just don't know where to start."
+      },
+      {
+        "turn_id": 76,
+        "start_time": 258,
+        "stop_time": 260,
+        "role": "Therapist",
+        "text_en": "We can definitely work on that together."
+      }
+    ]
+  }
+}

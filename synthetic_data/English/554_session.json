@@ -1,0 +1,270 @@
+{
+  "session_id": 554,
+  "phq8_score": 5,
+  "severity": "mild",
+  "symptom_profile": {
+    "sleep": 2,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 1,
+    "concentration": 0,
+    "psychomotor": 2
+  },
+  "persona": {
+    "age": 43,
+    "gender": "male",
+    "occupation": "retail store manager",
+    "city": "Columbus"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's good to hear. What's been going on with you lately? Any big changes or events in the past week?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Nah, nothing out of the ordinary. Just the usual work stuff."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "Work can be pretty demanding. How's your job as a retail store manager treating you?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "It's been okay. Just trying to stay on top of things, but it feels like there's always something to do."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I bet. What are some of the most stressful parts about managing a store?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Just trying to keep up with inventory and customer requests. And sometimes customers can be...testy."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Yeah, that can be tough. Have you noticed any changes in your sleep lately?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Honestly? Yeah, I've been having trouble falling asleep at night. Sometimes I'll lie awake for hours thinking about work or just feeling anxious."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "I see. That can be really frustrating. Do you find yourself having trouble sleeping during the week or just on certain nights?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "It's pretty consistent – every night feels like it takes me forever to fall asleep."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "Got it. And have you noticed any patterns or triggers that might contribute to your insomnia?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Not really...I mean, I don't know if it's related, but I do feel guilty about not spending enough time with my family lately."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Okay, so guilt might be a factor in your sleep struggles. Can you tell me more about what specifically makes you feel guilty?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Just that I'm always putting work first and then feeling like I'm missing out on quality time with the kids."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That can be really tough. Have you talked to your family about this or is it something you're carrying around on your own?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "No, I haven't said anything yet...I don't want to burden them with my problems."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "You know, sometimes sharing our concerns with loved ones can actually bring us closer together. Would you be open to discussing some strategies for addressing those feelings of guilt and finding a better work-life balance?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, that sounds like it could help. I guess just talking about it is helpful already."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Exactly! Sometimes just acknowledging our emotions can be the first step towards making positive changes. What do you think might be one small change you could make to prioritize your family time this week?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Hmm...I don't know, maybe setting aside some dedicated time for them on weekends?"
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That's a great start! Let's make that a goal for the upcoming weekend. And how about we revisit our progress next session and see if there are any other steps you've taken to address your sleep struggles or feelings of guilt?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Sounds good. Thanks, I feel like this is helping already."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "You're welcome – it's all about making small steps towards a healthier balance. Anything else you'd like to add or discuss before we wrap up today's session?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "No, that's all for now. Thanks again."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "You're welcome! Remember, everything discussed here is confidential and safe. We'll pick up where we left off next time. See you then!"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah, see you then."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Before we go, I just want to make sure there's nothing else on your mind that you'd like to talk about or any concerns you have for the upcoming week?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "No, no...just getting my priorities straight and trying to remember to take some time off this weekend."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That sounds like a great plan! Remember to be kind to yourself as you work through these challenges. You're doing the best you can, and that's something to be proud of."
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah, I'll try. Thanks again."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "You're welcome – it was my pleasure to chat with you today. Take care!"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Bye."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "See you next time!"
+      }
+    ]
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "session_id": 674,
+  "phq8_score": 21,
+  "severity": "severe",
+  "symptom_profile": {
+    "sleep": 2,
+    "energy": 3,
+    "interest": 3,
+    "depressed": 1,
+    "appetite": 3,
+    "guilt": 3,
+    "concentration": 3,
+    "psychomotor": 3
+  },
+  "persona": {
+    "age": 43,
+    "gender": "male",
+    "occupation": "retail store manager",
+    "city": "Portland"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "So, what's been going on lately? Any big changes or stressors in your daily routine?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Not really, just the usual retail grind. Same old, same old."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That can be draining. How are you doing with managing your work responsibilities?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Honestly, it's been a real challenge to stay focused and motivated."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I bet. Do you find yourself getting more tired or sluggish at any point in the day?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Yeah, by mid-morning I'm pretty much done. Lack of energy, I guess."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That can be tough. Are there things you'd like to do outside of work that you're not making time for?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Nah, nothing specific, just feeling stuck and uninspired overall."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds frustrating. Have you noticed any changes in your appetite or eating habits lately?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Actually, I've been having trouble sleeping at night too. And when I do sleep, it's like my body is working overtime somehow."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "So, even when you're sleeping, you feel like you're expending a lot of energy?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Exactly. It's like my mind won't shut off or something."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That can be really draining. Are there any particular emotions or feelings that are dominating your mood right now?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Just this general sense of guilt and self-reproach, I guess. Like I'm not good enough or doing enough."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Guilt can be a heavy burden to carry. Have you noticed any changes in your social life or relationships lately?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Yeah, pretty much all my friends are still working from home, so it's been hard to connect with them."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That can be isolating. Are there any hobbies or activities that used to bring you joy and satisfaction that you've stopped doing?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Nah, not really. It feels like I just don't have the time or energy for anything anymore."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That sounds tough. Have you noticed any difficulties with concentration or decision-making recently?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Definitely. I find myself second-guessing every little thing, even simple decisions."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That can be frustrating. Are there any recent stressful events or changes that might have triggered some of these symptoms?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Just the usual work stress and my folks being in town more often, which always brings its own set of problems."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "Family dynamics can be challenging to navigate. Do you feel like you're using any coping strategies to manage your stress levels?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Honestly, I'm just trying to push through and hope things get better on their own."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That can be tough. What are some small steps you could take to start prioritizing self-care and taking care of yourself?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Hmm, I don't know... maybe try to meditate or something?"
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Meditation can be a great way to calm your mind and recharge. How does that sound to you?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "It sounds better than just feeling stuck."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That's a good start. What are some things you'd like to work on or achieve in the next few weeks, even if it seems small?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Maybe get my energy back up, feel more motivated and inspired... just little victories, you know?"
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Absolutely. Those can be huge steps forward. And finally, what do you hope we can accomplish in our sessions together moving forward?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Honestly, I just want to figure out how to break this cycle and get my life back on track."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "That's a great goal to have. We'll work towards that. Thank you for sharing your experiences with me today. Is there anything else you'd like to add or any concerns you have before we wrap up?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Just thanks, I guess... it's nice to finally talk about this stuff."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "You're welcome. Remember, everything discussed here is confidential and stays between us. Let's schedule another session for next week."
+      }
+    ]
+  }
+}

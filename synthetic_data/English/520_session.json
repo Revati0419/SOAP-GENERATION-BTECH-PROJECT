@@ -1,0 +1,305 @@
+{
+  "session_id": 520,
+  "phq8_score": 3,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 1,
+    "appetite": 2,
+    "guilt": 0,
+    "concentration": 0,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 21,
+    "gender": "male",
+    "occupation": "veterinary technician",
+    "city": "Boston"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "So you got in and out of Boston without any issues, yeah?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, traffic wasn't too bad. I mean, considering it's rush hour."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That's good to hear. How about your daily routine been going? Any changes or routines that feel stuck?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Same old same old. Just getting up early, heading to work at the vet clinic, coming home late."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "And what's work like lately? Any new challenges or projects that are keeping you busy?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "We're slammed with appointments this month, so it's been crazy. I mean, trying to keep up with all these pets and their owners."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That sounds stressful. Have you noticed any changes in your social life or relationships recently?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Nah, nothing too out of the ordinary. Just trying to hang out with friends when we can, you know?"
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Yeah, that's great. How about your appetite? Has that been affected at all?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Actually, yeah - I've been eating way more than usual. Like, I'll grab a sandwich on my lunch break and then have leftovers for dinner."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "Okay, so it sounds like you're fueling up, but maybe not in the healthiest ways? How do you feel about that?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Honestly, I don't really think about it too much. I just try to get the energy back somehow."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "What kind of activities or hobbies are you enjoying these days? Any downtime or relaxation methods that bring you joy?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Uh, nothing lately. Just work and home, really. Maybe some Netflix here and there."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Got it. So you're not doing anything that brings you a sense of enjoyment or fulfillment outside of work."
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "No, I don't think so. I mean, who has the time, right?"
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That's understandable. Have you experienced any particularly stressful events recently? Any changes in your personal life or at work?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Well, we just got new staff at the clinic and it's been an adjustment. Trying to get used to everyone."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay, so there might be some adjustments going on at work. How do you cope with that kind of stress?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Honestly? I don't really cope with it too well. Just try to power through, I guess."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Powering through can be tough sometimes. What are your goals for our time here today? What would you like to get out of this session?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Yeah, just trying to figure some stuff out, you know? Like what's going on and how to make it stop, really."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "I'm happy to help with that. Just so we're on the same page - everything we discuss here is confidential, right?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Right, got it. Good to know it stays between us."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay, great! So what do you think might be some possible reasons behind your feelings of being down and losing interest in things? Have there been any changes or events recently that could be contributing factors?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah, I don't know... maybe just the stress at work. It's like, every day is a struggle."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Okay, so it sounds like work might be playing a big role in your mood and energy levels. What do you think would help improve things for you?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "I'm not sure. Just getting more sleep, I guess? And maybe eating better or something."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That's a great start! Let's explore that further - what does getting more sleep look like to you?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Like, just trying to get a full night's rest without waking up feeling like I've got weights on my chest or anything."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Okay, so it sounds like you're hoping for some relief from physical symptoms. Have there been any recent events that might be causing you distress or stress in your personal life?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Uh, well... maybe just the usual stuff. Just trying to get by sometimes, I guess."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Okay, got it. It sounds like you're trying to keep a lot on your plate and it's taking a toll on you. What do you think would be some small steps towards making things more manageable?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Honestly? I don't know... just taking it one day at a time, maybe? And not letting everything get to me."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "That's a great start! Taking care of yourself and prioritizing your own needs is crucial. Is there anything you'd like to add or any topics you haven't touched on yet that you think are important?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "No, I don't think so. Just trying to figure things out as we go along, really."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "Okay, well let's keep an eye on those thoughts and see how things progress over time. Thank you for sharing your concerns with me today."
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Yeah, thanks for listening."
+      }
+    ]
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "session_id": 504,
+  "phq8_score": 0,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 0,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 44,
+    "gender": "male",
+    "occupation": "data analyst",
+    "city": "Memphis"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "So, how have you been doing lately? Anything on your mind that you'd like to talk about today?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Honestly, just trying to keep up with work and stuff. It feels like I'm constantly playing catch-up."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That sounds challenging. Can you tell me a little bit more about what's going on at work?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Yeah, I mean, it's not too terrible, but it'd be nice if things ran a bit smoother. Sometimes I feel like I'm just spinning plates and trying not to drop any."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I hear you. It sounds like you're feeling a little overwhelmed. Have you noticed anything changing in your social life or relationships lately?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Nah, nothing too out of the ordinary. Just the usual ups and downs with friends and family."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Okay, got it. So, what do you usually do to unwind after work?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Oh, I like to watch some TV, play some video games... just stuff that helps me relax, I guess."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds nice. Are there any specific activities or hobbies that bring you joy and fulfillment?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Yeah, I love my job, actually. It's a bit stressful at times, but it's rewarding to see projects come together."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That's great! What kind of projects are you working on right now?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Mostly data analysis for clients. Trying to help them make sense of their numbers and all that jazz."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Ah, I think many people can relate to wanting to make sense of their data! Have you noticed any changes in your routine or daily habits recently?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "No, not really. Same old same old. Although, I did start going to the gym a bit more regularly. Trying to stay active."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That's terrific! Physical activity can be such a great stress-reliever. How's that been going for you?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "It's been okay, I guess. Just trying to get into a routine and stuff."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That's understandable. Are there any particular events or situations recently that have caused you some stress or anxiety?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Hmm... well, my sister's been going through some tough times with her job, so we've been supporting each other more often lately. And I guess just the usual adulting stuff – bills to pay, and all that."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Ah, yeah, those can be big stressors. Have you thought about what kind of support system you have in place for yourself?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Yeah, my friends are pretty great. We like to hang out and grab beers or something. My family's also super supportive, even if they don't always understand what I do."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That's wonderful! What are your goals for this session today? Is there anything specific you'd like to work on or discuss?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly, just trying to get a better grip on things. You know, adulting is hard!"
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "Ha! I think many people can relate to that! Let's take some time to explore those feelings and see if we can come up with some strategies for you to feel more in control."
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Sounds good to me."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Great! So, what do you think might be the most helpful thing for us to work on today?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "I guess just trying to prioritize my tasks better. Sometimes things get away from me and I feel overwhelmed."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That makes sense. Let's brainstorm some ideas for how we can help you stay more organized and focused. What are your thoughts on that?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Yeah, okay! Maybe making a to-do list or something? And setting reminders for myself?"
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Exactly! Those are great strategies. Can I ask what it is about to-do lists that appeals to you?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Um... well, I guess just knowing what I need to do and when helps me feel more in control. Plus, crossing things off makes me feel accomplished!"
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Ah, the satisfaction of checking things off! That's a great motivator. Let's make a plan for you to start implementing these strategies and see how it goes."
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Sounds good!"
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Before we wrap up today, is there anything else that's been on your mind or anything you'd like to add?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Nah, I think that's all for now. Thanks for listening and helping me brainstorm some ideas!"
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "You're welcome! It was great chatting with you today. Remember, everything discussed here stays confidential. Take care of yourself, okay?"
+      }
+    ]
+  }
+}
