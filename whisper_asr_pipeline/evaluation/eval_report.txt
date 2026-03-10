@@ -1,0 +1,34 @@
+WHISPER MEDICAL ASR — EVALUATION REPORT
+=======================================================
+
+Fine-tuned model: models/whisper-medical/final
+Test samples:     14
+
+OVERALL METRICS
+----------------------------------------
+  Word Error Rate (WER): 66.3%
+  Char Error Rate (CER): 36.4%
+
+INTERPRETATION:
+  WER < 10%  = Excellent (production ready)
+  WER 10-20% = Good (usable with correction)
+  WER 20-30% = Fair (needs more data)
+  WER > 30%  = Poor (collect more training data)
+
+PER-LANGUAGE BREAKDOWN
+----------------------------------------
+  english      WER=20.0%  CER=14.6%  (n=3)
+  marathi      WER=78.7%  CER=33.9%  (n=9)
+  mixed        WER=95.0%  CER=79.2%  (n=2)
+
+NEXT STEPS (if WER is high):
+  1. Review worst_examples.csv — find patterns in errors
+  2. Add more training data for the highest-WER language
+  3. Check if medical terms are in your training set
+  4. Re-run augmentation with more variants
+  5. When GPU available, upgrade to whisper-small
+
+Files: evaluation/
+  eval_results.json
+  worst_examples.csv
+  eval_report.txt
