@@ -13,3 +13,18 @@ __pycache__/
 
 #OS files
 .DS_Store
+
+.venv/
+node_modules/
+
+# models
+models/
+*.pt
+*.pth
+*.safetensors
+
+# audio
+*.wav
+
+# checkpoints
+checkpoint-*/
