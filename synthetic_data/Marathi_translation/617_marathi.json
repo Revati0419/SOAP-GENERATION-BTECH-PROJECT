@@ -1,0 +1,962 @@
+{
+  "session_id": 617,
+  "language": "marathi",
+  "phq8_score": 16,
+  "phq8_binary": null,
+  "severity": "moderately_severe",
+  "gender": null,
+  "split": null,
+  "styles": {
+    "formal_translated": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable.",
+        "text": "हाय, मी तुमचा थेरपिस्ट आहे. आम्ही येथे चर्चा करत असलेली प्रत्येक गोष्ट गोपनीय आहे, म्हणून कृपया आरामदायक वाटा."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Thanks, I appreciate that.",
+        "text": "धन्यवाद, मी त्याचे कौतुक करतो."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's great to hear. What's been going on in your life lately? Any big changes or stressors that have come up recently?",
+        "text": "ते ऐकून छान वाटलं. तुमच्या आयुष्यात अलीकडे काय चालले आहे? अलीकडे आलेले कोणतेही मोठे बदल किंवा तणाव?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, work has been a real challenge. I've just started this new job and the expectations are really high.",
+        "text": "प्रामाणिकपणे, काम हे खरे आव्हान आहे. मी नुकतीच ही नवीन नोकरी सुरू केली आहे आणि अपेक्षा खूप जास्त आहेत."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "I see. So it sounds like there might be some pressure at work. Can you tell me more about what's going on there?",
+        "text": "मी पाहतो. त्यामुळे कामात काही दडपण असेल असे वाटते. तिथे काय चालले आहे याबद्दल तुम्ही मला अधिक सांगू शकाल का?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, my team is really counting on me to perform well and I'm struggling to keep up with the workload.",
+        "text": "होय, माझी टीम खरोखरच चांगली कामगिरी करण्यासाठी माझ्यावर विश्वास ठेवत आहे आणि मी कामाचा भार कायम ठेवण्यासाठी धडपडत आहे."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be tough. Are you finding time for anything outside of work that brings you joy or relaxation?",
+        "text": "ते कठीण असू शकते. तुम्हाला कामाच्या बाहेरच्या कोणत्याही गोष्टीसाठी वेळ मिळत आहे ज्यामुळे तुम्हाला आनंद किंवा विश्रांती मिळते?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Not really. I mean, I've been trying to get into some hobbies but it's hard to find the energy.",
+        "text": "खरंच नाही. म्हणजे, मी काही छंद जपण्याचा प्रयत्न करत आहे पण ऊर्जा शोधणे कठीण आहे."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "I understand. Sometimes our routines and habits can be affected when we're stressed. Have you noticed any changes in your sleep patterns recently?",
+        "text": "मला समजते. कधीकधी जेव्हा आपण तणावग्रस्त असतो तेव्हा आपल्या दिनचर्या आणि सवयींवर परिणाम होऊ शकतो. तुमच्या झोपेच्या नमुन्यांमध्ये अलीकडे काही बदल तुमच्या लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, I've been having trouble sleeping every other night. And even on the nights I do sleep well, I wake up feeling tired and groggy.",
+        "text": "होय, मला प्रत्येक रात्री झोपायला त्रास होत आहे. आणि ज्या रात्री मला चांगली झोप येते त्या दिवशीही मला थकल्यासारखे आणि कुचकामी वाटून जाग येते."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That sounds exhausting. How about your appetite? Has that changed at all?",
+        "text": "ते थकवणारे वाटते. तुमची भूक कशी आहे? त्यात अजिबात बदल झाला आहे का?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, I've been eating a lot more than usual. Like, way too much.",
+        "text": "प्रामाणिकपणे, मी नेहमीपेक्षा खूप जास्त खात आहे. आवडले, खूप जास्त."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be concerning. Have you noticed any changes in your interest or motivation levels lately?",
+        "text": "ते संबंधित असू शकते. अलीकडे तुमच्या स्वारस्य किंवा प्रेरणा स्तरांमध्ये काही बदल तुमच्या लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "No, actually. I feel pretty apathetic most of the time now. It's like nothing really excites me anymore.",
+        "text": "नाही, प्रत्यक्षात. मला आता बहुतेक वेळा उदासीन वाटते. हे असे आहे की आता काहीही मला उत्तेजित करत नाही."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That sounds tough. Can you think back to when things were going well and you felt more engaged? What was happening then?",
+        "text": "ते कठीण वाटतं. जेव्हा गोष्टी चांगल्या चालल्या होत्या आणि तुम्हाला अधिक व्यस्त वाटले तेव्हा तुम्ही परत विचार करू शकता? तेव्हा काय होतं?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "I guess it was when I first started my job and everything was new and exciting. I had a sense of purpose, you know?",
+        "text": "माझा अंदाज आहे की मी पहिल्यांदा माझी नोकरी सुरू केली आणि सर्व काही नवीन आणि रोमांचक होते. मला उद्देशाची भावना होती, तुम्हाला माहिती आहे?"
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Yeah, that makes sense. So maybe we can explore ways to recapture some of that sense of purpose or excitement.",
+        "text": "होय, याचा अर्थ होतो. त्यामुळे कदाचित आपण त्या उद्देशाच्या किंवा उत्साहाच्या काही गोष्टी पुन्हा मिळवण्याचे मार्ग शोधू शकतो."
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "That would be great, thanks.",
+        "text": "ते छान होईल, धन्यवाद."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Of course! Let's keep exploring. Have you noticed any physical sensations or body feelings lately? Like tension or aches?",
+        "text": "अर्थातच! चला एक्सप्लोर करत राहू. तुम्हाला अलीकडे काही शारीरिक संवेदना किंवा शरीराच्या भावना लक्षात आल्या आहेत? टेन्शन किंवा दुखण्यासारखे?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Actually, yeah. I've been getting these weird pains in my stomach whenever I'm stressed.",
+        "text": "खरं तर, होय. जेव्हा जेव्हा मी तणावग्रस्त असतो तेव्हा मला माझ्या पोटात या विचित्र वेदना होत आहेत."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Hmm, that sounds uncomfortable. How about social life and relationships? Are there any changes you've noticed recently?",
+        "text": "हम्म, ते अस्वस्थ वाटते. सामाजिक जीवन आणि नातेसंबंध कसे आहेत? तुमच्या अलीकडे काही बदल लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, I've just felt really disconnected from everyone lately. Like, even small talk feels like too much effort.",
+        "text": "प्रामाणिकपणे, मला अलीकडेच प्रत्येकापासून खरोखर डिस्कनेक्ट झाल्याचे जाणवले आहे. जसे की, अगदी लहान बोलणे देखील खूप मेहनतीसारखे वाटते."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be isolating. Have you had any recent stressful life events or significant changes that might have contributed to this feeling?",
+        "text": "ते वेगळे होऊ शकते. तुमच्या जीवनात अलीकडच्या काही तणावपूर्ण घटना किंवा महत्त्वपूर्ण बदल घडले आहेत ज्यांनी या भावनेला हातभार लावला असेल?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, actually. My best friend moved away a few months ago and I'm still getting used to the distance.",
+        "text": "होय, प्रत्यक्षात. माझा सर्वात चांगला मित्र काही महिन्यांपूर्वी दूर गेला आणि मला अजूनही अंतराची सवय आहे."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Ah, that makes sense. Sometimes losing a close connection can really affect our emotional state. Have you noticed any feelings of guilt or regret lately?",
+        "text": "अहो, याचा अर्थ होतो. कधीकधी जवळचा संबंध गमावणे खरोखरच आपल्या भावनिक स्थितीवर परिणाम करू शकते. तुम्हाला अलीकडे अपराधीपणाची किंवा पश्चात्तापाची भावना दिसली आहे का?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "All the time! Like, I feel like I should be doing more or achieving more in my life.",
+        "text": "सर्व वेळ! जसे की, मला असे वाटते की मी माझ्या आयुष्यात आणखी काही केले पाहिजे किंवा अधिक साध्य केले पाहिजे."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "It sounds like there's some pressure to perform even when you're not feeling up to it. Can we explore what that feels like for you a bit more?",
+        "text": "तुम्हाला ते जाणवत नसतानाही कामगिरी करण्यासाठी काही दबाव आहे असे वाटते. तुमच्यासाठी ते कसे वाटते ते आम्ही शोधू शकतो का?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah... it's just really hard to shake the feeling that I'm failing at everything.",
+        "text": "होय... मी प्रत्येक गोष्टीत अपयशी ठरत आहे ही भावना झटकून टाकणे खरोखरच कठीण आहे."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be overwhelming. Have you thought about talking to anyone about how you're feeling, or is this something you've been keeping to yourself?",
+        "text": "ते जबरदस्त असू शकते. तुम्हाला कसे वाटते याविषयी कोणाशीही बोलण्याचा तुम्ही विचार केला आहे, किंवा हे असे काहीतरी आहे जे तुम्ही स्वतःकडे ठेवत आहात?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, yeah. Just my mom. She's always worried about me, but even with her support, it feels like I'm just not doing enough.",
+        "text": "प्रामाणिकपणे, होय. फक्त माझी आई. ती नेहमी माझ्याबद्दल काळजीत असते, पण तिच्या पाठिंब्यानेही असे वाटते की मी पुरेसे करत नाही."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "It sounds like you might be carrying a lot of weight on your shoulders. What are some things that make you feel good, even if they're small? Can we work towards incorporating those into your daily routine?",
+        "text": "असे वाटते की आपण आपल्या खांद्यावर खूप भार वाहून नेत आहात. अशा कोणत्या गोष्टी आहेत ज्या तुम्हाला छान वाटतात, जरी त्या लहान असल्या तरी? तुमच्या दैनंदिन दिनचर्येत त्यांचा समावेश करण्यासाठी आम्ही काम करू शकतो का?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah... actually, thinking about going for walks in the park again. I used to love that.",
+        "text": "होय... खरं तर, पुन्हा उद्यानात फिरायला जाण्याचा विचार करत आहे. मला ते आवडायचे."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's great! Maybe we can start with little steps like that. What are some goals you might have for this session or our next few sessions together?",
+        "text": "छान आहे! कदाचित आपण अशा छोट्या पावलांनी सुरुवात करू शकतो. या सत्रासाठी किंवा आमच्या पुढील काही सत्रांसाठी तुमची काही उद्दिष्टे कोणती असू शकतात?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly? Just feeling a little more grounded and less stuck, I guess.",
+        "text": "प्रामाणिकपणे? मला वाटते की थोडे अधिक ग्राउंड आणि कमी अडकलेले वाटत आहे."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's a great place to start. We'll work on building some momentum towards that.",
+        "text": "ते सुरू करण्यासाठी एक उत्तम जागा आहे. आम्ही त्या दिशेने काही गती निर्माण करण्याचे काम करू."
+      }
+    ],
+    "colloquial": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable.",
+        "text": "हाय, मी तुमचा थेरपिस्ट आहे. आम्ही येथे चर्चा करत असलेली प्रत्येक गोष्ट गोपनीय आहे, त्यामुळे कृपया आराम करा."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Thanks, I appreciate that.",
+        "text": "धन्यवाद, मी त्याची प्रशंसा करतो."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's great to hear. What's been going on in your life lately? Any big changes or stressors that have come up recently?",
+        "text": "ते ऐकून छान आहे. तुमच्या आयुष्यात अलीकडे काय चालले आहे? अलीकडे आलेले कोणतेही मोठे बदल किंवा तणाव?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, work has been a real challenge. I've just started this new job and the expectations are really high.",
+        "text": "प्रामाणिकपणे, काम एक खरे आव्हान आहे. मी नुकतीच ही नवीन नोकरी सुरू केली आहे आणि अपेक्षा खूप जास्त आहेत."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "I see. So it sounds like there might be some pressure at work. Can you tell me more about what's going on there?",
+        "text": "मी पाहतो त्यामुळे कामावर काही दडपण असेल असे वाटते. तिथे काय चालले आहे याबद्दल तुम्ही मला अधिक सांगू शकाल का?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, my team is really counting on me to perform well and I'm struggling to keep up with the workload.",
+        "text": "होय, माझी टीम चांगली कामगिरी करण्यासाठी माझ्यावर खरोखरच विश्वास ठेवत आहे आणि मी कामाचा भार कायम ठेवण्यासाठी धडपडत आहे."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be tough. Are you finding time for anything outside of work that brings you joy or relaxation?",
+        "text": "ते कठीण असू शकते. तुम्हाला आनंद किंवा विश्रांती देणाऱ्या कामाबाहेरील कोणत्याही गोष्टीसाठी तुम्ही वेळ काढत आहात का?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Not really. I mean, I've been trying to get into some hobbies but it's hard to find the energy.",
+        "text": "खरोखर नाही. म्हणजे, मी काही छंद जपण्याचा प्रयत्न करत आहे पण ऊर्जा शोधणे कठीण आहे."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "I understand. Sometimes our routines and habits can be affected when we're stressed. Have you noticed any changes in your sleep patterns recently?",
+        "text": "मला समजते. कधीकधी जेव्हा आपण तणावग्रस्त असतो तेव्हा आपल्या दिनचर्या आणि सवयींवर परिणाम होऊ शकतो. तुमच्या झोपेच्या नमुन्यांमध्ये अलीकडे काही बदल तुमच्या लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, I've been having trouble sleeping every other night. And even on the nights I do sleep well, I wake up feeling tired and groggy.",
+        "text": "होय, मला प्रत्येक रात्री झोपायला त्रास होत आहे. आणि ज्या रात्री मला चांगली झोप येते त्या दिवशीही मी थकल्यासारखे आणि कुचंबणाने उठतो."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That sounds exhausting. How about your appetite? Has that changed at all?",
+        "text": "ते थकवणारे वाटते. तुमची भूक कशी आहे? ते अजिबात बदलले आहे का?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, I've been eating a lot more than usual. Like, way too much.",
+        "text": "प्रामाणिकपणे, मी नेहमीपेक्षा खूप जास्त खात आहे. जसे, खूप जास्त."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be concerning. Have you noticed any changes in your interest or motivation levels lately?",
+        "text": "ते संबंधित असू शकते. अलीकडे तुमच्या स्वारस्य किंवा प्रेरणा स्तरांमध्ये काही बदल तुमच्या लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "No, actually. I feel pretty apathetic most of the time now. It's like nothing really excites me anymore.",
+        "text": "नाही, प्रत्यक्षात. मला आता बहुतेक वेळा उदासीन वाटते. हे असे आहे की आता काहीही मला उत्तेजित करत नाही."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That sounds tough. Can you think back to when things were going well and you felt more engaged? What was happening then?",
+        "text": "ते कठीण वाटते. जेव्हा गोष्टी चांगल्या चालल्या होत्या आणि तुम्हाला अधिक व्यस्त वाटले तेव्हा तुम्ही परत विचार करू शकता? तेव्हा काय होत होते?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "I guess it was when I first started my job and everything was new and exciting. I had a sense of purpose, you know?",
+        "text": "माझा अंदाज आहे की मी पहिल्यांदा माझी नोकरी सुरू केली आणि सर्व काही नवीन आणि रोमांचक होते. मला उद्देशाची भावना होती, तुम्हाला माहिती आहे?"
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Yeah, that makes sense. So maybe we can explore ways to recapture some of that sense of purpose or excitement.",
+        "text": "होय, याचा अर्थ होतो. त्यामुळे कदाचित आपण त्या उद्देशाच्या किंवा उत्साहाच्या काही गोष्टी पुन्हा मिळवण्याचे मार्ग शोधू शकतो."
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "That would be great, thanks.",
+        "text": "ते छान होईल, धन्यवाद."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Of course! Let's keep exploring. Have you noticed any physical sensations or body feelings lately? Like tension or aches?",
+        "text": "नक्कीच! चला एक्सप्लोर करत राहू. तुम्हाला अलीकडे काही शारीरिक संवेदना किंवा शारीरिक संवेदना लक्षात आल्या आहेत का? तणाव किंवा वेदना सारखे?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Actually, yeah. I've been getting these weird pains in my stomach whenever I'm stressed.",
+        "text": "प्रत्यक्षात, होय. जेव्हा जेव्हा मी तणावग्रस्त असतो तेव्हा मला माझ्या पोटात या विचित्र वेदना होत आहेत."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Hmm, that sounds uncomfortable. How about social life and relationships? Are there any changes you've noticed recently?",
+        "text": "हम्म, ते अस्वस्थ वाटतं. सामाजिक जीवन आणि नातेसंबंध कसे आहेत? तुमच्या अलीकडे काही बदल लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, I've just felt really disconnected from everyone lately. Like, even small talk feels like too much effort.",
+        "text": "प्रामाणिकपणे, मला अलीकडेच प्रत्येकापासून खरोखर डिस्कनेक्ट झाल्याचे जाणवले आहे. जसे की, अगदी लहान बोलणे देखील खूप प्रयत्न केल्यासारखे वाटते."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be isolating. Have you had any recent stressful life events or significant changes that might have contributed to this feeling?",
+        "text": "ते वेगळे केले जाऊ शकते. तुमच्या जीवनात अलीकडच्या काही तणावपूर्ण घटना किंवा महत्त्वपूर्ण बदल घडले आहेत ज्यामुळे या भावना निर्माण झाल्या असतील?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, actually. My best friend moved away a few months ago and I'm still getting used to the distance.",
+        "text": "होय, प्रत्यक्षात. माझा जिवलग मित्र काही महिन्यांपूर्वी दूर गेला आणि मला अजूनही या अंतराची सवय झाली आहे."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Ah, that makes sense. Sometimes losing a close connection can really affect our emotional state. Have you noticed any feelings of guilt or regret lately?",
+        "text": "अहो, याचा अर्थ होतो. काहीवेळा जवळचा संबंध गमावणे खरोखरच आपल्या भावनिक स्थितीवर परिणाम करू शकते. तुम्हाला अलीकडे अपराधीपणाची किंवा पश्चात्तापाची भावना दिसली आहे का?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "All the time! Like, I feel like I should be doing more or achieving more in my life.",
+        "text": "सर्व वेळ! जसे की, मला असे वाटते की मी माझ्या आयुष्यात आणखी काही केले पाहिजे किंवा अधिक साध्य केले पाहिजे."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "It sounds like there's some pressure to perform even when you're not feeling up to it. Can we explore what that feels like for you a bit more?",
+        "text": "तुम्हाला ते जाणवत नसतानाही कामगिरी करण्यासाठी काही दबाव आहे असे वाटते. तुमच्यासाठी ते कसे वाटते ते आम्ही शोधू शकतो का?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah... it's just really hard to shake the feeling that I'm failing at everything.",
+        "text": "होय... मी प्रत्येक गोष्टीत अपयशी ठरत आहे ही भावना झटकून टाकणे खरोखरच कठीण आहे."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be overwhelming. Have you thought about talking to anyone about how you're feeling, or is this something you've been keeping to yourself?",
+        "text": "ते जबरदस्त असू शकते. तुम्हाला कसे वाटते याबद्दल कोणाशीही बोलण्याचा तुम्ही विचार केला आहे, किंवा तुम्ही तुम्ही तुम्हाला जपून ठेवत आहात?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, yeah. Just my mom. She's always worried about me, but even with her support, it feels like I'm just not doing enough.",
+        "text": "प्रामाणिकपणे, होय. फक्त माझी आई. ती नेहमी माझ्याबद्दल काळजीत असते, पण तिच्या पाठिंब्यानेही असे वाटते की मी पुरेसे करत नाही."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "It sounds like you might be carrying a lot of weight on your shoulders. What are some things that make you feel good, even if they're small? Can we work towards incorporating those into your daily routine?",
+        "text": "असे वाटते की तुम्ही तुमच्या खांद्यावर खूप भार टाकत आहात. काही गोष्टी कोणत्या आहेत ज्या तुम्हाला छान वाटतात, जरी त्या लहान असल्या तरी? तुमच्या दैनंदिन दिनचर्येत त्यांचा समावेश करण्यासाठी आम्ही काम करू शकतो का?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah... actually, thinking about going for walks in the park again. I used to love that.",
+        "text": "होय... खरं तर, पुन्हा पार्कमध्ये फिरायला जाण्याचा विचार करत आहे. मला ते आवडायचे."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's great! Maybe we can start with little steps like that. What are some goals you might have for this session or our next few sessions together?",
+        "text": "ते छान आहे! कदाचित आपण अशा छोट्या पावलांनी सुरुवात करू शकतो. या सत्रासाठी किंवा आमच्या पुढील काही सत्रांसाठी तुमची काही उद्दिष्टे काय आहेत?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly? Just feeling a little more grounded and less stuck, I guess.",
+        "text": "प्रामाणिकपणे? मला वाटते की थोडे अधिक ग्राउंड आणि कमी अडकलेले वाटत आहे."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's a great place to start. We'll work on building some momentum towards that.",
+        "text": "ते सुरू करण्यासाठी एक उत्तम जागा आहे. आम्ही त्या दिशेने काही गती निर्माण करण्याचे काम करू."
+      }
+    ],
+    "code_mixed": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable.",
+        "text": "हाय, मी तुमचा थेरपिस्ट आहे. आम्ही येथे चर्चा करत असलेली प्रत्येक गोष्ट गोपनीय आहे, म्हणून कृपया आरामदायक वाटा. (Hi, feel)"
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Thanks, I appreciate that.",
+        "text": "धन्यवाद, मी त्याचे कौतुक करतो. (Thanks,)"
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's great to hear. What's been going on in your life lately? Any big changes or stressors that have come up recently?",
+        "text": "ते ऐकून छान वाटलं. तुमच्या आयुष्यात अलीकडे काय चालले आहे? अलीकडे आलेले कोणतेही मोठे बदल किंवा तणाव?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, work has been a real challenge. I've just started this new job and the expectations are really high.",
+        "text": "प्रामाणिकपणे, काम हे खरे आव्हान आहे. मी नुकतीच ही नवीन नोकरी सुरू केली आहे आणि अपेक्षा खूप जास्त आहेत."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "I see. So it sounds like there might be some pressure at work. Can you tell me more about what's going on there?",
+        "text": "मी पाहतो. त्यामुळे कामात काही दडपण असेल असे वाटते. तिथे काय चालले आहे याबद्दल तुम्ही मला अधिक सांगू शकाल का?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, my team is really counting on me to perform well and I'm struggling to keep up with the workload.",
+        "text": "होय, माझी टीम खरोखरच चांगली कामगिरी करण्यासाठी माझ्यावर विश्वास ठेवत आहे आणि मी कामाचा भार कायम ठेवण्यासाठी धडपडत आहे."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be tough. Are you finding time for anything outside of work that brings you joy or relaxation?",
+        "text": "ते कठीण असू शकते. तुम्हाला कामाच्या बाहेरच्या कोणत्याही गोष्टीसाठी वेळ मिळत आहे ज्यामुळे तुम्हाला आनंद किंवा विश्रांती मिळते?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Not really. I mean, I've been trying to get into some hobbies but it's hard to find the energy.",
+        "text": "खरंच नाही. म्हणजे, मी काही छंद जपण्याचा प्रयत्न करत आहे पण ऊर्जा शोधणे कठीण आहे. (energy.)"
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "I understand. Sometimes our routines and habits can be affected when we're stressed. Have you noticed any changes in your sleep patterns recently?",
+        "text": "मला समजते. कधीकधी जेव्हा आपण तणावग्रस्त असतो तेव्हा आपल्या दिनचर्या आणि सवयींवर परिणाम होऊ शकतो. तुमच्या झोपेच्या नमुन्यांमध्ये अलीकडे काही बदल तुमच्या लक्षात आले आहेत का? (sleep)"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, I've been having trouble sleeping every other night. And even on the nights I do sleep well, I wake up feeling tired and groggy.",
+        "text": "होय, मला प्रत्येक रात्री झोपायला त्रास होत आहे. आणि ज्या रात्री मला चांगली झोप येते त्या दिवशीही मला थकल्यासारखे आणि कुचकामी वाटून जाग येते."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That sounds exhausting. How about your appetite? Has that changed at all?",
+        "text": "ते थकवणारे वाटते. तुमची भूक कशी आहे? त्यात अजिबात बदल झाला आहे का?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, I've been eating a lot more than usual. Like, way too much.",
+        "text": "प्रामाणिकपणे, मी नेहमीपेक्षा खूप जास्त खात आहे. आवडले, खूप जास्त."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be concerning. Have you noticed any changes in your interest or motivation levels lately?",
+        "text": "ते संबंधित असू शकते. अलीकडे तुमच्या स्वारस्य किंवा प्रेरणा स्तरांमध्ये काही बदल तुमच्या लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "No, actually. I feel pretty apathetic most of the time now. It's like nothing really excites me anymore.",
+        "text": "नाही, प्रत्यक्षात. मला आता बहुतेक वेळा उदासीन वाटते. हे असे आहे की आता काहीही मला उत्तेजित करत नाही. (No, feel)"
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That sounds tough. Can you think back to when things were going well and you felt more engaged? What was happening then?",
+        "text": "ते कठीण वाटतं. जेव्हा गोष्टी चांगल्या चालल्या होत्या आणि तुम्हाला अधिक व्यस्त वाटले तेव्हा तुम्ही परत विचार करू शकता? तेव्हा काय होतं?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "I guess it was when I first started my job and everything was new and exciting. I had a sense of purpose, you know?",
+        "text": "माझा अंदाज आहे की मी पहिल्यांदा माझी नोकरी सुरू केली आणि सर्व काही नवीन आणि रोमांचक होते. मला उद्देशाची भावना होती, तुम्हाला माहिती आहे?"
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Yeah, that makes sense. So maybe we can explore ways to recapture some of that sense of purpose or excitement.",
+        "text": "होय, याचा अर्थ होतो. त्यामुळे कदाचित आपण त्या उद्देशाच्या किंवा उत्साहाच्या काही गोष्टी पुन्हा मिळवण्याचे मार्ग शोधू शकतो."
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "That would be great, thanks.",
+        "text": "ते छान होईल, धन्यवाद. (thanks.)"
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Of course! Let's keep exploring. Have you noticed any physical sensations or body feelings lately? Like tension or aches?",
+        "text": "अर्थातच! चला एक्सप्लोर करत राहू. तुम्हाला अलीकडे काही शारीरिक संवेदना किंवा शरीराच्या भावना लक्षात आल्या आहेत? टेन्शन किंवा दुखण्यासारखे?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Actually, yeah. I've been getting these weird pains in my stomach whenever I'm stressed.",
+        "text": "खरं तर, होय. जेव्हा जेव्हा मी तणावग्रस्त असतो तेव्हा मला माझ्या पोटात या विचित्र वेदना होत आहेत."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Hmm, that sounds uncomfortable. How about social life and relationships? Are there any changes you've noticed recently?",
+        "text": "हम्म, ते अस्वस्थ वाटते. सामाजिक जीवन आणि नातेसंबंध कसे आहेत? तुमच्या अलीकडे काही बदल लक्षात आले आहेत का?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, I've just felt really disconnected from everyone lately. Like, even small talk feels like too much effort.",
+        "text": "प्रामाणिकपणे, मला अलीकडेच प्रत्येकापासून खरोखर डिस्कनेक्ट झाल्याचे जाणवले आहे. जसे की, अगदी लहान बोलणे देखील खूप मेहनतीसारखे वाटते."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be isolating. Have you had any recent stressful life events or significant changes that might have contributed to this feeling?",
+        "text": "ते वेगळे होऊ शकते. तुमच्या जीवनात अलीकडच्या काही तणावपूर्ण घटना किंवा महत्त्वपूर्ण बदल घडले आहेत ज्यांनी या भावनेला हातभार लावला असेल? (feeling?)"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah, actually. My best friend moved away a few months ago and I'm still getting used to the distance.",
+        "text": "होय, प्रत्यक्षात. माझा सर्वात चांगला मित्र काही महिन्यांपूर्वी दूर गेला आणि मला अजूनही अंतराची सवय आहे."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "Ah, that makes sense. Sometimes losing a close connection can really affect our emotional state. Have you noticed any feelings of guilt or regret lately?",
+        "text": "अहो, याचा अर्थ होतो. कधीकधी जवळचा संबंध गमावणे खरोखरच आपल्या भावनिक स्थितीवर परिणाम करू शकते. तुम्हाला अलीकडे अपराधीपणाची किंवा पश्चात्तापाची भावना दिसली आहे का?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "All the time! Like, I feel like I should be doing more or achieving more in my life.",
+        "text": "सर्व वेळ! जसे की, मला असे वाटते की मी माझ्या आयुष्यात आणखी काही केले पाहिजे किंवा अधिक साध्य केले पाहिजे. (feel)"
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "It sounds like there's some pressure to perform even when you're not feeling up to it. Can we explore what that feels like for you a bit more?",
+        "text": "तुम्हाला ते जाणवत नसतानाही कामगिरी करण्यासाठी काही दबाव आहे असे वाटते. तुमच्यासाठी ते कसे वाटते ते आम्ही शोधू शकतो का? (feeling)"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah... it's just really hard to shake the feeling that I'm failing at everything.",
+        "text": "होय... मी प्रत्येक गोष्टीत अपयशी ठरत आहे ही भावना झटकून टाकणे खरोखरच कठीण आहे. (feeling)"
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That can be overwhelming. Have you thought about talking to anyone about how you're feeling, or is this something you've been keeping to yourself?",
+        "text": "ते जबरदस्त असू शकते. तुम्हाला कसे वाटते याविषयी कोणाशीही बोलण्याचा तुम्ही विचार केला आहे, किंवा हे असे काहीतरी आहे जे तुम्ही स्वतःकडे ठेवत आहात? (feeling,)"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly, yeah. Just my mom. She's always worried about me, but even with her support, it feels like I'm just not doing enough.",
+        "text": "प्रामाणिकपणे, होय. फक्त माझी आई. ती नेहमी माझ्याबद्दल काळजीत असते, पण तिच्या पाठिंब्यानेही असे वाटते की मी पुरेसे करत नाही."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "It sounds like you might be carrying a lot of weight on your shoulders. What are some things that make you feel good, even if they're small? Can we work towards incorporating those into your daily routine?",
+        "text": "असे वाटते की आपण आपल्या खांद्यावर खूप भार वाहून नेत आहात. अशा कोणत्या गोष्टी आहेत ज्या तुम्हाला छान वाटतात, जरी त्या लहान असल्या तरी? तुमच्या दैनंदिन दिनचर्येत त्यांचा समावेश करण्यासाठी आम्ही काम करू शकतो का? (feel)"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Yeah... actually, thinking about going for walks in the park again. I used to love that.",
+        "text": "होय... खरं तर, पुन्हा उद्यानात फिरायला जाण्याचा विचार करत आहे. मला ते आवडायचे."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's great! Maybe we can start with little steps like that. What are some goals you might have for this session or our next few sessions together?",
+        "text": "छान आहे! कदाचित आपण अशा छोट्या पावलांनी सुरुवात करू शकतो. या सत्रासाठी किंवा आमच्या पुढील काही सत्रांसाठी तुमची काही उद्दिष्टे कोणती असू शकतात?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "role_label": "रुग्ण",
+        "text_en": "Honestly? Just feeling a little more grounded and less stuck, I guess.",
+        "text": "प्रामाणिकपणे? मला वाटते की थोडे अधिक ग्राउंड आणि कमी अडकलेले वाटत आहे. (feeling)"
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "role_label": "डॉक्टर",
+        "text_en": "That's a great place to start. We'll work on building some momentum towards that.",
+        "text": "ते सुरू करण्यासाठी एक उत्तम जागा आहे. आम्ही त्या दिशेने काही गती निर्माण करण्याचे काम करू."
+      }
+    ]
+  }
+}
