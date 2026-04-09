@@ -1,0 +1,298 @@
+{
+  "session_id": 601,
+  "phq8_score": 11,
+  "severity": "moderate",
+  "symptom_profile": {
+    "sleep": 3,
+    "energy": 3,
+    "interest": 0,
+    "depressed": 1,
+    "appetite": 1,
+    "guilt": 1,
+    "concentration": 1,
+    "psychomotor": 1
+  },
+  "persona": {
+    "age": 49,
+    "gender": "male",
+    "occupation": "financial analyst",
+    "city": "Chicago"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's good to know. What's been going on in your daily routine lately?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Just the usual stuff. Work, sleep, and so on. Nothing out of the ordinary."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "I see. Can you tell me a bit about your work as a financial analyst? How's that been lately?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "It's been good, I guess. Just trying to keep up with the workload."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That sounds like a lot of responsibility. Do you have any social plans or relationships that are important to you?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Yeah, I've got my family and some friends, but nothing too exciting going on right now."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Got it. Sleep's been okay for you then?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Honestly, sleep's been a real struggle lately. I'm always tired, no matter how much rest I get."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "I understand. How about your energy levels? Feeling energized or drained most of the time?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Definitely drained. It's like I have this perpetual exhaustion hanging over me."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. Have you noticed any changes in your appetite recently?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Yeah, it's been off too. Sometimes I'm not hungry at all, and sometimes I just devour whatever's around."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Okay. How about your mood? Feeling hopeful or downbeat most days?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "It's been pretty downbeat, to be honest. Everything feels like an effort."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. Are there any physical sensations you've noticed that might be related to how you're feeling?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Just the usual aches and pains from lack of sleep and tiredness."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That makes sense. Have there been any recent stressful events or changes in your life?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, work's been pretty intense lately, and I feel like I'm always putting out fires."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay. Do you have any support system in place that helps you cope with stress?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Just my family, really. They're understanding, but sometimes it feels like they don't get what I'm going through."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That can be tough. What are your goals for our time together? What do you hope to achieve from this process?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly, I just want to feel better. Less exhausted and more energized."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That's a great starting point. Okay, let's take a look at some of these areas we've discussed so far. How about your sleep patterns? Can you tell me more about what that's been like?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Like I said, it's been terrible. I'm always tired and struggle to fall asleep."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Got it. And what about energy levels again? Have there been any changes or fluctuations?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah, it's just this perpetual exhaustion. Sometimes I'll get a tiny boost of energy and then crash again."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Okay. Appetite-wise, have you noticed anything different lately?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Just the usual off days when I'm not hungry at all, and then the binge-eating episodes later on."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. How about your concentration? Has that been affected by your energy levels or mood?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Yeah, it's like my brain is constantly foggy, making it hard to focus."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That can be really frustrating. Are there any hobbies or activities you used to enjoy but haven't had time for lately?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Actually, I used to love playing the guitar, but it's been ages since I last picked one up."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "That sounds like a great way to relax. Have you thought about trying to get back into that or finding something new to do in your free time?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Maybe. It's hard to muster the energy for anything right now."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "Okay, well, we can definitely work on building up your energy levels and finding ways to make those activities more manageable. What's one thing you're looking forward to doing this week or month that might give you a sense of accomplishment?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "Honestly, just getting through the day without feeling like I'm running on empty."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "That sounds like a great goal. Well, let's keep working together to make some progress."
+      }
+    ]
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "session_id": 599,
+  "phq8_score": 12,
+  "severity": "moderate",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 3,
+    "interest": 1,
+    "depressed": 3,
+    "appetite": 2,
+    "guilt": 1,
+    "concentration": 0,
+    "psychomotor": 2
+  },
+  "persona": {
+    "age": 45,
+    "gender": "female",
+    "occupation": "insurance adjuster",
+    "city": "Seattle"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's great. So, what's been going on this week? Any big changes or stressors?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Not really. Just the usual stuff at work. Trying to get some claims settled before the deadline."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "I see. How's your job as an insurance adjuster treating you lately?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "It's...fine. Just trying to keep up with the workload, you know? Feels like there's never enough hours in the day."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I understand that feeling. Can you tell me a bit more about what's been going on at work that's causing some stress for you?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly, it's just the constant pressure to meet these crazy deadlines. And when I don't, my boss gets on my case."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Okay, I see. That sounds frustrating. How do you usually take care of yourself outside of work? Do you have any hobbies or interests that bring you joy?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Well...I used to like hiking, but lately, even that's felt like too much effort. And with all the changes going on at work, it's hard to find time for anything else."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "I'm so sorry to hear that. It sounds like your energy levels have been pretty low lately."
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Yeah...I just don't feel like doing much of anything anymore. And when I do, it feels like I crash and burn after a few hours."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Can you tell me more about what's going on with your appetite? Are you eating well?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Honestly, I've been having some trouble sleeping too...not that I'm complaining or anything! But yeah, my stomach's always growling, and I find myself snacking on junk food just to keep going."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Okay, got it. So, sleep's not really an issue for you. That's a good thing!"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Yeah, no complaints there. Although...it would be nice to have some consistent energy levels again. You know?"
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Of course! Let's explore that more. What are some things you usually do to try and boost your energy when you're feeling low?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Honestly, not much. I mean, I used to love exercise, but lately, even going for a walk feels like too much effort."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That makes sense. It sounds like motivation's been really hard to come by lately."
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah...and it's not just the physical stuff either. Emotionally, I feel like I'm just stuck in this funk all the time."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Can you tell me more about what's going on emotionally? What are some of the feelings you're experiencing?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Honestly...I just feel guilty a lot of the time. Like, I should be doing better at work or with my relationships..."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Okay, got it. So, guilt's been playing a big role in how you've been feeling."
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Yeah...and it's hard to shake off. It's like, even when I'm trying to have fun or relax, this nagging feeling is always there in the back of my mind."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Can you think of any specific situations or people that might be contributing to these feelings?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Well...there was a big change at work recently, and it's been hard to adjust..."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay, let's explore that more. What's been going on at work that's causing this guilt?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Just the way things have changed since the new manager started...it feels like I'm not really valued or respected anymore."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That sounds really frustrating. How are your relationships with friends and family doing during all of this?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly, they're kind of suffering too. I just don't know how to balance everything anymore..."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Okay, let's talk more about what's going on in those relationships. What changes have you noticed?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Well...my girlfriend's been getting really frustrated with me lately. She says I'm distant and withdrawn all the time."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Okay, that sounds tough. How do you feel about your relationship right now?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Honestly, it feels like we're just going through the motions at this point..."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Can you think of any specific changes or conversations that might have triggered this feeling in you?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Yeah...we had a big fight recently over some stupid thing, and it just made things worse."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "Okay, let's explore what happened during that fight. What did you say to each other?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "Honestly, I don't even remember what we were fighting about anymore. It was just this general feeling of frustration and resentment..."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Have you talked to your girlfriend about how you're feeling?"
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Yeah...I mean, not really. I just feel like she wouldn't understand or care..."
+      },
+      {
+        "turn_id": 40,
+        "start_time": 150,
+        "stop_time": 152,
+        "role": "Therapist",
+        "text_en": "Okay, let's work on that. Can we make a plan for you to have an open and honest conversation with her about what's going on?"
+      },
+      {
+        "turn_id": 41,
+        "start_time": 153,
+        "stop_time": 155,
+        "role": "Patient",
+        "text_en": "Honestly, that scares me. But maybe it's time to try something different..."
+      },
+      {
+        "turn_id": 42,
+        "start_time": 156,
+        "stop_time": 158,
+        "role": "Therapist",
+        "text_en": "That's the spirit! We can work on some strategies together to help you approach this conversation. How do you feel about that?"
+      },
+      {
+        "turn_id": 43,
+        "start_time": 159,
+        "stop_time": 161,
+        "role": "Patient",
+        "text_en": "Yeah...I guess it couldn't hurt to try."
+      },
+      {
+        "turn_id": 44,
+        "start_time": 162,
+        "stop_time": 164,
+        "role": "Therapist",
+        "text_en": "Absolutely! Let's take things one step at a time and work through this process together, okay?"
+      },
+      {
+        "turn_id": 45,
+        "start_time": 165,
+        "stop_time": 167,
+        "role": "Patient",
+        "text_en": "Okay."
+      }
+    ]
+  }
+}

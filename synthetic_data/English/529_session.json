@@ -1,0 +1,305 @@
+{
+  "session_id": 529,
+  "phq8_score": 2,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 2,
+    "psychomotor": 0
+  },
+  "persona": {
+    "age": 25,
+    "gender": "female",
+    "occupation": "veterinary technician",
+    "city": "Columbus"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That sounds nice. Can you tell me a bit about what you've been up to lately?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, work has been busy. I'm a veterinary technician and we're always short-staffed. It's exhausting."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "I can imagine. How do you prioritize your tasks during those busy days?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Honestly, it's just trying to get everything done as quickly as possible. My mind gets pretty foggy by the end of the day."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That makes sense. Do you find yourself having trouble focusing on anything else outside of work when things are like that?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Yeah, kind of. I mean, my friends invite me out sometimes but I just can't seem to muster up the energy to go."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "I see. It sounds like your energy levels might be affected by your workload. How do you feel about your social life right now?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "It's been... quiet lately. We don't get together as often as we used to."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Okay, and how do you handle that feeling of disconnection?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "I mean, it's not like I'm sad or anything. I just don't really know what to do about it."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That can be tough. What do you think you'd like to change about your current situation if you could?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Honestly, I wish I had more time for myself and my own interests outside of work. Maybe take a class or something."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That's a great goal! What kind of classes did you have in mind?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Um, maybe photography? I've always been interested in that but never had the time to pursue it."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That sounds like a great hobby. How do you think taking up photography would help you feel more fulfilled?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "I think it would give me something else to focus on besides work and allow me to relax a bit, you know?"
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "Absolutely. What's the biggest challenge you're facing right now in terms of making time for yourself?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Definitely finding a balance between work and personal life."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That can be tough. Have you found any strategies that help you cope with stress or overwhelm when it feels like things are getting too much?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Honestly, I just kind of zone out and hope the day ends already."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Okay, and what do you think would happen if you didn't have that coping mechanism available to you?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "I'd probably feel a lot more anxious and stressed."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That makes sense. Have you noticed any changes in your appetite or sleep patterns lately?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "No, everything's been normal there."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay, what about your mood? Do you ever feel like you're stuck in a rut or struggling to find motivation?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Yeah, definitely. It feels like I'm just going through the motions most days."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That can be tough. Have you considered talking to anyone about how you're feeling – maybe a trusted friend or family member?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Yeah, my sister actually listens really well and tries to offer helpful advice."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That's great! What do you think would happen if you did decide to open up more to others about your struggles?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "I think it would be nice to have someone to share the burden with – maybe get some perspective on things."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Absolutely. And what are your goals for our time together today? Is there anything specific you'd like to work on or achieve in the next few sessions?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Honestly, just getting a better handle on my thoughts and feelings I guess. Feeling more balanced."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "That's a great goal! Let's definitely work towards that. Before we wrap up for today, is there anything that stands out to you as something you're looking forward to in the coming weeks or months?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Yeah, actually – I have a friend moving back to town soon and I'm really excited about reconnecting with them."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "That sounds like a great opportunity! What do you think it would be like to have that connection and support system available again?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "It would mean a lot – feeling seen and heard by someone who knows me well."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "That's wonderful. Well, I think we've had a great start today. Let's plan on meeting again next week to continue exploring some of these topics further."
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Sounds good to me. Thanks for listening – it feels like a weight has been lifted already."
+      }
+    ]
+  }
+}

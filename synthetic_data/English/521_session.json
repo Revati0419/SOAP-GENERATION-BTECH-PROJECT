@@ -1,0 +1,354 @@
+{
+  "session_id": 521,
+  "phq8_score": 1,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 0,
+    "psychomotor": 1
+  },
+  "persona": {
+    "age": 34,
+    "gender": "male",
+    "occupation": "social worker",
+    "city": "Nashville"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That helps, honestly. So, how has your week been? Any notable events or changes?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, work's been a grind lately. I've had some new responsibilities added to my plate, and it's taking a toll."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "Can you tell me more about what's going on at work that's causing stress?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Just the usual - tight deadlines, micromanaging boss... you know how it is."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "Absolutely. How do you unwind after a long day?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Honestly? I've been playing some video games to take my mind off things."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That sounds like a great way to relax. Have you noticed any changes in your social life or relationships lately?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Nah, nothing too out of the ordinary. Just the usual stuff with friends and family."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Okay, that's good to hear. How's your daily routine been? Any changes in your morning or evening routines?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "No, everything's pretty much the same. I wake up early, get some coffee, and head to work."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "Got it. Do you have any hobbies or activities you enjoy doing in your free time?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Yeah, like I said, I've been playing video games a lot lately."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That's something we can explore more later on. How are you handling the stress and pressure at work right now?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Honestly? It's just making me feel really frustrated and irritable."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Okay, that sounds tough. Can you tell me more about what you mean by \"frustrated and irritable\"?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Just everything feels like it's piling up on me - emails, meetings, tasks... it's all just feeling overwhelming."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "I understand. Have you noticed any physical sensations or body feelings related to this stress?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, my hands get really sweaty sometimes when I'm stuck in traffic."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay, that can be pretty unsettling. How do you think your colleagues or friends would describe your mood lately?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Probably just saying I seem stressed out and overwhelmed, which is true, but it's not like they've noticed anything specific."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That makes sense. Have there been any recent stressful life events or changes that might be contributing to this stress?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Yeah, my mom's been going through some health issues, and I've had to help out more with her care."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. How are you coping with that added responsibility?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Honestly? It's just making me feel even more anxious and on edge."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay, that sounds really challenging. What kind of support system do you have in place to help you cope with these feelings?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Just my friends and family, I guess. They're all pretty understanding."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That's great. Do you think there are any specific goals or changes you'd like to work on during our time together here?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Yeah, just figuring out how to manage this stress better and get some of the weight off my shoulders would be a good start."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Absolutely. What do you think is the first step we can take towards making that happen?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "I don't know... maybe just getting some things off my plate at work and finding ways to relax more outside of work?"
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That sounds like a great starting point. Is there anything in particular that's been causing you distress or anxiety at work lately?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Just the constant feeling of being overwhelmed and like I'm not doing enough."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Okay, let's explore that further. What would \"doing enough\" mean to you in this context?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Just meeting my responsibilities and not having any major mistakes or catastrophes happen."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "Got it. Have there been any instances recently where you've felt like you didn't meet those expectations or had something go wrong?"
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "Yeah, last week I missed two deadlines due to some unexpected delays... it was pretty stressful."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "Okay, that can be really frustrating and demoralizing. What did you do after that happened?"
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Just felt pretty terrible about myself and tried to push through the rest of the day."
+      },
+      {
+        "turn_id": 40,
+        "start_time": 150,
+        "stop_time": 152,
+        "role": "Therapist",
+        "text_en": "That sounds tough. Is there anything you've learned from this experience or any ways you'd like to handle similar situations differently in the future?"
+      },
+      {
+        "turn_id": 41,
+        "start_time": 153,
+        "stop_time": 155,
+        "role": "Patient",
+        "text_en": "Yeah, I guess I just need to prioritize better and not procrastinate so much... also maybe find some more relaxation techniques to deal with stress."
+      },
+      {
+        "turn_id": 42,
+        "start_time": 156,
+        "stop_time": 158,
+        "role": "Therapist",
+        "text_en": "Absolutely. What do you think are some realistic steps you can take this week to start working on those changes?"
+      },
+      {
+        "turn_id": 43,
+        "start_time": 159,
+        "stop_time": 161,
+        "role": "Patient",
+        "text_en": "Just trying to get my priorities straight and focusing on one thing at a time, maybe setting aside some time each day for self-care."
+      },
+      {
+        "turn_id": 44,
+        "start_time": 162,
+        "stop_time": 164,
+        "role": "Therapist",
+        "text_en": "That sounds like a great plan. Is there anything else you'd like to talk about or any questions you have for me before we wrap up today?"
+      },
+      {
+        "turn_id": 45,
+        "start_time": 165,
+        "stop_time": 167,
+        "role": "Patient",
+        "text_en": "Nah, I think that's it... just appreciate your help so far."
+      },
+      {
+        "turn_id": 46,
+        "start_time": 168,
+        "stop_time": 170,
+        "role": "Therapist",
+        "text_en": "You're welcome! It was a pleasure chatting with you."
+      }
+    ]
+  }
+}

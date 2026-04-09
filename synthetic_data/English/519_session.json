@@ -1,0 +1,270 @@
+{
+  "session_id": 519,
+  "phq8_score": 2,
+  "severity": "minimal",
+  "symptom_profile": {
+    "sleep": 0,
+    "energy": 0,
+    "interest": 0,
+    "depressed": 0,
+    "appetite": 0,
+    "guilt": 0,
+    "concentration": 0,
+    "psychomotor": 2
+  },
+  "persona": {
+    "age": 23,
+    "gender": "male",
+    "occupation": "retail store manager",
+    "city": "Atlanta"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That helps, honestly. Can you tell me a bit about what's been going on at work? You manage a retail store, right?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, that's my job. To be honest, it's been kind of tough lately. I feel like I'm just trying to keep everything running smoothly."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "I understand. It sounds like you're really putting in the effort to manage the store effectively. What specifically is making things challenging for you?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Um, just a lot of little things, I guess. Equipment breaking down, employees calling in sick... it's all kind of adding up."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I see. So it's more about the daily grind rather than any one specific issue. Can you tell me what your routine looks like on a typical day?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Yeah, sure thing. I usually wake up pretty early, get to work around 7, and then just try to stay focused till my shift ends at 3."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That sounds like a lot of structure. Do you have any hobbies or activities outside of work that bring you enjoyment?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Honestly? Not really. I mean, I used to play some guitar, but I haven't picked it up in ages."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "It's great that you had an interest before. Maybe we can explore ways to get you back into doing something creative."
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Yeah, maybe so. My friends and family are always asking me to hang out or go do things, but sometimes I just don't feel like leaving the house."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That makes sense. It sounds like socializing is a bit of an effort for you right now. What's going through your mind when you're feeling hesitant?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Um, just that I'm tired, I guess. And kind of worried about what people will think if they see me looking so down."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That can be really tough to deal with. Have you noticed any changes in how you're moving or physically feeling lately?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Yeah... I mean, sometimes my hands get all shaky and my legs feel like lead."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Okay, that does sound uncomfortable. What do you think might help take some of the edge off when you're feeling that way?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Honestly? Sometimes I just want to sit down and not move for a bit. Or maybe take a walk outside if it's nice out."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "Those are great coping mechanisms! It sounds like you're trying to find ways to cope with how you're feeling."
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah, I guess so. Just little things, though. Not anything major."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That's okay. Little things can add up, and it's great that you're acknowledging them. What are some of the most significant changes or stressors in your life recently?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Well, my grandma passed away last month, and I've been dealing with a lot of grief."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "I'm so sorry to hear that. Losing someone close can be really tough. How have you been coping with her passing?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly? It's been tough. Sometimes it feels like everything is just too much for me to handle right now."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That makes sense. Grief can be a lot to process. What are some of the things that you think would help you feel more supported or comfortable in this moment?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Just talking to someone, I guess. Like, actually being able to open up about how I'm feeling without worrying it's weird."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That makes sense. It can be really helpful to have someone to talk to who understands and is non-judgmental. We're here for you, and we'll do our best to support you in whatever way we can."
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Thanks... that means a lot."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "You're welcome. So, what are some of your goals or things you'd like to work on over the next little while?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Um, just trying not to feel so stuck all the time, I guess. And maybe finding ways to get my energy back up again."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Those sound like great goals! We can definitely work on building those skills and strategies together. Is there anything else that's been going on or anything you'd like to talk about before we wrap things up?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Not really, I think. Just grateful for this chance to chat, actually."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "You're welcome. It was great talking with you too! Remember, everything we discussed is completely confidential and just between us. Take care of yourself, okay?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah, got it. Thanks again."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "You're welcome."
+      }
+    ]
+  }
+}
