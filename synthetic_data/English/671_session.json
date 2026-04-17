@@ -1,0 +1,354 @@
+{
+  "session_id": 671,
+  "phq8_score": 20,
+  "severity": "severe",
+  "symptom_profile": {
+    "sleep": 2,
+    "energy": 3,
+    "interest": 2,
+    "depressed": 2,
+    "appetite": 3,
+    "guilt": 3,
+    "concentration": 3,
+    "psychomotor": 2
+  },
+  "persona": {
+    "age": 64,
+    "gender": "female",
+    "occupation": "registered nurse",
+    "city": "Memphis"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's great to hear your commute went smoothly. Can you tell me a little bit about why you decided to come in today? What's been going on that's brought you here?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Honestly, I just feel like I'm stuck in this rut and can't seem to get out of it."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Have things changed recently at work or in your personal life?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Yeah, my workload has been overwhelming lately. We're short-staffed and I'm covering some extra shifts."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. How's that impacting you outside of work?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Well, like I said, I just feel stuck. My routine is all messed up. Sleep's been a struggle too."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "Sorry to hear that. It sounds like your energy levels are suffering as well."
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Yeah, big time. I mean, I used to be able to get stuff done efficiently, but now it feels like I'm just going through the motions."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds really frustrating. How's your appetite been?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Actually, it's been the opposite – I've lost my appetite altogether."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That can be really tough. Have you noticed any changes in your mood or emotional state?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Yeah...I get these feelings of guilt and regret. It's like I'm stuck on repeat, replaying all these what-ifs."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "That sounds really painful. What kind of things are you replaying in your mind?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Just feeling like I should've done this or that differently. You know how it is when you're beating yourself up over little mistakes?"
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Absolutely. It sounds like those feelings might be tied to some stressors, but are there any other people or relationships in your life right now that could be contributing to this sense of being stuck?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Well, my kids have been having a tough time lately. They're going through their own struggles and it's hard for me to watch."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "I'm so sorry to hear that. It sounds like you're carrying a lot of emotional weight right now."
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Yeah...I just wish I could be more present for them, but sometimes I feel like I'm stuck in this fog and can't shake it off."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That must be really hard. Can you tell me what you think is the biggest challenge facing you right now?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Honestly, I think it's just finding some sense of normalcy again. I don't know how to get out of this funk."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "That makes a lot of sense. What are your goals for our time together today? What do you hope to work on or achieve?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Just trying to figure out what's going on and maybe get some strategies to help me feel more grounded, I guess."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That sounds like a great place to start. Let's take a closer look at your daily routine and see if we can identify any patterns that might be contributing to these feelings of being stuck."
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Sounds good."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay! So what does a typical day look like for you?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Well, I wake up early, try to get some coffee in me...then it's just kind of go-go-go all day."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "Got it. And how do you spend your free time? Do you have any hobbies or activities that bring you joy?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly, not as much lately. Just trying to keep up with everything else."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "That makes sense. It sounds like you might be feeling a bit burnt out. How's your physical health been lately?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Actually, I've been noticing some weird body sensations – just little things like numbness in my fingers and toes."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Okay! We'll definitely want to explore those physical sensations further. Have you noticed any changes in your concentration or decision-making abilities recently?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah...I feel like my brain's a bit foggy, like I'm not thinking as clearly as I used to."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "That sounds really frustrating. What do you think would be the most helpful thing for us to focus on today?"
+      },
+      {
+        "turn_id": 35,
+        "start_time": 135,
+        "stop_time": 137,
+        "role": "Patient",
+        "text_en": "Just figuring out what's going on and getting some strategies in place."
+      },
+      {
+        "turn_id": 36,
+        "start_time": 138,
+        "stop_time": 140,
+        "role": "Therapist",
+        "text_en": "Alright! Let's keep exploring your daily routine and see if we can identify any patterns that might be contributing to these feelings of being stuck."
+      },
+      {
+        "turn_id": 37,
+        "start_time": 141,
+        "stop_time": 143,
+        "role": "Patient",
+        "text_en": "Okay, sounds good."
+      },
+      {
+        "turn_id": 38,
+        "start_time": 144,
+        "stop_time": 146,
+        "role": "Therapist",
+        "text_en": "So, what do you usually do after work?"
+      },
+      {
+        "turn_id": 39,
+        "start_time": 147,
+        "stop_time": 149,
+        "role": "Patient",
+        "text_en": "Just try to get home as quickly as possible, then collapse on the couch for a bit. Sometimes I'll watch TV or something."
+      },
+      {
+        "turn_id": 40,
+        "start_time": 150,
+        "stop_time": 152,
+        "role": "Therapist",
+        "text_en": "That sounds like self-care! Have you been enjoying that downtime at all?"
+      },
+      {
+        "turn_id": 41,
+        "start_time": 153,
+        "stop_time": 155,
+        "role": "Patient",
+        "text_en": "Yeah...it's just hard when it feels like I'm wasting time instead of being productive."
+      },
+      {
+        "turn_id": 42,
+        "start_time": 156,
+        "stop_time": 158,
+        "role": "Therapist",
+        "text_en": "That makes sense. It sounds like there might be some conflicting values going on – the desire to relax versus the need to feel accomplished. How do you think we could work with that in a way that honors both your needs?"
+      },
+      {
+        "turn_id": 43,
+        "start_time": 159,
+        "stop_time": 161,
+        "role": "Patient",
+        "text_en": "Honestly, I just don't know what to do. I'm stuck."
+      },
+      {
+        "turn_id": 44,
+        "start_time": 162,
+        "stop_time": 164,
+        "role": "Therapist",
+        "text_en": "That's okay! We can work through this together. Let's try to brainstorm some small steps you can take towards feeling more grounded and in control. What are some things that might make a difference for you?"
+      },
+      {
+        "turn_id": 45,
+        "start_time": 165,
+        "stop_time": 167,
+        "role": "Patient",
+        "text_en": "I guess just having some kind of routine or structure, even if it's just a little bit."
+      },
+      {
+        "turn_id": 46,
+        "start_time": 168,
+        "stop_time": 170,
+        "role": "Therapist",
+        "text_en": "That sounds like a great starting point! Can we come up with some small, achievable goals for you to work towards this week?"
+      }
+    ]
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "session_id": 664,
+  "phq8_score": 23,
+  "severity": "severe",
+  "symptom_profile": {
+    "sleep": 3,
+    "energy": 3,
+    "interest": 3,
+    "depressed": 3,
+    "appetite": 2,
+    "guilt": 3,
+    "concentration": 3,
+    "psychomotor": 3
+  },
+  "persona": {
+    "age": 23,
+    "gender": "female",
+    "occupation": "financial analyst",
+    "city": "San Diego"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's good to know. So, how's life been treating you lately? Any big changes or stressors?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Not really. Same old same old. Just trying to get through the workdays without too much trouble."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "I see. Can you tell me a bit about your job as a financial analyst? How do you find it challenging or rewarding?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "It's just...I used to enjoy it, but lately, everything feels like a chore. Even simple tasks take forever to get done."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Have you noticed any changes in your social life or relationships with friends and family?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Nah, they're all good. I've just been too exhausted to do much of anything after work. I mean, I used to love hanging out with my friends on the weekends, but now it's like...I just collapse."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "It sounds like you've been struggling with your energy levels lately. Can you tell me more about that?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Yeah, I mean, I used to be a morning person, but now getting up feels like climbing a mountain. And when I do finally get moving, I crash in the afternoon like there's no tomorrow."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "That sounds really challenging. Have you noticed any changes in your appetite or eating habits?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Actually, yeah. I've been having these weird cravings for comfort foods all the time. Like, I'll be fine one minute, and then suddenly I just want a giant bowl of ice cream or something."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "Comfort foods can be really tempting when we're feeling stressed. Have you noticed any changes in your sleep patterns?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Oh yeah...I used to sleep like a rock every night, but now it's like...I'll wake up multiple times, and then I just lie there for hours feeling restless."
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "It sounds like you're having trouble getting quality rest. Can you tell me more about what that feels like?"
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Like, I'll be in bed, and my mind will start racing, thinking about all these things I need to do tomorrow or whatever. And then when I finally fall asleep, it's like...I wake up an hour later feeling like I've been hit by a truck."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "That sounds really frustrating. Have you noticed any changes in your interest or enjoyment of activities outside of work?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "Honestly? No. Nothing really gives me joy anymore. It's all just so...meh."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "That can be really tough to feel like that about things we used to enjoy. Can you tell me more about what you mean by \"meh\"?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "I don't know, it's hard to explain. Everything just feels so pointless and boring. Like, I'll watch a movie or TV show, but then suddenly I'll realize I've been staring at the screen for hours without even really paying attention."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "That sounds like you're feeling disconnected from things that used to bring you joy. Have you noticed any physical sensations or body feelings that might be related to this?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Actually, yeah...I've been getting these weird knots in my shoulders and neck, and sometimes my hands feel all tingly like they're asleep."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Those kinds of physical sensations can be really uncomfortable. Have you noticed any recent stressful life events or changes that might have contributed to how you're feeling?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "Honestly? Yeah...I think it's just been one thing after another lately. Work stress, personal stuff...it all feels like too much sometimes."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "It sounds like you've been carrying a heavy emotional load lately. Can you tell me more about what that looks like for you?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Like...I'll be driving to work, and suddenly I'll start crying because of something some coworker said or whatever. And then I'll feel guilty afterwards because I'm supposed to be all professional."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Can you tell me more about what it feels like to feel guilty about that?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "It's just...I don't know, it feels like I'm not doing things right somehow. Like, I should be stronger or something."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "You're already taking a big step by acknowledging how you're feeling and seeking support. That takes a lot of courage. What are some things that you think might help you feel better?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Honestly? I don't know...I guess just getting through the days without losing my mind would be nice."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Well, we can definitely work on strategies to help you do that. Can you tell me more about what you hope to get out of our sessions together?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "Like...I don't know, maybe just feeling like I'm not completely losing my grip on reality? Feeling like I can actually enjoy life again someday?"
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "That sounds like a great goal for us to work towards. What do you think we should focus on in the next few sessions to make that happen?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Honestly? Just...help me feel human again, I guess."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Well, let's definitely prioritize building some coping strategies and self-care practices into your daily routine. And don't worry, we'll work together to get you feeling more like yourself again."
+      }
+    ]
+  }
+}

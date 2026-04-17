@@ -13,3 +13,6 @@ __pycache__/
 
 #OS files
 .DS_Store
+
+whisper_asr_pipeline/.venv_whisper/
+whisper_asr_pipeline/models/

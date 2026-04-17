@@ -1,0 +1,270 @@
+{
+  "session_id": 689,
+  "phq8_score": 23,
+  "severity": "severe",
+  "symptom_profile": {
+    "sleep": 3,
+    "energy": 2,
+    "interest": 3,
+    "depressed": 3,
+    "appetite": 3,
+    "guilt": 3,
+    "concentration": 3,
+    "psychomotor": 3
+  },
+  "persona": {
+    "age": 27,
+    "gender": "male",
+    "occupation": "truck driver",
+    "city": "Austin"
+  },
+  "styles": {
+    "conversation": [
+      {
+        "turn_id": 0,
+        "start_time": 30,
+        "stop_time": 32,
+        "role": "Therapist",
+        "text_en": "Hi, I'm your therapist. Everything we discuss here is confidential, so please feel comfortable."
+      },
+      {
+        "turn_id": 1,
+        "start_time": 33,
+        "stop_time": 35,
+        "role": "Patient",
+        "text_en": "Thanks, I appreciate that."
+      },
+      {
+        "turn_id": 2,
+        "start_time": 36,
+        "stop_time": 38,
+        "role": "Therapist",
+        "text_en": "That's great to hear. So, what's a typical day like for you? Do you have any routines or rituals that help get your morning started?"
+      },
+      {
+        "turn_id": 3,
+        "start_time": 39,
+        "stop_time": 41,
+        "role": "Patient",
+        "text_en": "Yeah, I mean, it's the usual stuff. Got up early, grabbed some coffee, and headed out on my truck. Work was...fine."
+      },
+      {
+        "turn_id": 4,
+        "start_time": 42,
+        "stop_time": 44,
+        "role": "Therapist",
+        "text_en": "That sounds pretty routine. What about social life? Are you doing anything fun or relaxing outside of work?"
+      },
+      {
+        "turn_id": 5,
+        "start_time": 45,
+        "stop_time": 47,
+        "role": "Patient",
+        "text_en": "Um, not really. Honestly, it's been tough to muster up the energy for much of anything lately."
+      },
+      {
+        "turn_id": 6,
+        "start_time": 48,
+        "stop_time": 50,
+        "role": "Therapist",
+        "text_en": "I see. How has your sleep been? Have you noticed any changes in that department?"
+      },
+      {
+        "turn_id": 7,
+        "start_time": 51,
+        "stop_time": 53,
+        "role": "Patient",
+        "text_en": "Sleep is a real challenge right now. I've been waking up multiple times during the night and having trouble getting back to bed."
+      },
+      {
+        "turn_id": 8,
+        "start_time": 54,
+        "stop_time": 56,
+        "role": "Therapist",
+        "text_en": "That can be really frustrating. Have you noticed any changes in your appetite or eating habits too?"
+      },
+      {
+        "turn_id": 9,
+        "start_time": 57,
+        "stop_time": 59,
+        "role": "Patient",
+        "text_en": "Yeah, I've lost my appetite completely. Food just doesn't appeal to me anymore."
+      },
+      {
+        "turn_id": 10,
+        "start_time": 60,
+        "stop_time": 62,
+        "role": "Therapist",
+        "text_en": "Okay. And how about energy levels? Do you feel like you have the get-up-and-go you used to?"
+      },
+      {
+        "turn_id": 11,
+        "start_time": 63,
+        "stop_time": 65,
+        "role": "Patient",
+        "text_en": "Honestly, no. I'm exhausted all the time. Even simple tasks feel overwhelming."
+      },
+      {
+        "turn_id": 12,
+        "start_time": 66,
+        "stop_time": 68,
+        "role": "Therapist",
+        "text_en": "That sounds really tough. Have you tried doing anything that brings you joy or relaxation?"
+      },
+      {
+        "turn_id": 13,
+        "start_time": 69,
+        "stop_time": 71,
+        "role": "Patient",
+        "text_en": "Hobbies-wise, nothing lately. Just feeling stuck and unmotivated, you know?"
+      },
+      {
+        "turn_id": 14,
+        "start_time": 72,
+        "stop_time": 74,
+        "role": "Therapist",
+        "text_en": "Yeah, I do. It can be hard to find the motivation when things are feeling so challenging."
+      },
+      {
+        "turn_id": 15,
+        "start_time": 75,
+        "stop_time": 77,
+        "role": "Patient",
+        "text_en": "Yeah...it's just been one of those weeks, you know? Everything feels like a struggle."
+      },
+      {
+        "turn_id": 16,
+        "start_time": 78,
+        "stop_time": 80,
+        "role": "Therapist",
+        "text_en": "Okay, well, it sounds like you're carrying a lot right now. Can you tell me more about what's been going on at work?"
+      },
+      {
+        "turn_id": 17,
+        "start_time": 81,
+        "stop_time": 83,
+        "role": "Patient",
+        "text_en": "It's just...being a truck driver is getting harder and harder. The company's cutting routes left and right, and I'm feeling overwhelmed trying to make ends meet."
+      },
+      {
+        "turn_id": 18,
+        "start_time": 84,
+        "stop_time": 86,
+        "role": "Therapist",
+        "text_en": "I see. That sounds really stressful. Have you talked to anyone about how you're feeling? Do you have any support system in place?"
+      },
+      {
+        "turn_id": 19,
+        "start_time": 87,
+        "stop_time": 89,
+        "role": "Patient",
+        "text_en": "Not really...I mean, my family's always been supportive, but they're all busy with their own things."
+      },
+      {
+        "turn_id": 20,
+        "start_time": 90,
+        "stop_time": 92,
+        "role": "Therapist",
+        "text_en": "Okay. Well, we can work on building that support system together. Let's see if we can identify some small goals for you to start working towards, okay?"
+      },
+      {
+        "turn_id": 21,
+        "start_time": 93,
+        "stop_time": 95,
+        "role": "Patient",
+        "text_en": "Yeah, that sounds good...I guess."
+      },
+      {
+        "turn_id": 22,
+        "start_time": 96,
+        "stop_time": 98,
+        "role": "Therapist",
+        "text_en": "Great! So, what are some things you've enjoyed doing in the past? Any hobbies or activities that brought you joy?"
+      },
+      {
+        "turn_id": 23,
+        "start_time": 99,
+        "stop_time": 101,
+        "role": "Patient",
+        "text_en": "I used to love playing guitar, but haven't touched it in years..."
+      },
+      {
+        "turn_id": 24,
+        "start_time": 102,
+        "stop_time": 104,
+        "role": "Therapist",
+        "text_en": "That's great! Maybe we can explore ways to get you back into playing again. Would that be something you'd like to work towards?"
+      },
+      {
+        "turn_id": 25,
+        "start_time": 105,
+        "stop_time": 107,
+        "role": "Patient",
+        "text_en": "Yeah...that would be nice."
+      },
+      {
+        "turn_id": 26,
+        "start_time": 108,
+        "stop_time": 110,
+        "role": "Therapist",
+        "text_en": "Okay! We'll start there. What do you think is the biggest challenge for you right now?"
+      },
+      {
+        "turn_id": 27,
+        "start_time": 111,
+        "stop_time": 113,
+        "role": "Patient",
+        "text_en": "Just feeling stuck and not knowing how to move forward, I guess."
+      },
+      {
+        "turn_id": 28,
+        "start_time": 114,
+        "stop_time": 116,
+        "role": "Therapist",
+        "text_en": "That makes sense. Well, we can definitely work on that together. Let's keep building from this place, okay?"
+      },
+      {
+        "turn_id": 29,
+        "start_time": 117,
+        "stop_time": 119,
+        "role": "Patient",
+        "text_en": "Yeah...okay."
+      },
+      {
+        "turn_id": 30,
+        "start_time": 120,
+        "stop_time": 122,
+        "role": "Therapist",
+        "text_en": "Great! I want to make sure you're comfortable with the pace of our sessions. Is there anything in particular that's not working for you or feeling overwhelming so far?"
+      },
+      {
+        "turn_id": 31,
+        "start_time": 123,
+        "stop_time": 125,
+        "role": "Patient",
+        "text_en": "No, it's just...I don't know how to fix all this stuff. Feels like too much to handle."
+      },
+      {
+        "turn_id": 32,
+        "start_time": 126,
+        "stop_time": 128,
+        "role": "Therapist",
+        "text_en": "Okay, well, we'll take it one step at a time then! We can work on breaking things down into smaller, manageable pieces. Does that sound doable?"
+      },
+      {
+        "turn_id": 33,
+        "start_time": 129,
+        "stop_time": 131,
+        "role": "Patient",
+        "text_en": "Yeah...I think so."
+      },
+      {
+        "turn_id": 34,
+        "start_time": 132,
+        "stop_time": 134,
+        "role": "Therapist",
+        "text_en": "Great! Well, let's keep going then. What do you hope to get out of our sessions together?"
+      }
+    ]
+  }
+}
