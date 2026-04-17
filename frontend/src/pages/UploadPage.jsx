@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FileJson, Wand2, Loader2, UploadCloud, X } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
 import SoapNoteViewer from '../components/SoapNoteViewer';
 import LoadingAnimation from '../components/LoadingAnimation';
+import { API_BASE_URL } from '../lib/api';
+import { createSession, fetchPatients } from '../services/clinicApi';
 
 export default function UploadPage() {
-  const API_BASE = 'http://localhost:8000';
+  const API_BASE = API_BASE_URL;
+  const [searchParams] = useSearchParams();
+  const patientIdFromUrl = Number(searchParams.get('patient_id') || 0) || '';
 
   const [mode, setMode] = useState('json');
   const [jsonFile, setJsonFile] = useState(null);
@@ -22,9 +27,56 @@ export default function UploadPage() {
   const [loadingText, setLoadingText] = useState('Processing...');
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
-  const [opStart, setOpStart] = useState(null);
   const [liveElapsed, setLiveElapsed] = useState('0.00s');
+  const [patients, setPatients] = useState([]);
+  const [selectedPatientId, setSelectedPatientId] = useState(patientIdFromUrl);
+  const [loadingPatients, setLoadingPatients] = useState(false);
+  const [saveNotice, setSaveNotice] = useState(null);
   const liveTimerRef = React.useRef(null);
+
+  const selectedPatient = patients.find((p) => Number(p.id) === Number(selectedPatientId));
+
+  const loadPatients = async () => {
+    setLoadingPatients(true);
+    try {
+      const data = await fetchPatients('', 200);
+      setPatients(data.patients || []);
+    } catch {
+      // Allow SOAP generation even if patient lookup fails.
+    } finally {
+      setLoadingPatients(false);
+    }
+  };
+
+  const persistSession = async ({ sourceType, generatedResult, transcriptText }) => {
+    if (!selectedPatientId || !generatedResult) {
+      setSaveNotice('SOAP generated (not saved: select a patient).');
+      return;
+    }
+
+    const effectiveTargetLang = targetLang || generatedResult.target_language || 'marathi';
+    const soapEnglish = generatedResult.soap_english || {};
+    const soapTarget = generatedResult[`soap_${effectiveTargetLang}`] || {};
+
+    try {
+      await createSession({
+        patient_id: Number(selectedPatientId),
+        source_type: sourceType,
+        transcript: transcriptText || '',
+        target_lang: effectiveTargetLang,
+        input_lang: generatedResult.input_language || asrLanguage || null,
+        phq8_score: parseInt(phq8Score, 10) || 0,
+        severity,
+        gender,
+        soap_english: soapEnglish,
+        soap_target: soapTarget,
+        full_result: generatedResult,
+      });
+      setSaveNotice('Session saved to patient history.');
+    } catch (err) {
+      setSaveNotice(err?.response?.data?.detail || 'SOAP generated, but session save failed.');
+    }
+  };
 
   const handleJsonFileChange = (e) => {
     if (e.target.files[0]) setJsonFile(e.target.files[0]);
@@ -38,10 +90,10 @@ export default function UploadPage() {
     if (!jsonFile) return;
     setLoading(true);
     setError(null);
+    setSaveNotice(null);
     setLoadingText('Processing NER, LLM & RAG...');
-    // start client timer
+
     const start = Date.now();
-    setOpStart(start);
     setLiveElapsed('0.00s');
     liveTimerRef.current = setInterval(() => {
       setLiveElapsed(((Date.now() - start) / 1000).toFixed(2) + 's');
@@ -53,13 +105,13 @@ export default function UploadPage() {
 
     try {
       const response = await axios.post(`${API_BASE}/api/generate-from-json`, formData);
-      // attach client-measured processing time
-      const totalMs = Date.now() - (opStart || Date.now());
+      const totalMs = Date.now() - start;
       const clientTime = (totalMs / 1000).toFixed(2) + 's';
       const data = response.data || {};
       data.metadata = data.metadata || {};
       data.metadata.processing_time = clientTime;
       setResult(data);
+      await persistSession({ sourceType: 'json', generatedResult: data, transcriptText: transcript });
     } catch (err) {
       setError(err?.response?.data?.detail || 'Pipeline Error. Is the backend running?');
     } finally {
@@ -68,7 +120,6 @@ export default function UploadPage() {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
       }
-      setOpStart(null);
     }
   };
 
@@ -78,7 +129,6 @@ export default function UploadPage() {
     setError(null);
     setLoadingText('Transcribing audio with Whisper...');
     const start = Date.now();
-    setOpStart(start);
     setLiveElapsed('0.00s');
     liveTimerRef.current = setInterval(() => {
       setLiveElapsed(((Date.now() - start) / 1000).toFixed(2) + 's');
@@ -88,17 +138,14 @@ export default function UploadPage() {
     formData.append('file', audioFile);
     formData.append('language', asrLanguage);
     formData.append('base_model', baseModel);
-  formData.append('diarization', String(diarizationEnabled));
+    formData.append('diarization', String(diarizationEnabled));
 
     try {
       const response = await axios.post(`${API_BASE}/api/transcribe-audio`, formData);
       const data = response.data || {};
-      // attach client measured ASR time
-      const totalMs = Date.now() - (opStart || Date.now());
+      const totalMs = Date.now() - start;
       data._client_processing_time = (totalMs / 1000).toFixed(2) + 's';
       setTranscript(data?.transcript || '');
-      // store last ASR timing in state for reference
-      // (not setting result yet)
     } catch (err) {
       setError(err?.response?.data?.detail || 'ASR Error. Please check backend + Whisper setup.');
     } finally {
@@ -107,7 +154,6 @@ export default function UploadPage() {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
       }
-      setOpStart(null);
     }
   };
 
@@ -119,9 +165,9 @@ export default function UploadPage() {
 
     setLoading(true);
     setError(null);
+    setSaveNotice(null);
     setLoadingText('Generating SOAP from transcript...');
     const start = Date.now();
-    setOpStart(start);
     setLiveElapsed('0.00s');
     liveTimerRef.current = setInterval(() => {
       setLiveElapsed(((Date.now() - start) / 1000).toFixed(2) + 's');
@@ -135,12 +181,13 @@ export default function UploadPage() {
         gender,
         target_lang: targetLang,
       });
-      const totalMs = Date.now() - (opStart || Date.now());
+      const totalMs = Date.now() - start;
       const clientTime = (totalMs / 1000).toFixed(2) + 's';
       const data = response.data || {};
       data.metadata = data.metadata || {};
       data.metadata.processing_time = clientTime;
       setResult(data);
+      await persistSession({ sourceType: 'transcript', generatedResult: data, transcriptText: transcript });
     } catch (err) {
       setError(err?.response?.data?.detail || 'Failed to generate SOAP from transcript.');
     } finally {
@@ -149,14 +196,8 @@ export default function UploadPage() {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
       }
-      setOpStart(null);
     }
   };
-
-  // Ensure timer cleanup on unmount
-  React.useEffect(() => () => {
-    if (liveTimerRef.current) clearInterval(liveTimerRef.current);
-  }, []);
 
   const handleGenerateFromAudioEndToEnd = async () => {
     if (!audioFile) {
@@ -166,10 +207,9 @@ export default function UploadPage() {
 
     setLoading(true);
     setError(null);
+    setSaveNotice(null);
     setLoadingText('Running end-to-end pipeline: Whisper → SOAP...');
-    // start client timer
     const start = Date.now();
-    setOpStart(start);
     setLiveElapsed('0.00s');
     liveTimerRef.current = setInterval(() => {
       setLiveElapsed(((Date.now() - start) / 1000).toFixed(2) + 's');
@@ -179,7 +219,7 @@ export default function UploadPage() {
     formData.append('file', audioFile);
     formData.append('language', asrLanguage);
     formData.append('base_model', baseModel);
-  formData.append('diarization', String(diarizationEnabled));
+    formData.append('diarization', String(diarizationEnabled));
     formData.append('target_lang', targetLang);
     formData.append('phq8_score', String(parseInt(phq8Score, 10) || 0));
     formData.append('severity', severity);
@@ -192,18 +232,21 @@ export default function UploadPage() {
         setTranscript(data.asr.transcript);
       }
       setResult(data);
+      await persistSession({
+        sourceType: 'audio',
+        generatedResult: data,
+        transcriptText: data.asr?.transcript || transcript,
+      });
     } catch (err) {
       setError(err?.response?.data?.detail || 'End-to-end audio pipeline failed.');
     } finally {
       setLoading(false);
-      // stop client timer and attach measured time if backend didn't provide processing_time
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
       }
-      const totalMs = Date.now() - (opStart || Date.now());
+      const totalMs = Date.now() - start;
       const clientTime = (totalMs / 1000).toFixed(2) + 's';
-      setOpStart(null);
       setLiveElapsed(clientTime);
       setResult((prev) => {
         if (!prev) return prev;
@@ -214,21 +257,70 @@ export default function UploadPage() {
     }
   };
 
+  React.useEffect(() => {
+    loadPatients();
+  }, []);
+
+  React.useEffect(() => {
+    if (patientIdFromUrl) {
+      setSelectedPatientId(patientIdFromUrl);
+    }
+  }, [patientIdFromUrl]);
+
+  React.useEffect(() => () => {
+    if (liveTimerRef.current) clearInterval(liveTimerRef.current);
+  }, []);
+
   return (
     <div className="max-w-5xl mx-auto p-12">
-      {/* Loading Animation Overlay */}
       <LoadingAnimation isOpen={loading} />
       {loading && (
         <div className="fixed top-6 right-6 bg-white/90 px-3 py-2 rounded-lg shadow-sm text-sm font-medium">
           Time: {liveElapsed}
         </div>
       )}
-      
+
       {!result ? (
         <div className="space-y-8 animate-in fade-in duration-500">
           <div className="text-center">
             <h1 className="text-4xl font-black text-slate-900 tracking-tight">Pipeline Session Analysis</h1>
             <p className="text-slate-500 font-medium mt-2 tracking-wide">Upload session JSON or audio to generate clinical SOAP notes.</p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <div className="flex-1">
+                <label className="block text-sm font-bold text-slate-600 mb-2">Patient for this session</label>
+                <select
+                  value={selectedPatientId}
+                  onChange={(e) => {
+                    setSelectedPatientId(e.target.value ? Number(e.target.value) : '');
+                    setSaveNotice(null);
+                  }}
+                  className="w-full p-3 border rounded-xl"
+                >
+                  <option value="">Select patient (optional)</option>
+                  {patients.map((p) => (
+                    <option key={p.id} value={p.id}>
+                      #{p.id} • {p.full_name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="text-sm text-slate-500 md:text-right">
+                {loadingPatients ? 'Loading patients...' : selectedPatient ? `Selected: ${selectedPatient.full_name}` : 'Select patient to auto-save session.'}
+                <div className="mt-1">
+                  <Link to="/" className="text-brand-600 font-semibold hover:underline">Create/Search patients</Link>
+                  {selectedPatientId ? (
+                    <>
+                      {' '}
+                      •{' '}
+                      <Link to={`/history?patient_id=${selectedPatientId}`} className="text-brand-600 font-semibold hover:underline">View patient history</Link>
+                    </>
+                  ) : null}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="flex items-center justify-center gap-3">
@@ -279,22 +371,18 @@ export default function UploadPage() {
 
                 <div className="w-full mt-6">
                   <label className="block text-sm font-bold text-slate-600 mb-2">Target language</label>
-                  <select
-                    value={targetLang}
-                    onChange={(e) => setTargetLang(e.target.value)}
-                    className="w-full p-3 border rounded-xl"
-                  >
+                  <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full p-3 border rounded-xl">
                     <option value="marathi">Marathi</option>
                     <option value="hindi">Hindi</option>
                   </select>
                 </div>
 
-                <button 
+                <button
                   disabled={loading || !jsonFile}
                   onClick={handleGenerateFromJson}
                   className="w-full mt-10 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24}/>}
+                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24} />}
                   {loading ? loadingText : 'Start Pipeline Analysis'}
                 </button>
               </>
@@ -354,9 +442,7 @@ export default function UploadPage() {
                       onChange={(e) => setDiarizationEnabled(e.target.checked)}
                       className="h-4 w-4"
                     />
-                    <span className="text-sm font-semibold text-slate-700">
-                      Enable true diarization (pyannote)
-                    </span>
+                    <span className="text-sm font-semibold text-slate-700">Enable true diarization (pyannote)</span>
                   </label>
                   <p className="text-xs text-slate-500 mt-2">
                     Requires <code>pyannote.audio</code> in <code>whisper_asr_pipeline/.venv_whisper</code> and a valid <code>HF_TOKEN</code> on backend.
@@ -364,21 +450,21 @@ export default function UploadPage() {
                   </p>
                 </div>
 
-                <button 
+                <button
                   disabled={loading || !audioFile}
                   onClick={handleTranscribeAudio}
                   className="w-full mt-6 bg-slate-800 text-white py-4 rounded-2xl font-black flex items-center justify-center gap-3 hover:bg-black disabled:bg-slate-200 disabled:text-slate-400 transition"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : <UploadCloud size={20}/>}
+                  {loading ? <Loader2 className="animate-spin" /> : <UploadCloud size={20} />}
                   {loading ? loadingText : 'Transcribe Audio (Whisper)'}
                 </button>
 
-                <button 
+                <button
                   disabled={loading || !audioFile}
                   onClick={handleGenerateFromAudioEndToEnd}
                   className="w-full mt-4 bg-brand-600 text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={22}/>}
+                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={22} />}
                   {loading ? loadingText : 'Run End-to-End (Audio → SOAP)'}
                 </button>
 
@@ -420,12 +506,12 @@ export default function UploadPage() {
                   </div>
                 </div>
 
-                <button 
+                <button
                   disabled={loading || !transcript.trim()}
                   onClick={handleGenerateFromTranscript}
                   className="w-full mt-8 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24}/>}
+                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24} />}
                   {loading ? loadingText : 'Generate SOAP from Transcript'}
                 </button>
 
@@ -441,16 +527,29 @@ export default function UploadPage() {
               {error}
             </div>
           )}
+          {saveNotice && (
+            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-emerald-50 border border-emerald-200 text-emerald-800'}`}>
+              {saveNotice}
+            </div>
+          )}
         </div>
       ) : (
         <div className="space-y-10 animate-in slide-in-from-bottom-10 duration-700">
-           <button onClick={() => {
-             setResult(null);
-             setError(null);
-           }} className="font-black text-slate-400 hover:text-brand-600 flex items-center gap-2 transition uppercase text-xs tracking-widest">
-             ← Analyze Another File
-           </button>
-           <SoapNoteViewer data={result} />
+          <button
+            onClick={() => {
+              setResult(null);
+              setError(null);
+            }}
+            className="font-black text-slate-400 hover:text-brand-600 flex items-center gap-2 transition uppercase text-xs tracking-widest"
+          >
+            ← Analyze Another File
+          </button>
+          <SoapNoteViewer data={result} />
+          {saveNotice && (
+            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-emerald-50 border border-emerald-200 text-emerald-800'}`}>
+              {saveNotice}
+            </div>
+          )}
         </div>
       )}
     </div>

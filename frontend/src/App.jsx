@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
 import UploadPage from './pages/UploadPage';
+import HistoryPage from './pages/HistoryPage';
 
 function App() {
   return (
@@ -13,9 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/upload" element={<UploadPage />} />
-            <Route path="/history" element={
-              <div className="p-20 text-center font-bold text-slate-300">Session History coming soon...</div>
-            } />
+            <Route path="/history" element={<HistoryPage />} />
           </Routes>
         </main>
       </div>

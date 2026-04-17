@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import LoadingAnimation from './LoadingAnimation';
+import { apiUrl } from '../lib/api';
 
 export default function MultilingualSOAPGenerator() {
   const [transcript, setTranscript] = useState('');
@@ -19,7 +20,7 @@ export default function MultilingualSOAPGenerator() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:8000/api/generate-from-transcript', {
+      const response = await fetch(apiUrl('/api/generate-from-transcript'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
