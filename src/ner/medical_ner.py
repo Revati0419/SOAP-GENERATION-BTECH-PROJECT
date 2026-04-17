@@ -5,10 +5,13 @@ Uses open-source models:
 - IndicNER (AI4Bharat) - for Indian languages
 - BioBERT-NER - for medical entities
 - Clinical-BERT - for clinical text
+
+Now includes comprehensive Marathi regex patterns for rule-based extraction.
 """
 
 from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
+import re
 
 
 @dataclass
@@ -51,31 +54,102 @@ class MedicalNER:
         self.ner_pipeline = None
         self._loaded = False
         
-        # Mental health specific patterns
+        # Comprehensive Marathi regex patterns for rule-based extraction
+        self.marathi_patterns = {
+            "SYMPTOM": [
+                # Sleep issues
+                r"(निद्रानाश|झोप\s+(?:येत\s+नाही|नीट\s+होत\s+नाही|कमी|व्यत्यय|समस्या))",
+                r"(रात्री\s+झोप\s+(?:घेणे|लागणे))",
+                r"(उशिरा\s+झोपतो|उशिरा\s+झोपणे)",
+                # Fatigue / energy
+                r"(थकवा|थकलेलो|थकलेली|कमी\s+उर्जा|ऊर्जा\s+कमी)",
+                # Appetite
+                r"(भूक\s+(?:कमी|नाही|लागत\s+नाही)|जेवण\s+(?:कमी|नाही))",
+                # Concentration
+                r"(एकाग्रता\s+(?:कमी|समस्या|नाही)|लक्ष\s+(?:लागत\s+नाही|कमी|कमतरता))",
+                r"(लक्ष\s+कमतरता\s+विकार)",
+                # Suicidal
+                r"(आत्महत्या(?:चे\s+विचार)?|स्वतःला\s+इजा|जगणे\s+नको)",
+                # Somatic
+                r"(डोकेदुखी|छातीत\s+दुखणे|पोटदुखी|श्वास\s+(?:घेणे\s+कठीण|लागणे))",
+                # Panic
+                r"(भयग्रस्त\s+झटका|घाबरणे|धडधड)",
+            ],
+            "EMOTION": [
+                r"(नैराश्य(?:ाचे|ाने)?)",
+                r"(चिंता(?:ग्रस्त)?|काळजी(?:\s+वाटते)?)",
+                r"(ताण(?:\s+आहे|\s+वाटतो)?)",
+                r"(दुःख(?:ी)?|उदास|मन\s+(?:खिन्न|जड))",
+                r"(राग(?:\s+येतो|\s+नियंत्रण)?|चिडचिड(?:ेपणा)?)",
+                r"(भीती(?:\s+वाटते)?|घाबरतो|घाबरते)",
+                r"(लाज(?:\s+वाटली|\s+वाटते)?|लाजाळू)",
+                r"(अपराध(?:बोध|ी\s+वाटणे))",
+                r"(निराशा|निरुत्साह)",
+                r"(एकटेपणा|एकटे\s+(?:वाटते|असणे))",
+                r"(आनंद(?:ी)?|उत्साह(?:ी)?|समाधान(?:ी)?)",
+                r"(अस्वस्थ(?:ता)?|बेचैन)",
+            ],
+            "DURATION": [
+                r"(\d+\s+(?:दिवसांपूर्वी|आठवड्यांपूर्वी|महिन्यांपूर्वी|वर्षांपूर्वी))",
+                r"(\d+\s+(?:दिवस|आठवडे|महिने|वर्षे)\s+(?:झाले|पासून))",
+                r"(महिन्यातून\s+(?:एकदा|दोनदा|तीनदा|\d+\s+वेळा?))",
+                r"(आठवड्यातून\s+(?:एकदा|दोनदा|\d+\s+वेळा?))",
+                r"(नेहमी|नेहमीच|सतत|सर्व\s+वेळ)",
+                r"(कधीकधी|कधी\s+कधी|अधूनमधून)",
+                r"(क्वचित(?:च)?|कधीच\s+नाही|बऱ्याच\s+वेळा)",
+                r"(अलीकडे|अलीकडील|गेल्या\s+काही\s+(?:दिवसांत|महिन्यांत))",
+            ],
+            "SEVERITY": [
+                r"(सौम्य\s+(?:लक्षणे|समस्या|स्थिती))",  # Mild symptoms/condition
+                r"(मध्यम\s+(?:लक्षणे|समस्या|तीव्रता))",  # Moderate symptoms
+                r"(तीव्र\s+(?:लक्षणे|समस्या|नैराश्य|चिंता))",  # Severe symptoms
+                r"(गंभीर\s+(?:परिस्थिती|स्थिती|समस्या))",  # Serious condition
+                r"(वाढत\s+(?:आहे|चालले)|आणखी\s+(?:वाईट|त्रासदायक))",
+                r"(सुधारत\s+(?:आहे|आहोत)|बरे\s+होत\s+(?:आहे|आहोत))",
+            ],
+            "TREATMENT": [
+                r"(मनोचिकित्स(?:क|ा|ेकडे))",
+                r"(समुपदेशन|समुपदेशक)",
+                r"(थेरपी|थेरपिस्ट)",
+                r"(औषध(?:े|ोपचार|े\s+घेतो|े\s+घेते)?)",
+                r"(डॉक्टर(?:ांकडे|ांना)?)",
+                r"(उपचार(?:\s+घेतो|\s+घेते|\s+सुरू)?)",
+                r"(रुग्णालय|हॉस्पिटल)",
+            ],
+            "LIFESTYLE": [
+                r"(व्यायाम(?:\s+करतो|\s+करते)?)",
+                r"(झोपणे|झोपतो|झोपते|उशिरा\s+झोपणे)",
+                r"(प्रवास(?:\s+करतो|\s+करते|\s+करायला)?)",
+                r"(गोल्फ|पोहणे|पोहतो)",
+                r"(मित्र(?:ांसोबत)?|मैत्रिणींसोबत)",
+                r"(कॉफी|बिअर|मद्यपान|धूम्रपान)",
+                r"(मैफिल|संगीत\s+(?:ऐकणे|वाजवणे))",
+            ],
+        }
+        
+        # Mental health specific patterns (English + basic Marathi)
         self.mental_health_patterns = {
             'SYMPTOM': [
                 'depression', 'anxiety', 'stress', 'insomnia', 'fatigue',
                 'sadness', 'hopelessness', 'irritability', 'panic',
-                'mood swings', 'lack of interest', 'concentration',
-                'appetite', 'sleep', 'energy', 'motivation',
-                # Marathi terms
-                'नैराश्य', 'चिंता', 'ताण', 'थकवा', 'झोप', 'भूक',
+                'mood swings', 'lack of interest', 'poor concentration',
+                'appetite loss', 'sleep disturbance', 'low energy', 'lack of motivation',
+                # Marathi clinical terms only
+                'नैराश्य', 'चिंता', 'ताण', 'थकवा', 'निद्रानाश', 'भूक कमी',
             ],
             'SEVERITY': [
-                'mild', 'moderate', 'severe', 'minimal', 'extreme',
-                'slight', 'significant', 'chronic', 'acute',
-                # Marathi
-                'सौम्य', 'मध्यम', 'तीव्र', 'गंभीर',
+                'mild depression', 'moderate anxiety', 'severe stress',
+                'minimal symptoms', 'extreme distress',
+                'significant impairment', 'chronic condition', 'acute episode',
+                # Marathi - only when followed by clinical context
+                'सौम्य लक्षणे', 'मध्यम नैराश्य', 'तीव्र चिंता', 'गंभीर स्थिती',
             ],
             'DURATION': [
-                'days', 'weeks', 'months', 'years', 'daily', 'weekly',
-                'constantly', 'sometimes', 'often', 'rarely',
-                # Marathi
-                'दिवस', 'आठवडे', 'महिने', 'वर्षे', 'रोज', 'कधीकधी',
+                # Only temporal patterns with clinical context - removed standalone time words
             ],
             'MEDICATION': [
                 'antidepressant', 'anxiolytic', 'ssri', 'snri',
-                'therapy', 'counseling', 'medication',
+                'therapy', 'counseling', 'medication', 'psychotherapy',
             ],
         }
     
@@ -149,10 +223,14 @@ class MedicalNER:
         return unique_entities
     
     def _extract_rule_based(self, text: str) -> List[Entity]:
-        """Rule-based entity extraction for mental health terms"""
+        """
+        Rule-based entity extraction for mental health terms
+        Now supports both simple keyword matching AND Marathi regex patterns
+        """
         entities = []
         text_lower = text.lower()
         
+        # 1. Simple keyword matching (existing logic)
         for label, patterns in self.mental_health_patterns.items():
             for pattern in patterns:
                 pattern_lower = pattern.lower()
@@ -170,14 +248,35 @@ class MedicalNER:
                     ))
                     start = idx + 1
         
+        # 2. Regex-based matching for Marathi patterns
+        for label, regex_patterns in self.marathi_patterns.items():
+            for pattern in regex_patterns:
+                try:
+                    matches = re.finditer(pattern, text, re.IGNORECASE)
+                    for match in matches:
+                        matched_text = match.group(0)
+                        entities.append(Entity(
+                            text=matched_text,
+                            label=label,
+                            start=match.start(),
+                            end=match.end(),
+                            confidence=0.95  # Higher confidence for regex matches
+                        ))
+                except re.error as e:
+                    print(f"⚠️ Regex error in pattern '{pattern}': {e}")
+        
         return entities
     
     def extract_from_conversation(self, turns: List[Dict]) -> Dict[str, List[Entity]]:
         """
         Extract entities from a conversation
         
+        Now handles BOTH:
+        - 'text' field (Marathi conversation)
+        - 'text_en' field (English translation)
+        
         Args:
-            turns: List of conversation turns with 'role' and 'text'
+            turns: List of conversation turns with 'role'/'speaker' and 'text'/'text_en'
             
         Returns:
             Dict with 'patient' and 'doctor' entity lists
@@ -186,18 +285,39 @@ class MedicalNER:
         doctor_entities = []
         
         for turn in turns:
-            role = turn.get('role', '').lower()
-            text = turn.get('text', '') or turn.get('text_en', '')
+            # Get role (support both 'role' and 'speaker' fields)
+            role = turn.get('role', turn.get('speaker', '')).lower()
             
-            if not text:
-                continue
+            # Get text - prioritize Marathi (text), fallback to English (text_en)
+            # Process BOTH if available for maximum entity coverage
+            texts_to_process = []
             
-            entities = self.extract_entities(text)
+            marathi_text = turn.get('text', '')
+            english_text = turn.get('text_en', '')
             
-            if 'patient' in role:
-                patient_entities.extend(entities)
-            else:
-                doctor_entities.extend(entities)
+            if marathi_text:
+                texts_to_process.append(('marathi', marathi_text))
+            if english_text:
+                texts_to_process.append(('english', english_text))
+            
+            # Extract entities from all available text versions
+            for lang, text in texts_to_process:
+                if not text:
+                    continue
+                
+                entities = self.extract_entities(text)
+                
+                # Tag entities with language source
+                for entity in entities:
+                    entity.text = entity.text + f" [{lang}]"
+                
+                if 'patient' in role or 'रुग्ण' in role:
+                    patient_entities.extend(entities)
+                elif 'therapist' in role or 'doctor' in role or 'थेरपिस्ट' in role:
+                    doctor_entities.extend(entities)
+                else:
+                    # Default: assume patient if role unclear
+                    patient_entities.extend(entities)
         
         return {
             'patient': patient_entities,

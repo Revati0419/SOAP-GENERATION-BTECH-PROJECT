@@ -40,15 +40,11 @@ class ClinicalVectorStore:
         
         try:
             import chromadb
-            from chromadb.config import Settings
             
-            Path(self.persist_dir).mkdir(parents=True, exist_ok=True)
+            # Path(self.persist_dir).mkdir(parents=True, exist_ok=True)
             
-            self.client = chromadb.Client(Settings(
-                chroma_db_impl="duckdb+parquet",
-                persist_directory=self.persist_dir,
-                anonymized_telemetry=False
-            ))
+            # Use new PersistentClient API (ChromaDB 0.4.0+)
+            self.client = chromadb.PersistentClient(path=self.persist_dir)
             
             self.collection = self.client.get_or_create_collection(
                 name=self.collection_name,
