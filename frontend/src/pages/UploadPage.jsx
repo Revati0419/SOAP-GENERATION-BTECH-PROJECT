@@ -17,17 +17,15 @@ export default function UploadPage() {
   const [audioFile, setAudioFile] = useState(null);
   const [transcript, setTranscript] = useState('');
   const [targetLang, setTargetLang] = useState('marathi');
-  const [asrLanguage, setAsrLanguage] = useState('marathi');
-  const [baseModel, setBaseModel] = useState('openai/whisper-small');
-  const [diarizationEnabled, setDiarizationEnabled] = useState(false);
-  const [phq8Score, setPhq8Score] = useState(0);
-  const [severity, setSeverity] = useState('unknown');
-  const [gender, setGender] = useState('unknown');
+  const [asrLanguage] = useState('english');
+  const DEFAULT_ASR_MODEL = import.meta.env.VITE_ASR_BASE_MODEL || 'muktan174/whisper-medium-ekacare-medical';
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('Processing...');
   const [error, setError] = useState(null);
   const [result, setResult] = useState(null);
   const [liveElapsed, setLiveElapsed] = useState('0.00s');
+  const [transcriptionMeta, setTranscriptionMeta] = useState(null);
+  const [showSoapLoading, setShowSoapLoading] = useState(false);
   const [patients, setPatients] = useState([]);
   const [selectedPatientId, setSelectedPatientId] = useState(patientIdFromUrl);
   const [loadingPatients, setLoadingPatients] = useState(false);
@@ -35,6 +33,12 @@ export default function UploadPage() {
   const liveTimerRef = React.useRef(null);
 
   const selectedPatient = patients.find((p) => Number(p.id) === Number(selectedPatientId));
+
+  const ensurePatientSelected = () => {
+    if (selectedPatientId) return true;
+    setError('Please select a patient before running transcription or SOAP generation.');
+    return false;
+  };
 
   const loadPatients = async () => {
     setLoadingPatients(true);
@@ -65,9 +69,6 @@ export default function UploadPage() {
         transcript: transcriptText || '',
         target_lang: effectiveTargetLang,
         input_lang: generatedResult.input_language || asrLanguage || null,
-        phq8_score: parseInt(phq8Score, 10) || 0,
-        severity,
-        gender,
         soap_english: soapEnglish,
         soap_target: soapTarget,
         full_result: generatedResult,
@@ -88,7 +89,9 @@ export default function UploadPage() {
 
   const handleGenerateFromJson = async () => {
     if (!jsonFile) return;
+    if (!ensurePatientSelected()) return;
     setLoading(true);
+  setShowSoapLoading(true);
     setError(null);
     setSaveNotice(null);
     setLoadingText('Processing NER, LLM & RAG...');
@@ -110,12 +113,14 @@ export default function UploadPage() {
       const data = response.data || {};
       data.metadata = data.metadata || {};
       data.metadata.processing_time = clientTime;
+  data.metadata.session_to_soap_time = clientTime;
       setResult(data);
       await persistSession({ sourceType: 'json', generatedResult: data, transcriptText: transcript });
     } catch (err) {
       setError(err?.response?.data?.detail || 'Pipeline Error. Is the backend running?');
     } finally {
       setLoading(false);
+  setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -125,7 +130,9 @@ export default function UploadPage() {
 
   const handleTranscribeAudio = async () => {
     if (!audioFile) return;
+    if (!ensurePatientSelected()) return;
     setLoading(true);
+  setShowSoapLoading(false);
     setError(null);
     setLoadingText('Transcribing audio with Whisper...');
     const start = Date.now();
@@ -137,8 +144,8 @@ export default function UploadPage() {
     const formData = new FormData();
     formData.append('file', audioFile);
     formData.append('language', asrLanguage);
-    formData.append('base_model', baseModel);
-    formData.append('diarization', String(diarizationEnabled));
+  formData.append('base_model', DEFAULT_ASR_MODEL);
+  formData.append('diarization', 'false');
 
     try {
       const response = await axios.post(`${API_BASE}/api/transcribe-audio`, formData);
@@ -146,10 +153,14 @@ export default function UploadPage() {
       const totalMs = Date.now() - start;
       data._client_processing_time = (totalMs / 1000).toFixed(2) + 's';
       setTranscript(data?.transcript || '');
+  setTranscriptionMeta(data);
+  setResult(null);
+  setSaveNotice(null);
     } catch (err) {
       setError(err?.response?.data?.detail || 'ASR Error. Please check backend + Whisper setup.');
     } finally {
       setLoading(false);
+  setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -158,12 +169,14 @@ export default function UploadPage() {
   };
 
   const handleGenerateFromTranscript = async () => {
+    if (!ensurePatientSelected()) return;
     if (!transcript.trim()) {
       setError('Please transcribe audio first (or paste transcript manually).');
       return;
     }
 
     setLoading(true);
+  setShowSoapLoading(true);
     setError(null);
     setSaveNotice(null);
     setLoadingText('Generating SOAP from transcript...');
@@ -176,9 +189,6 @@ export default function UploadPage() {
     try {
       const response = await axios.post(`${API_BASE}/api/generate-from-transcript`, {
         conversation: transcript,
-        phq8_score: parseInt(phq8Score, 10) || 0,
-        severity,
-        gender,
         target_lang: targetLang,
       });
       const totalMs = Date.now() - start;
@@ -186,12 +196,14 @@ export default function UploadPage() {
       const data = response.data || {};
       data.metadata = data.metadata || {};
       data.metadata.processing_time = clientTime;
+  data.metadata.session_to_soap_time = clientTime;
       setResult(data);
       await persistSession({ sourceType: 'transcript', generatedResult: data, transcriptText: transcript });
     } catch (err) {
       setError(err?.response?.data?.detail || 'Failed to generate SOAP from transcript.');
     } finally {
       setLoading(false);
+  setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -200,12 +212,14 @@ export default function UploadPage() {
   };
 
   const handleGenerateFromAudioEndToEnd = async () => {
+    if (!ensurePatientSelected()) return;
     if (!audioFile) {
       setError('Please select an audio file first.');
       return;
     }
 
     setLoading(true);
+  setShowSoapLoading(true);
     setError(null);
     setSaveNotice(null);
     setLoadingText('Running end-to-end pipeline: Whisper → SOAP...');
@@ -218,12 +232,9 @@ export default function UploadPage() {
     const formData = new FormData();
     formData.append('file', audioFile);
     formData.append('language', asrLanguage);
-    formData.append('base_model', baseModel);
-    formData.append('diarization', String(diarizationEnabled));
+  formData.append('base_model', DEFAULT_ASR_MODEL);
+  formData.append('diarization', 'false');
     formData.append('target_lang', targetLang);
-    formData.append('phq8_score', String(parseInt(phq8Score, 10) || 0));
-    formData.append('severity', severity);
-    formData.append('gender', gender);
 
     try {
       const response = await axios.post(`${API_BASE}/api/generate-from-audio`, formData);
@@ -231,6 +242,7 @@ export default function UploadPage() {
       if (data.asr?.transcript) {
         setTranscript(data.asr.transcript);
       }
+      setTranscriptionMeta(data.asr || null);
       setResult(data);
       await persistSession({
         sourceType: 'audio',
@@ -241,6 +253,7 @@ export default function UploadPage() {
       setError(err?.response?.data?.detail || 'End-to-end audio pipeline failed.');
     } finally {
       setLoading(false);
+  setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -252,6 +265,7 @@ export default function UploadPage() {
         if (!prev) return prev;
         const meta = prev.metadata || {};
         if (!meta.processing_time) meta.processing_time = clientTime;
+        if (!meta.session_to_soap_time) meta.session_to_soap_time = clientTime;
         return { ...prev, metadata: meta };
       });
     }
@@ -273,7 +287,7 @@ export default function UploadPage() {
 
   return (
     <div className="max-w-5xl mx-auto p-12">
-      <LoadingAnimation isOpen={loading} />
+  <LoadingAnimation isOpen={loading && showSoapLoading} />
       {loading && (
         <div className="fixed top-6 right-6 bg-white/90 px-3 py-2 rounded-lg shadow-sm text-sm font-medium">
           Time: {liveElapsed}
@@ -295,11 +309,12 @@ export default function UploadPage() {
                   value={selectedPatientId}
                   onChange={(e) => {
                     setSelectedPatientId(e.target.value ? Number(e.target.value) : '');
+                    setError(null);
                     setSaveNotice(null);
                   }}
                   className="w-full p-3 border rounded-xl"
                 >
-                  <option value="">Select patient (optional)</option>
+                  <option value="">Select patient</option>
                   {patients.map((p) => (
                     <option key={p.id} value={p.id}>
                       #{p.id} • {p.full_name}
@@ -308,7 +323,7 @@ export default function UploadPage() {
                 </select>
               </div>
               <div className="text-sm text-slate-500 md:text-right">
-                {loadingPatients ? 'Loading patients...' : selectedPatient ? `Selected: ${selectedPatient.full_name}` : 'Select patient to auto-save session.'}
+                {loadingPatients ? 'Loading patients...' : selectedPatient ? `Selected: ${selectedPatient.full_name}` : 'Select a patient to continue.'}
                 <div className="mt-1">
                   <Link to="/" className="text-brand-600 font-semibold hover:underline">Create/Search patients</Link>
                   {selectedPatientId ? (
@@ -340,7 +355,7 @@ export default function UploadPage() {
               }}
               className={`px-5 py-2 rounded-xl font-bold ${mode === 'audio' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'}`}
             >
-              Audio (Whisper)
+              Audio
             </button>
           </div>
 
@@ -374,11 +389,12 @@ export default function UploadPage() {
                   <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full p-3 border rounded-xl">
                     <option value="marathi">Marathi</option>
                     <option value="hindi">Hindi</option>
+                    <option value="english">English</option>
                   </select>
                 </div>
 
                 <button
-                  disabled={loading || !jsonFile}
+                  disabled={loading || !jsonFile || !selectedPatientId}
                   onClick={handleGenerateFromJson}
                   className="w-full mt-10 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
                 >
@@ -409,20 +425,11 @@ export default function UploadPage() {
                   </div>
                 )}
 
-                <div className="w-full mt-6 grid md:grid-cols-3 gap-4">
+                <div className="w-full mt-6 grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-slate-600 mb-2">ASR language</label>
-                    <select value={asrLanguage} onChange={(e) => setAsrLanguage(e.target.value)} className="w-full p-3 border rounded-xl">
-                      <option value="marathi">Marathi</option>
+                    <select value={asrLanguage} disabled className="w-full p-3 border rounded-xl bg-slate-100 text-slate-600 cursor-not-allowed">
                       <option value="english">English</option>
-                      <option value="auto">Auto detect</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-600 mb-2">Whisper model</label>
-                    <select value={baseModel} onChange={(e) => setBaseModel(e.target.value)} className="w-full p-3 border rounded-xl">
-                      <option value="openai/whisper-tiny">openai/whisper-tiny</option>
-                      <option value="openai/whisper-small">openai/whisper-small</option>
                     </select>
                   </div>
                   <div>
@@ -430,37 +437,36 @@ export default function UploadPage() {
                     <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full p-3 border rounded-xl">
                       <option value="marathi">Marathi</option>
                       <option value="hindi">Hindi</option>
+                      <option value="english">English</option>
                     </select>
                   </div>
                 </div>
 
-                <div className="w-full mt-4 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                  <label className="flex items-center gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={diarizationEnabled}
-                      onChange={(e) => setDiarizationEnabled(e.target.checked)}
-                      className="h-4 w-4"
-                    />
-                    <span className="text-sm font-semibold text-slate-700">Enable true diarization (pyannote)</span>
-                  </label>
-                  <p className="text-xs text-slate-500 mt-2">
-                    Requires <code>pyannote.audio</code> in <code>whisper_asr_pipeline/.venv_whisper</code> and a valid <code>HF_TOKEN</code> on backend.
-                    If unavailable, backend falls back to heuristic speakers.
-                  </p>
-                </div>
-
                 <button
-                  disabled={loading || !audioFile}
+                  disabled={loading || !audioFile || !selectedPatientId}
                   onClick={handleTranscribeAudio}
                   className="w-full mt-6 bg-slate-800 text-white py-4 rounded-2xl font-black flex items-center justify-center gap-3 hover:bg-black disabled:bg-slate-200 disabled:text-slate-400 transition"
                 >
                   {loading ? <Loader2 className="animate-spin" /> : <UploadCloud size={20} />}
-                  {loading ? loadingText : 'Transcribe Audio (Whisper)'}
+                  {loading ? loadingText : 'Transcribe Audio'}
                 </button>
 
+                {transcript && !result && (
+                  <div className="w-full mt-5 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
+                      <h4 className="text-sm font-black text-blue-800 uppercase tracking-wider">Transcription Output</h4>
+                      <span className="text-xs font-semibold text-blue-700">
+                        ASR time: {transcriptionMeta?._client_processing_time || (transcriptionMeta?.processing_s ? `${transcriptionMeta.processing_s}s` : '—')}
+                      </span>
+                    </div>
+                    <p className="text-xs text-blue-700 mb-2">
+                      Transcription is ready. You can edit below or run end-to-end to generate SOAP.
+                    </p>
+                  </div>
+                )}
+
                 <button
-                  disabled={loading || !audioFile}
+                  disabled={loading || !audioFile || !selectedPatientId}
                   onClick={handleGenerateFromAudioEndToEnd}
                   className="w-full mt-4 bg-brand-600 text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
                 >
@@ -479,35 +485,8 @@ export default function UploadPage() {
                   />
                 </div>
 
-                <div className="w-full mt-6 grid md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-slate-600 mb-2">PHQ-8</label>
-                    <input type="number" min="0" max="24" value={phq8Score} onChange={(e) => setPhq8Score(e.target.value)} className="w-full p-3 border rounded-xl" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-600 mb-2">Severity</label>
-                    <select value={severity} onChange={(e) => setSeverity(e.target.value)} className="w-full p-3 border rounded-xl">
-                      <option value="unknown">Unknown</option>
-                      <option value="minimal">Minimal</option>
-                      <option value="mild">Mild</option>
-                      <option value="moderate">Moderate</option>
-                      <option value="moderately_severe">Moderately Severe</option>
-                      <option value="severe">Severe</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-600 mb-2">Gender</label>
-                    <select value={gender} onChange={(e) => setGender(e.target.value)} className="w-full p-3 border rounded-xl">
-                      <option value="unknown">Unknown</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
                 <button
-                  disabled={loading || !transcript.trim()}
+                  disabled={loading || !transcript.trim() || !selectedPatientId}
                   onClick={handleGenerateFromTranscript}
                   className="w-full mt-8 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
                 >
@@ -545,6 +524,12 @@ export default function UploadPage() {
             ← Analyze Another File
           </button>
           <SoapNoteViewer data={result} />
+          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 px-5 py-4">
+            <p className="text-xs font-black uppercase tracking-wider text-indigo-700">Session → SOAP Time</p>
+            <p className="text-lg font-black text-indigo-900">
+              {result?.metadata?.session_to_soap_time || result?.metadata?.processing_time || '—'}
+            </p>
+          </div>
           {saveNotice && (
             <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-emerald-50 border border-emerald-200 text-emerald-800'}`}>
               {saveNotice}

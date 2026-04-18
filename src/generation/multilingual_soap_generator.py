@@ -275,7 +275,7 @@ class MultilingualSOAPGenerator:
         # ── BOTH PHASES: Gemma generates English SOAP ──────────────────────
         enriched_conversation = conversation + ner_context + rag_context
 
-        print("📝 Gemma: generating English SOAP note...")
+        # print("📝 Gemma: generating English SOAP note...")
         english_soap = self.soap_generator.generate(
             conversation=enriched_conversation,
             phq8_score=phq8_score,
@@ -286,7 +286,7 @@ class MultilingualSOAPGenerator:
         # ── Translate English SOAP → target language ───────────────────────
         target_soap = english_soap
         if target_lang != 'english' and self.translator:
-            print(f"🔄 NLLB: translating SOAP → {target_lang}...")
+            # print(f"🔄 NLLB: translating SOAP → {target_lang}...")
             target_soap = self._translate_soap(english_soap, target_lang)
 
         return MultilingualSOAPNote(
@@ -299,14 +299,52 @@ class MultilingualSOAPGenerator:
     # ── private helpers ─────────────────────────────────────────────────────
 
     def _extract_turns(self, session_data: Dict, dialect: Optional[str]) -> List[Dict]:
+        # 1) Explicit dialect selection from legacy schema
         if dialect:
             turns = session_data.get('dialects', {}).get(dialect, [])
             if turns:
                 return turns
+
+        # 2) Legacy schema: dialects
         dialects = session_data.get('dialects', {})
-        if dialects:
-            return dialects[next(iter(dialects))]
-        return session_data.get('turns', [])
+        if isinstance(dialects, dict) and dialects:
+            first = dialects[next(iter(dialects))]
+            if isinstance(first, list) and first:
+                return first
+
+        # 3) Newer synthetic schema: styles (e.g., formal_translated)
+        # synthetic_data/* files often store turn lists under styles.*
+        styles = session_data.get('styles', {})
+        if isinstance(styles, dict) and styles:
+            preferred_style_order = [
+                'formal_translated',
+                'translated',
+                'formal',
+                'colloquial',
+                'neutral',
+            ]
+
+            for key in preferred_style_order:
+                candidate = styles.get(key)
+                if isinstance(candidate, list) and candidate:
+                    return candidate
+
+            for value in styles.values():
+                if isinstance(value, list) and value:
+                    return value
+
+        # 4) Flat schema fallback
+        turns = session_data.get('turns', [])
+        if isinstance(turns, list) and turns:
+            return turns
+
+        # 5) Last-resort alternatives seen in some exports
+        for key in ('conversation', 'dialogue', 'messages'):
+            value = session_data.get(key)
+            if isinstance(value, list) and value:
+                return value
+
+        return []
 
     def _format_turns_english(self, turns: List[Dict], max_turns: int = 40) -> str:
         """

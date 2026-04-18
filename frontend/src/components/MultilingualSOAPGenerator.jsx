@@ -1,6 +1,6 @@
 // Example React component for the new multilingual API
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LoadingAnimation from './LoadingAnimation';
 import { apiUrl } from '../lib/api';
 

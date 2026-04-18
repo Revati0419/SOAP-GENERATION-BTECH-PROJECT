@@ -1,5 +1,5 @@
-import React from 'react';
 import { ClipboardCheck, Download, Printer } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 export default function SoapNoteViewer({ data }) {
   // Resolve the target language from the response
@@ -118,3 +118,32 @@ export default function SoapNoteViewer({ data }) {
     </div>
   );
 }
+
+SoapNoteViewer.propTypes = {
+  data: PropTypes.shape({
+    target_language: PropTypes.string,
+    session_id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    input_language: PropTypes.string,
+    soap_english: PropTypes.shape({
+      subjective: PropTypes.string,
+      objective: PropTypes.string,
+      assessment: PropTypes.string,
+      plan: PropTypes.string,
+    }),
+    metadata: PropTypes.shape({
+      processing_time: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      client_processing_time: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      server_processing_time: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    }),
+    entities: PropTypes.shape({
+      patient: PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            text: PropTypes.string,
+          }),
+        ])
+      ),
+    }),
+  }).isRequired,
+};

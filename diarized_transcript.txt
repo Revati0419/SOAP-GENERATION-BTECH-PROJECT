@@ -1,0 +1,126 @@
+[  0.03s -   2.06s] SPEAKER_00: act which will record your body so i'll show you
+[  2.61s -  10.14s] SPEAKER_00: okay so if you can move around a little bit we'll make sure that the connect is recognizing you so you just move your hands a little and you'll see it comes up as a stick figure
+[ 11.07s -  12.59s] SPEAKER_00: okay it's starting there you go
+[ 13.18s -  13.83s] SPEAKER_00: okay great
+[ 14.31s -  18.81s] SPEAKER_00: so i'm going to go ahead and give you this dota and so whenever the
+[ 19.35s -  20.03s] SPEAKER_00: um
+[ 20.47s -  24.01s] SPEAKER_00: interview is finished with the character you can go ahead and ring that doorbell and let me know okay
+[ 36.51s -  38.03s] SPEAKER_00: hi i'm ellie
+[ 38.12s -  39.43s] SPEAKER_00: thanks for coming in today
+[ 39.86s -  43.13s] SPEAKER_00: i was created to talk to people in a safe and secure environment
+[ 43.72s -  44.87s] SPEAKER_00: think of me as a friend
+[ 45.44s -  47.08s] SPEAKER_00: i don't judge i can
+[ 47.26s -  48.16s] SPEAKER_00: i have a computer
+[ 49.19s -  52.21s] SPEAKER_00: i'm here to learn about people and would love to learn about you
+[ 52.38s -  58.72s] SPEAKER_00: i'll ask a few questions to get it started and please feel free to tell me anything your answers are totally confidential
+[ 60.14s -  61.10s] SPEAKER_00: how are you doing today?
+[ 66.01s -  67.26s] SPEAKER_00: thank you for watching
+[ 68.97s -  69.98s] SPEAKER_01: atlantin georgia
+[ 72.96s -  73.79s] SPEAKER_00: why do you have a fillet?
+[ 75.01s -  78.04s] SPEAKER_01: My parents are from here
+[ 82.31s -  83.33s] SPEAKER_00: how do you like your legs?
+[ 83.66s -  84.20s] SPEAKER_01: i love it
+[ 85.67s -  87.63s] SPEAKER_00: What are some things you really like about LA?
+[ 88.30s -  93.05s] SPEAKER_01: i like the weather i like the opportunities
+[ 94.35s -  95.04s] SPEAKER_01: um
+[ 98.19s - 100.66s] SPEAKER_00: how easy was it for you to get used to living in a house?
+[102.29s - 102.95s] SPEAKER_01: um
+[104.37s - 105.35s] SPEAKER_01: it took a minute
+[107.59s - 108.42s] SPEAKER_01: somewhat easy
+[110.76s - 112.33s] SPEAKER_00: what are some things you don't want in a nightclub?
+[114.00s - 115.19s] SPEAKER_01: gestion
+[120.38s - 120.94s] SPEAKER_01: that's it
+[125.58s - 126.71s] SPEAKER_00: what did you study at school?
+[128.43s - 132.35s] SPEAKER_01: um i took up business and administration
+[136.82s - 144.24s] SPEAKER_01: uh yeah i am here and there i'm on a break right now but i plan on going back in the next semester
+[149.21s - 151.70s] SPEAKER_01: uh probably to open up my own business
+[155.89s - 156.51s] SPEAKER_00: awesome
+[165.73s - 168.46s] SPEAKER_01: um no specific reason i just
+[178.52s - 179.33s] SPEAKER_01: once a year
+[189.35s - 190.75s] SPEAKER_01: can be a little bit more specific
+[196.83s - 197.57s] SPEAKER_01: no answer
+[197.64s - 198.24s] SPEAKER_01: yeah
+[203.39s - 208.22s] SPEAKER_01: i like reading books i enjoy cooking exercising is great
+[228.05s - 229.89s] SPEAKER_01: uh probably about
+[231.10s - 232.28s] SPEAKER_01: two weeks ago
+[233.18s - 233.99s] SPEAKER_01: you
+[238.42s - 239.67s] SPEAKER_01: frustrated
+[244.57s - 247.42s] SPEAKER_01: um i don't like bias
+[250.68s - 251.94s] SPEAKER_01: i'm going to go
+[260.09s - 260.82s] SPEAKER_01: not from what
+[279.75s - 287.87s] SPEAKER_01: i like to play sports i enjoy going out with friends and family playing games
+[288.90s - 289.57s] SPEAKER_00: nice
+[290.74s - 293.01s] SPEAKER_00: here's some of it for the positive influence in life
+[294.52s - 295.43s] SPEAKER_01: grandparents
+[302.41s - 303.31s] SPEAKER_00: Can you help me with that?
+[305.23s - 309.03s] SPEAKER_01: um yeah i mean they've always given me great advice
+[310.60s - 311.98s] SPEAKER_01: you always kept it real
+[314.26s - 315.81s] SPEAKER_00: how close are you to your family?
+[316.88s - 317.64s] SPEAKER_01: real close
+[325.77s - 329.55s] SPEAKER_01: i would say going to
+[331.37s - 333.13s] SPEAKER_01: college right after high school
+[337.19s - 339.71s] SPEAKER_01: well i would have been done by now and um
+[340.42s - 343.83s] SPEAKER_01: i would have probably been out in the field
+[344.67s - 345.68s] SPEAKER_01: in the career field
+[347.18s - 348.62s] SPEAKER_00: what made you decide to do that?
+[349.78s - 351.74s] SPEAKER_01: taking a job off the street
+[354.54s - 356.28s] SPEAKER_00: do you have done anything to avoid it?
+[357.97s - 359.86s] SPEAKER_01: i'm sure i could have yes
+[363.97s - 366.20s] SPEAKER_00: what's one of your most memorable experiences?
+[372.01s - 375.25s] SPEAKER_01: i'm not sure maybe when i graduated from high school
+[381.86s - 383.46s] SPEAKER_00: i'd love to hear all about it
+[386.79s - 388.29s] SPEAKER_01: well i i am
+[388.61s - 395.23s] SPEAKER_01: i got my diploma my my diploma that i finished school and i admit all the requirements
+[396.66s - 397.37s] SPEAKER_01: high school
+[398.45s - 399.77s] SPEAKER_01: when i was approved to go
+[401.30s - 402.70s] SPEAKER_01: do whatever i wanted to do
+[403.48s - 404.25s] SPEAKER_00: that's great
+[406.85s - 408.42s] SPEAKER_00: what's it like for you living with them?
+[409.42s - 410.18s] SPEAKER_01: living with who?
+[411.46s - 413.10s] SPEAKER_00: how do you like your living situation?
+[414.08s - 416.08s] SPEAKER_01: um it's all right it could be better
+[417.60s - 418.45s] SPEAKER_00: have your mates
+[418.67s - 419.21s] SPEAKER_01: no
+[426.82s - 429.03s] SPEAKER_00: how easy is it for you to get a good night's sleep?
+[430.97s - 432.20s] SPEAKER_01: uh it's pretty easy
+[434.04s - 435.29s] SPEAKER_00: do you feel that way often?
+[436.64s - 437.50s] SPEAKER_01: uh yes
+[438.53s - 440.23s] SPEAKER_00: what are you like when you just speak well?
+[448.52s - 449.28s] SPEAKER_01: repeat that
+[450.51s - 452.16s] SPEAKER_00: what are you like when you don't speak well?
+[453.19s - 455.35s] SPEAKER_01: Irritated
+[457.36s - 457.97s] SPEAKER_01: lazy
+[462.30s - 463.03s] SPEAKER_00: thank you
+[468.35s - 470.12s] SPEAKER_00: have you been diagnosed with depression?
+[472.06s - 474.00s] SPEAKER_00: have you ever been diagnosed with ttsd
+[475.94s - 477.48s] SPEAKER_00: how many of us have to go to
+[487.79s - 490.25s] SPEAKER_00: when was the last time you felt really happy?
+[492.51s - 494.25s] SPEAKER_01: um the other day
+[496.46s - 497.22s] SPEAKER_00: tell me more about that
+[499.38s - 501.42s] SPEAKER_01: weather was great sun was out
+[504.07s - 505.84s] SPEAKER_00: that sounds like a great situation
+[507.55s - 508.95s] SPEAKER_00: what do you think of today's kids?
+[510.94s - 511.53s] SPEAKER_01: different
+[515.65s - 516.91s] SPEAKER_00: can you give me an example of that?
+[525.35s - 526.21s] SPEAKER_01: lef
+[527.90s - 530.72s] SPEAKER_01: less um interested
+[535.19s - 536.03s] SPEAKER_00: i see you
+[544.79s - 546.14s] SPEAKER_00: what do you do when you're annoyed?
+[548.43s - 549.73s] SPEAKER_01: uh shut down
+[553.70s - 555.25s] SPEAKER_00: when was the last time it happened?
+[559.57s - 561.88s] SPEAKER_01: uh about two weeks ago
+[566.27s - 567.25s] SPEAKER_00: can you tell me about that?
+[568.50s - 571.45s] SPEAKER_01: oh yeah a friend of mine was annoying me and i just
+[572.46s - 573.34s] SPEAKER_01: cut them off
+[575.97s - 577.32s] SPEAKER_01: haha that's alright
+[579.15s - 579.97s] SPEAKER_00: how do you know them?
+[581.04s - 581.66s] SPEAKER_01: friendship
+[589.17s - 590.76s] SPEAKER_00: how would your best friend describe you
+[598.30s - 599.31s] SPEAKER_01: chocolate
+[600.31s - 601.34s] SPEAKER_01: ciao
+[602.54s - 603.35s] SPEAKER_01: thin
+[614.42s - 616.86s] SPEAKER_00: okay i think i've asked everything i need to
+[618.21s - 618.82s] SPEAKER_01: thank you
+[620.36s - 620.91s] SPEAKER_01: bye bye
+[640.39s - 643.74s] SPEAKER_01: so a real life person is really looking at me
+[646.21s - 648.98s] SPEAKER_01: cuz it looks exactly like she was like really

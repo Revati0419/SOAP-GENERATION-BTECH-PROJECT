@@ -6,13 +6,22 @@ References/
 __pycache__/
 *.pyc
 
+.venv/
+.cache/
 #large files
 *.zip
 *.csv
 *.json
 
+chromadb_data
+
 #OS files
 .DS_Store
 
+logs/
+
 whisper_asr_pipeline/.venv_whisper/
 whisper_asr_pipeline/models/
+
+
+.env

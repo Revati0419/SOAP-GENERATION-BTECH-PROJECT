@@ -1,0 +1,15 @@
+INFO:__main__:Loading tokenizer...
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/google/gemma-2b/resolve/main/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/google/gemma-2b/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/google/gemma-2b/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/google/gemma-2b/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/google/gemma-2b "HTTP/1.1 200 OK"
+INFO:__main__:Loading model (k-bit quantization will be enabled if supported)...
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/google/gemma-2b/resolve/main/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/google/gemma-2b/resolve/main/config.json "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/google/gemma-2b/revision/main "HTTP/1.1 200 OK"
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]INFO:httpx:HTTP Request: HEAD https://huggingface.co/google/gemma-2b/resolve/9cf48e52b224239de00d483ec8eb84fb8d0f3a3a/model-00002-of-00002.safetensors "HTTP/1.1 302 Found"
+INFO:httpx:HTTP Request: HEAD https://huggingface.co/google/gemma-2b/resolve/9cf48e52b224239de00d483ec8eb84fb8d0f3a3a/model-00001-of-00002.safetensors "HTTP/1.1 302 Found"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/google/gemma-2b/xet-read-token/9cf48e52b224239de00d483ec8eb84fb8d0f3a3a "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://huggingface.co/api/models/google/gemma-2b/xet-read-token/9cf48e52b224239de00d483ec8eb84fb8d0f3a3a "HTTP/1.1 200 OK"
