@@ -16,7 +16,10 @@ export default function UploadPage() {
   const [jsonFile, setJsonFile] = useState(null);
   const [audioFile, setAudioFile] = useState(null);
   const [transcript, setTranscript] = useState('');
-  const [targetLang, setTargetLang] = useState('marathi');
+  
+  // FIXED: Hardcoded to marathi, removed UI setter
+  const targetLang = 'marathi'; 
+  
   const [asrLanguage] = useState('english');
   const DEFAULT_ASR_MODEL = import.meta.env.VITE_ASR_BASE_MODEL || 'muktan174/whisper-medium-ekacare-medical';
   const [loading, setLoading] = useState(false);
@@ -58,16 +61,15 @@ export default function UploadPage() {
       return;
     }
 
-    const effectiveTargetLang = targetLang || generatedResult.target_language || 'marathi';
     const soapEnglish = generatedResult.soap_english || {};
-    const soapTarget = generatedResult[`soap_${effectiveTargetLang}`] || {};
+    const soapTarget = generatedResult.soap_marathi || {}; // Explicitly look for Marathi
 
     try {
       await createSession({
         patient_id: Number(selectedPatientId),
         source_type: sourceType,
         transcript: transcriptText || '',
-        target_lang: effectiveTargetLang,
+        target_lang: 'marathi',
         input_lang: generatedResult.input_language || asrLanguage || null,
         soap_english: soapEnglish,
         soap_target: soapTarget,
@@ -91,10 +93,10 @@ export default function UploadPage() {
     if (!jsonFile) return;
     if (!ensurePatientSelected()) return;
     setLoading(true);
-  setShowSoapLoading(true);
+    setShowSoapLoading(true);
     setError(null);
     setSaveNotice(null);
-    setLoadingText('Processing NER, LLM & RAG...');
+    setLoadingText('Processing NER, LLM & RAG (Marathi)...');
 
     const start = Date.now();
     setLiveElapsed('0.00s');
@@ -104,7 +106,7 @@ export default function UploadPage() {
 
     const formData = new FormData();
     formData.append('file', jsonFile);
-    formData.append('target_lang', targetLang);
+    formData.append('target_lang', 'marathi'); // Forced
 
     try {
       const response = await axios.post(`${API_BASE}/api/generate-from-json`, formData);
@@ -113,14 +115,14 @@ export default function UploadPage() {
       const data = response.data || {};
       data.metadata = data.metadata || {};
       data.metadata.processing_time = clientTime;
-  data.metadata.session_to_soap_time = clientTime;
+      data.metadata.session_to_soap_time = clientTime;
       setResult(data);
       await persistSession({ sourceType: 'json', generatedResult: data, transcriptText: transcript });
     } catch (err) {
-      setError(err?.response?.data?.detail || 'Pipeline Error. Is the backend running?');
+      setError(err?.response?.data?.detail || 'Pipeline Error.');
     } finally {
       setLoading(false);
-  setShowSoapLoading(false);
+      setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -132,9 +134,9 @@ export default function UploadPage() {
     if (!audioFile) return;
     if (!ensurePatientSelected()) return;
     setLoading(true);
-  setShowSoapLoading(false);
+    setShowSoapLoading(false);
     setError(null);
-    setLoadingText('Transcribing audio with Whisper...');
+    setLoadingText('Transcribing audio...');
     const start = Date.now();
     setLiveElapsed('0.00s');
     liveTimerRef.current = setInterval(() => {
@@ -144,8 +146,8 @@ export default function UploadPage() {
     const formData = new FormData();
     formData.append('file', audioFile);
     formData.append('language', asrLanguage);
-  formData.append('base_model', DEFAULT_ASR_MODEL);
-  formData.append('diarization', 'false');
+    formData.append('base_model', DEFAULT_ASR_MODEL);
+    formData.append('diarization', 'false');
 
     try {
       const response = await axios.post(`${API_BASE}/api/transcribe-audio`, formData);
@@ -153,14 +155,14 @@ export default function UploadPage() {
       const totalMs = Date.now() - start;
       data._client_processing_time = (totalMs / 1000).toFixed(2) + 's';
       setTranscript(data?.transcript || '');
-  setTranscriptionMeta(data);
-  setResult(null);
-  setSaveNotice(null);
+      setTranscriptionMeta(data);
+      setResult(null);
+      setSaveNotice(null);
     } catch (err) {
-      setError(err?.response?.data?.detail || 'ASR Error. Please check backend + Whisper setup.');
+      setError(err?.response?.data?.detail || 'ASR Error.');
     } finally {
       setLoading(false);
-  setShowSoapLoading(false);
+      setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -171,15 +173,15 @@ export default function UploadPage() {
   const handleGenerateFromTranscript = async () => {
     if (!ensurePatientSelected()) return;
     if (!transcript.trim()) {
-      setError('Please transcribe audio first (or paste transcript manually).');
+      setError('Please transcribe audio first.');
       return;
     }
 
     setLoading(true);
-  setShowSoapLoading(true);
+    setShowSoapLoading(true);
     setError(null);
     setSaveNotice(null);
-    setLoadingText('Generating SOAP from transcript...');
+    setLoadingText('Generating Marathi SOAP...');
     const start = Date.now();
     setLiveElapsed('0.00s');
     liveTimerRef.current = setInterval(() => {
@@ -189,21 +191,21 @@ export default function UploadPage() {
     try {
       const response = await axios.post(`${API_BASE}/api/generate-from-transcript`, {
         conversation: transcript,
-        target_lang: targetLang,
+        target_lang: 'marathi', // Forced
       });
       const totalMs = Date.now() - start;
       const clientTime = (totalMs / 1000).toFixed(2) + 's';
       const data = response.data || {};
       data.metadata = data.metadata || {};
       data.metadata.processing_time = clientTime;
-  data.metadata.session_to_soap_time = clientTime;
+      data.metadata.session_to_soap_time = clientTime;
       setResult(data);
       await persistSession({ sourceType: 'transcript', generatedResult: data, transcriptText: transcript });
     } catch (err) {
-      setError(err?.response?.data?.detail || 'Failed to generate SOAP from transcript.');
+      setError(err?.response?.data?.detail || 'Failed to generate SOAP.');
     } finally {
       setLoading(false);
-  setShowSoapLoading(false);
+      setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -219,10 +221,10 @@ export default function UploadPage() {
     }
 
     setLoading(true);
-  setShowSoapLoading(true);
+    setShowSoapLoading(true);
     setError(null);
     setSaveNotice(null);
-    setLoadingText('Running end-to-end pipeline: Whisper → SOAP...');
+    setLoadingText('Running Marathi Pipeline...');
     const start = Date.now();
     setLiveElapsed('0.00s');
     liveTimerRef.current = setInterval(() => {
@@ -232,9 +234,9 @@ export default function UploadPage() {
     const formData = new FormData();
     formData.append('file', audioFile);
     formData.append('language', asrLanguage);
-  formData.append('base_model', DEFAULT_ASR_MODEL);
-  formData.append('diarization', 'false');
-    formData.append('target_lang', targetLang);
+    formData.append('base_model', DEFAULT_ASR_MODEL);
+    formData.append('diarization', 'false');
+    formData.append('target_lang', 'marathi'); // Forced
 
     try {
       const response = await axios.post(`${API_BASE}/api/generate-from-audio`, formData);
@@ -250,10 +252,10 @@ export default function UploadPage() {
         transcriptText: data.asr?.transcript || transcript,
       });
     } catch (err) {
-      setError(err?.response?.data?.detail || 'End-to-end audio pipeline failed.');
+      setError(err?.response?.data?.detail || 'End-to-end pipeline failed.');
     } finally {
       setLoading(false);
-  setShowSoapLoading(false);
+      setShowSoapLoading(false);
       if (liveTimerRef.current) {
         clearInterval(liveTimerRef.current);
         liveTimerRef.current = null;
@@ -261,13 +263,6 @@ export default function UploadPage() {
       const totalMs = Date.now() - start;
       const clientTime = (totalMs / 1000).toFixed(2) + 's';
       setLiveElapsed(clientTime);
-      setResult((prev) => {
-        if (!prev) return prev;
-        const meta = prev.metadata || {};
-        if (!meta.processing_time) meta.processing_time = clientTime;
-        if (!meta.session_to_soap_time) meta.session_to_soap_time = clientTime;
-        return { ...prev, metadata: meta };
-      });
     }
   };
 
@@ -287,7 +282,7 @@ export default function UploadPage() {
 
   return (
     <div className="max-w-5xl mx-auto p-12">
-  <LoadingAnimation isOpen={loading && showSoapLoading} />
+      <LoadingAnimation isOpen={loading && showSoapLoading} />
       {loading && (
         <div className="fixed top-6 right-6 bg-white/90 px-3 py-2 rounded-lg shadow-sm text-sm font-medium">
           Time: {liveElapsed}
@@ -297,14 +292,15 @@ export default function UploadPage() {
       {!result ? (
         <div className="space-y-8 animate-in fade-in duration-500">
           <div className="text-center">
-            <h1 className="text-4xl font-black text-slate-900 tracking-tight">Pipeline Session Analysis</h1>
-            <p className="text-slate-500 font-medium mt-2 tracking-wide">Upload session JSON or audio to generate clinical SOAP notes.</p>
+            <h1 className="text-4xl font-black text-slate-900 tracking-tight">Marathi Clinical Analysis</h1>
+            <p className="text-slate-500 font-medium mt-2 tracking-wide">मराठी SOAP नोट्स व्युत्पन्न करण्यासाठी सेशन अपलोड करा.</p>
           </div>
 
+          {/* Patient Selection Block */}
           <div className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div className="flex-1">
-                <label className="block text-sm font-bold text-slate-600 mb-2">Patient for this session</label>
+                <label className="block text-sm font-bold text-slate-600 mb-2">रुग्ण निवडा (Select Patient)</label>
                 <select
                   value={selectedPatientId}
                   onChange={(e) => {
@@ -323,40 +319,14 @@ export default function UploadPage() {
                 </select>
               </div>
               <div className="text-sm text-slate-500 md:text-right">
-                {loadingPatients ? 'Loading patients...' : selectedPatient ? `Selected: ${selectedPatient.full_name}` : 'Select a patient to continue.'}
-                <div className="mt-1">
-                  <Link to="/" className="text-brand-600 font-semibold hover:underline">Create/Search patients</Link>
-                  {selectedPatientId ? (
-                    <>
-                      {' '}
-                      •{' '}
-                      <Link to={`/history?patient_id=${selectedPatientId}`} className="text-brand-600 font-semibold hover:underline">View patient history</Link>
-                    </>
-                  ) : null}
-                </div>
+                {loadingPatients ? 'Loading...' : selectedPatient ? `Selected: ${selectedPatient.full_name}` : 'Select a patient.'}
               </div>
             </div>
           </div>
 
           <div className="flex items-center justify-center gap-3">
-            <button
-              onClick={() => {
-                setMode('json');
-                setError(null);
-              }}
-              className={`px-5 py-2 rounded-xl font-bold ${mode === 'json' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'}`}
-            >
-              JSON Session
-            </button>
-            <button
-              onClick={() => {
-                setMode('audio');
-                setError(null);
-              }}
-              className={`px-5 py-2 rounded-xl font-bold ${mode === 'audio' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'}`}
-            >
-              Audio
-            </button>
+            <button onClick={() => setMode('json')} className={`px-5 py-2 rounded-xl font-bold ${mode === 'json' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'}`}>JSON Session</button>
+            <button onClick={() => setMode('audio')} className={`px-5 py-2 rounded-xl font-bold ${mode === 'audio' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'}`}>Audio</button>
           </div>
 
           <div className="bg-white p-12 rounded-[3rem] border-2 border-slate-100 shadow-2xl shadow-slate-200/50 flex flex-col items-center">
@@ -368,38 +338,25 @@ export default function UploadPage() {
                       <UploadCloud size={48} />
                     </div>
                     <p className="text-lg font-black text-slate-700">Select Session JSON</p>
-                    <p className="text-sm text-slate-400 font-bold uppercase tracking-widest mt-2 underline">Browse Files</p>
                     <input type="file" className="hidden" accept=".json" onChange={handleJsonFileChange} />
                   </label>
                 ) : (
                   <div className="w-full bg-slate-50 rounded-[2rem] p-10 border border-slate-200 flex flex-col items-center">
-                    <div className="bg-white p-4 rounded-2xl shadow-sm mb-4">
-                      <FileJson size={40} className="text-brand-600" />
-                    </div>
+                    <FileJson size={40} className="text-brand-600 mb-2" />
                     <p className="text-xl font-black text-slate-800">{jsonFile.name}</p>
-                    <p className="text-slate-400 font-bold text-xs uppercase mt-1">Ready for Pipeline Analysis</p>
-                    <button onClick={() => setJsonFile(null)} className="mt-6 text-red-500 font-black text-xs uppercase tracking-widest flex items-center gap-1 hover:text-red-700 transition">
-                      <X size={14}/> Remove File
-                    </button>
+                    <button onClick={() => setJsonFile(null)} className="mt-4 text-red-500 font-bold text-xs uppercase tracking-widest">Remove File</button>
                   </div>
                 )}
 
-                <div className="w-full mt-6">
-                  <label className="block text-sm font-bold text-slate-600 mb-2">Target language</label>
-                  <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full p-3 border rounded-xl">
-                    <option value="marathi">Marathi</option>
-                    <option value="hindi">Hindi</option>
-                    <option value="english">English</option>
-                  </select>
-                </div>
+                {/* REMOVED: Target Language Dropdown (now hardcoded to Marathi) */}
 
                 <button
                   disabled={loading || !jsonFile || !selectedPatientId}
                   onClick={handleGenerateFromJson}
-                  className="w-full mt-10 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
+                  className="w-full mt-10 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition"
                 >
                   {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24} />}
-                  {loading ? loadingText : 'Start Pipeline Analysis'}
+                  Generate Marathi SOAP
                 </button>
               </>
             ) : (
@@ -409,132 +366,69 @@ export default function UploadPage() {
                     <div className="bg-brand-100 text-brand-600 p-5 rounded-3xl mb-3 group-hover:scale-110 transition">
                       <UploadCloud size={42} />
                     </div>
-                    <p className="text-lg font-black text-slate-700">Select Audio (MP3/WAV/M4A/FLAC/OGG)</p>
-                    <p className="text-sm text-slate-400 font-bold uppercase tracking-widest mt-2 underline">Browse Files</p>
-                    <input type="file" className="hidden" accept=".mp3,.wav,.m4a,.flac,.ogg,audio/*" onChange={handleAudioFileChange} />
+                    <p className="text-lg font-black text-slate-700">Select Audio File</p>
+                    <input type="file" className="hidden" accept="audio/*" onChange={handleAudioFileChange} />
                   </label>
                 ) : (
                   <div className="w-full bg-slate-50 rounded-[2rem] p-8 border border-slate-200 flex flex-col items-center">
-                    <div className="bg-white p-4 rounded-2xl shadow-sm mb-4">
-                      <UploadCloud size={36} className="text-brand-600" />
-                    </div>
+                    <UploadCloud size={36} className="text-brand-600 mb-2" />
                     <p className="text-lg font-black text-slate-800 text-center break-all">{audioFile.name}</p>
-                    <button onClick={() => setAudioFile(null)} className="mt-4 text-red-500 font-black text-xs uppercase tracking-widest flex items-center gap-1 hover:text-red-700 transition">
-                      <X size={14}/> Remove File
-                    </button>
+                    <button onClick={() => setAudioFile(null)} className="mt-4 text-red-500 font-bold text-xs uppercase tracking-widest">Remove File</button>
                   </div>
                 )}
 
-                <div className="w-full mt-6 grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-slate-600 mb-2">ASR language</label>
-                    <select value={asrLanguage} disabled className="w-full p-3 border rounded-xl bg-slate-100 text-slate-600 cursor-not-allowed">
-                      <option value="english">English</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-600 mb-2">Target language</label>
-                    <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full p-3 border rounded-xl">
-                      <option value="marathi">Marathi</option>
-                      <option value="hindi">Hindi</option>
-                      <option value="english">English</option>
-                    </select>
-                  </div>
-                </div>
+                {/* REMOVED: Target/ASR Language Grid (now hardcoded) */}
 
                 <button
                   disabled={loading || !audioFile || !selectedPatientId}
                   onClick={handleTranscribeAudio}
-                  className="w-full mt-6 bg-slate-800 text-white py-4 rounded-2xl font-black flex items-center justify-center gap-3 hover:bg-black disabled:bg-slate-200 disabled:text-slate-400 transition"
+                  className="w-full mt-6 bg-slate-800 text-white py-4 rounded-2xl font-black flex items-center justify-center gap-3 hover:bg-black disabled:bg-slate-200"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : <UploadCloud size={20} />}
-                  {loading ? loadingText : 'Transcribe Audio'}
+                   Transcribe Audio
                 </button>
-
-                {transcript && !result && (
-                  <div className="w-full mt-5 rounded-2xl border border-blue-200 bg-blue-50 p-4">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                      <h4 className="text-sm font-black text-blue-800 uppercase tracking-wider">Transcription Output</h4>
-                      <span className="text-xs font-semibold text-blue-700">
-                        ASR time: {transcriptionMeta?._client_processing_time || (transcriptionMeta?.processing_s ? `${transcriptionMeta.processing_s}s` : '—')}
-                      </span>
-                    </div>
-                    <p className="text-xs text-blue-700 mb-2">
-                      Transcription is ready. You can edit below or run end-to-end to generate SOAP.
-                    </p>
-                  </div>
-                )}
 
                 <button
                   disabled={loading || !audioFile || !selectedPatientId}
                   onClick={handleGenerateFromAudioEndToEnd}
-                  className="w-full mt-4 bg-brand-600 text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
+                  className="w-full mt-4 bg-brand-600 text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 transition"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={22} />}
-                  {loading ? loadingText : 'Run End-to-End (Audio → SOAP)'}
+                   Run Marathi Pipeline (End-to-End)
                 </button>
 
                 <div className="w-full mt-6">
-                  <label className="block text-sm font-bold text-slate-600 mb-2">Transcript (editable)</label>
+                  <label className="block text-sm font-bold text-slate-600 mb-2">संवाद उतारा (Transcript)</label>
                   <textarea
                     value={transcript}
                     onChange={(e) => setTranscript(e.target.value)}
-                    rows={10}
+                    rows={8}
                     className="w-full p-3 border rounded-xl"
-                    placeholder="Transcript will appear here after ASR. You can edit it before SOAP generation."
+                    placeholder="Transcript will appear here..."
                   />
                 </div>
 
                 <button
                   disabled={loading || !transcript.trim() || !selectedPatientId}
                   onClick={handleGenerateFromTranscript}
-                  className="w-full mt-8 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
+                  className="w-full mt-8 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 shadow-xl"
                 >
-                  {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24} />}
-                  {loading ? loadingText : 'Generate SOAP from Transcript'}
+                  Generate Marathi SOAP
                 </button>
-
-                <p className="w-full mt-3 text-xs text-slate-500 font-medium text-center">
-                  Tip: Use <strong>Run End-to-End</strong> for one-click flow, or use the manual two-step flow to edit transcript before SOAP generation.
-                </p>
               </>
             )}
           </div>
 
-          {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 rounded-2xl px-5 py-4 font-semibold">
-              {error}
-            </div>
-          )}
-          {saveNotice && (
-            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-emerald-50 border border-emerald-200 text-emerald-800'}`}>
-              {saveNotice}
-            </div>
-          )}
+          {error && <div className="bg-red-50 border border-red-200 text-red-700 rounded-2xl px-5 py-4 font-semibold">{error}</div>}
+          {saveNotice && <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 text-amber-800' : 'bg-emerald-50 text-emerald-800'}`}>{saveNotice}</div>}
         </div>
       ) : (
         <div className="space-y-10 animate-in slide-in-from-bottom-10 duration-700">
-          <button
-            onClick={() => {
-              setResult(null);
-              setError(null);
-            }}
-            className="font-black text-slate-400 hover:text-brand-600 flex items-center gap-2 transition uppercase text-xs tracking-widest"
-          >
+          <button onClick={() => setResult(null)} className="font-black text-slate-400 hover:text-brand-600 flex items-center gap-2 uppercase text-xs">
             ← Analyze Another File
           </button>
+          
           <SoapNoteViewer data={result} />
-          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 px-5 py-4">
-            <p className="text-xs font-black uppercase tracking-wider text-indigo-700">Session → SOAP Time</p>
-            <p className="text-lg font-black text-indigo-900">
-              {result?.metadata?.session_to_soap_time || result?.metadata?.processing_time || '—'}
-            </p>
-          </div>
-          {saveNotice && (
-            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-emerald-50 border border-emerald-200 text-emerald-800'}`}>
-              {saveNotice}
-            </div>
-          )}
+          
+          {saveNotice && <div className="rounded-2xl px-5 py-4 bg-emerald-50 text-emerald-800 font-semibold">{saveNotice}</div>}
         </div>
       )}
     </div>

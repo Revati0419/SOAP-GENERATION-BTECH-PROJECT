@@ -249,55 +249,55 @@ class ClinicalTermDatabase:
     with accurate Marathi and Hindi translations
     """
     
+    # In rag.py -> ClinicalTermDatabase class
+
     MENTAL_HEALTH_TERMS = [
-        # Symptoms
-        {"english": "depression", "marathi": "नैराश्य", "hindi": "अवसाद", "category": "symptom"},
-        {"english": "anxiety", "marathi": "चिंता", "hindi": "चिंता", "category": "symptom"},
-        {"english": "stress", "marathi": "ताण", "hindi": "तनाव", "category": "symptom"},
-        {"english": "insomnia", "marathi": "निद्रानाश", "hindi": "अनिद्रा", "category": "symptom"},
-        {"english": "fatigue", "marathi": "थकवा", "hindi": "थकान", "category": "symptom"},
-        {"english": "hopelessness", "marathi": "निराशा", "hindi": "निराशा", "category": "symptom"},
-        {"english": "irritability", "marathi": "चिडचिड", "hindi": "चिड़चिड़ापन", "category": "symptom"},
-        {"english": "panic attack", "marathi": "घबराट", "hindi": "घबराहट का दौरा", "category": "symptom"},
-        {"english": "mood swings", "marathi": "मनःस्थिती बदल", "hindi": "मिजाज में बदलाव", "category": "symptom"},
-        {"english": "loss of interest", "marathi": "रुची कमी होणे", "hindi": "रुचि में कमी", "category": "symptom"},
-        {"english": "concentration problems", "marathi": "एकाग्रता समस्या", "hindi": "एकाग्रता की समस्या", "category": "symptom"},
-        {"english": "appetite changes", "marathi": "भूक बदल", "hindi": "भूख में बदलाव", "category": "symptom"},
-        {"english": "sleep disturbance", "marathi": "झोपेत अडथळा", "hindi": "नींद में खलल", "category": "symptom"},
-        {"english": "low energy", "marathi": "कमी ऊर्जा", "hindi": "कम ऊर्जा", "category": "symptom"},
-        {"english": "worthlessness", "marathi": "निरर्थकता", "hindi": "बेकार होने का एहसास", "category": "symptom"},
-        {"english": "guilt", "marathi": "अपराधीपणा", "hindi": "अपराध बोध", "category": "symptom"},
-        {"english": "suicidal thoughts", "marathi": "आत्महत्येचे विचार", "hindi": "आत्महत्या के विचार", "category": "symptom"},
-        {"english": "self-harm", "marathi": "स्वतःला इजा", "hindi": "आत्म-हानि", "category": "symptom"},
-        
-        # Diagnoses
-        {"english": "major depressive disorder", "marathi": "मुख्य नैराश्य विकार", "hindi": "प्रमुख अवसादग्रस्तता विकार", "category": "diagnosis"},
-        {"english": "generalized anxiety disorder", "marathi": "सामान्यीकृत चिंता विकार", "hindi": "सामान्यीकृत चिंता विकार", "category": "diagnosis"},
-        {"english": "bipolar disorder", "marathi": "द्विध्रुवीय विकार", "hindi": "द्विध्रुवी विकार", "category": "diagnosis"},
-        {"english": "PTSD", "marathi": "आघातोत्तर ताण विकार", "hindi": "पीटीएसडी", "category": "diagnosis"},
-        {"english": "social anxiety", "marathi": "सामाजिक चिंता", "hindi": "सामाजिक चिंता", "category": "diagnosis"},
-        
-        # Severity
-        {"english": "mild", "marathi": "सौम्य", "hindi": "हल्का", "category": "severity"},
-        {"english": "moderate", "marathi": "मध्यम", "hindi": "मध्यम", "category": "severity"},
-        {"english": "severe", "marathi": "तीव्र", "hindi": "गंभीर", "category": "severity"},
-        {"english": "minimal", "marathi": "अत्यल्प", "hindi": "न्यूनतम", "category": "severity"},
-        
-        # Treatment
-        {"english": "psychotherapy", "marathi": "मानसोपचार", "hindi": "मनोचिकित्सा", "category": "treatment"},
-        {"english": "cognitive behavioral therapy", "marathi": "संज्ञानात्मक वर्तणूक उपचार", "hindi": "संज्ञानात्मक व्यवहार थेरेपी", "category": "treatment"},
-        {"english": "counseling", "marathi": "समुपदेशन", "hindi": "परामर्श", "category": "treatment"},
-        {"english": "medication", "marathi": "औषधोपचार", "hindi": "दवाई", "category": "treatment"},
-        {"english": "antidepressant", "marathi": "प्रतिनैराश्यक", "hindi": "अवसादरोधी", "category": "treatment"},
-        {"english": "follow-up", "marathi": "पाठपुरावा", "hindi": "अनुवर्ती", "category": "treatment"},
-        
-        # SOAP specific
-        {"english": "chief complaint", "marathi": "मुख्य तक्रार", "hindi": "मुख्य शिकायत", "category": "soap"},
-        {"english": "history of present illness", "marathi": "सध्याच्या आजाराचा इतिहास", "hindi": "वर्तमान बीमारी का इतिहास", "category": "soap"},
-        {"english": "assessment", "marathi": "मूल्यांकन", "hindi": "मूल्यांकन", "category": "soap"},
-        {"english": "treatment plan", "marathi": "उपचार योजना", "hindi": "उपचार योजना", "category": "soap"},
-        {"english": "risk assessment", "marathi": "जोखीम मूल्यांकन", "hindi": "जोखिम मूल्यांकन", "category": "soap"},
-        {"english": "prognosis", "marathi": "रोगनिदान", "hindi": "पूर्वानुमान", "category": "soap"},
+        # 1. Chief Complaint (मुख्य तक्रार)
+        {"english": "chief complaint", "marathi": "मुख्य तक्रार", "category": "cc"},
+        {"english": "presenting symptoms", "marathi": "सध्याची लक्षणे", "category": "cc"},
+
+        # 2. HPI (सध्याच्या आजाराचा इतिहास)
+        {"english": "history of present illness", "marathi": "सध्याच्या आजाराचा इतिहास", "category": "hpi"},
+        {"english": "onset", "marathi": "सुरुवात", "category": "hpi"},
+        {"english": "triggering factor", "marathi": "उत्तेजक घटक", "category": "hpi"},
+
+        # 3. Trauma History (आघाताचा इतिहास)
+        {"english": "trauma history", "marathi": "आघाताचा इतिहास", "category": "trauma"},
+        {"english": "emotional distress", "marathi": "भावनिक त्रास", "category": "trauma"},
+        {"english": "past regret", "marathi": "भूतकाळातील खेद", "category": "trauma"},
+
+        # 4. Psychosocial (मनोसामाजिक इतिहास)
+        {"english": "psychosocial history", "marathi": "मनोसामाजिक इतिहास", "category": "psychosocial"},
+        {"english": "family support", "marathi": "कौटुंबिक आधार", "category": "psychosocial"},
+        {"english": "social isolation", "marathi": "सामाजिक एकाकीपणा", "category": "psychosocial"},
+
+        # 5. Functional Status (कार्यक्षम स्थिती)
+        {"english": "functional status", "marathi": "कार्यक्षम स्थिती", "category": "functional"},
+        {"english": "daily activities", "marathi": "दैनंदिन क्रिया", "category": "functional"},
+        {"english": "occupational history", "marathi": "व्यावसायिक इतिहास", "category": "functional"},
+
+        # 6. Biological (जैविक निरीक्षणे)
+        {"english": "biological observations", "marathi": "जैविक निरीक्षणे", "category": "biological"},
+        {"english": "sleep patterns", "marathi": "झोपण्याची पद्धत", "category": "biological"},
+        {"english": "appetite change", "marathi": "भूकेत बदल", "category": "biological"},
+
+        # 7. MSE (मानसिक स्थिती तपासणी)
+        {"english": "mental status exam", "marathi": "मानसिक स्थिती तपासणी", "category": "mse"},
+        {"english": "affect and mood", "marathi": "प्रभाव आणि मनःस्थिती", "category": "mse"},
+        {"english": "thought process", "marathi": "विचार प्रक्रिया", "category": "mse"},
+
+        # 8. Medical History (वैद्यकीय इतिहास)
+        {"english": "medical history", "marathi": "वैद्यकीय इतिहास", "category": "medical"},
+        {"english": "physical illness", "marathi": "शारीरिक आजार", "category": "medical"},
+
+        # 9. Past Psych History (पूर्व मनोरुग्ण इतिहास)
+        {"english": "past psychiatric history", "marathi": "पूर्व मनोरुग्ण इतिहास", "category": "past_psych"},
+        {"english": "previous diagnosis", "marathi": "पूर्वीचे निदान", "category": "past_psych"},
+
+        # 10. Plan (उपचार योजना)
+        {"english": "treatment plan", "marathi": "उपचार योजना", "category": "plan"},
+        {"english": "safety precautions", "marathi": "सुरक्षा खबरदारी", "category": "plan"},
+        {"english": "follow up", "marathi": "पाठपुरावा", "category": "plan"}
     ]
     
     @classmethod

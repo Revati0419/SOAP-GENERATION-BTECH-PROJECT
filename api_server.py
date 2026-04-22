@@ -253,37 +253,17 @@ def _sync_transcribe_audio(
 
 @app.post("/api/generate-from-transcript")
 async def generate_from_transcript(input_data: TranscriptInput):
-    """
-    NEW ENDPOINT: Generate SOAP from raw transcript in any language
-    
-    Accepts: Marathi, Hindi, English, or mixed language transcript
-    Returns: SOAP note in English + Input Language
-    
-    Example:
-    {
-        "conversation": "डॉक्टर: तुम्हाला कसे वाटते?\nरुग्ण: मला झोप येत नाही...",
-        "phq8_score": 15,
-        "severity": "moderate",
-        "gender": "female",
-        "target_lang": "marathi"
-    }
-    """
     try:
-        print(f"🚀 Processing transcript (length: {len(input_data.conversation)} chars)")
-        
-        # Generate using new multilingual generator
+        # Force target_lang to marathi for your project requirement
         result = multilingual_generator.generate_from_transcript(
             conversation=input_data.conversation,
             phq8_score=input_data.phq8_score,
             severity=input_data.severity,
             gender=input_data.gender,
-            target_lang=input_data.target_lang
+            target_lang="marathi" 
         )
-        
         return result.to_dict()
-    
     except Exception as e:
-        print(f"❌ Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -329,20 +309,20 @@ async def list_patient_sessions(patient_id: int, limit: int = 100):
 
 @app.post("/api/sessions")
 async def create_session(session: SessionCreate):
-    """Persist a generated SOAP note as a patient session."""
-    if session.source_type not in {"json", "audio", "transcript"}:
-        raise HTTPException(status_code=400, detail="source_type must be one of: json, audio, transcript")
-
     payload = session.model_dump()
-    # Autofill soap target from full result if not explicitly provided.
-    if not payload.get("soap_target") and payload.get("full_result"):
-        target_lang = payload.get("target_lang") or "marathi"
-        payload["soap_target"] = payload["full_result"].get(f"soap_{target_lang}")
+    
+    # Ensure we extract the 'soap_marathi' dictionary for the database
+    if payload.get("full_result"):
+        full = payload["full_result"]
+        # Pull the marathi 10-section dictionary
+        payload["soap_target"] = full.get("soap_marathi")
+        payload["soap_english"] = full.get("soap_english")
+        payload["target_lang"] = "marathi"
 
     try:
         created = repo.create_session(payload)
         return {"session": created}
-    except ValueError as e:
+    except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
 
