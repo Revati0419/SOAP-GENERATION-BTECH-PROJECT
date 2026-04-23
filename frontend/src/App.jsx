@@ -7,9 +7,9 @@ import HistoryPage from './pages/HistoryPage';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-[radial-gradient(circle_at_top,#e8f0ff_0%,#f5f8ff_30%,#f8fafc_65%)]">
         <Navbar />
-        <main>
+        <main className="px-4 pb-8 pt-6 md:px-8">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/upload" element={<UploadPage />} />

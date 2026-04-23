@@ -527,8 +527,14 @@ async def generate_from_audio(
         )
         soap_result = note.to_dict()
 
-        soap_en = soap_result.get("soap_english") or {}
-        has_content = any((soap_en.get(k) or "").strip() for k in ["subjective", "objective", "assessment", "plan"])
+        target_lang_resolved = (
+            soap_result.get("target_language")
+            or (soap_result.get("metadata") or {}).get("target_language")
+            or target_lang
+            or "marathi"
+        )
+        primary_soap = soap_result.get(f"soap_{target_lang_resolved}") or soap_result.get("soap_english") or {}
+        has_content = any((primary_soap.get(k) or "").strip() for k in ["subjective", "objective", "assessment", "plan"])
         if not has_content:
             note = multilingual_generator.generate_from_transcript(
                 conversation=transcript,

@@ -40,7 +40,7 @@ class SOAPGenerator:
     """
     
     # Strongly constrained clinical prompt for better factuality and structure.
-    PROMPT_TEMPLATE = """You are a psychiatrist writing a professional SOAP note.
+    PROMPT_TEMPLATE = """You are a psychiatrist writing a professional, detailed SOAP note.
 
 PHQ-8: {phq8_score}/24 | Severity: {severity} | Gender: {gender}
 
@@ -50,39 +50,66 @@ TRANSCRIPT:
 Rules:
 1) Use ONLY evidence from transcript. Do NOT invent symptoms, diagnosis details, or risk factors.
 2) If information is missing, write "Not clearly elicited from interview.".
-3) Keep bullets concise, clinically neutral, and non-repetitive.
+3) Keep bullets clinically neutral, specific, non-repetitive, and slightly descriptive.
 4) Output ONLY the four SOAP sections below. No markdown fences, no preface.
+5) Under each SOAP section, cover the requested subsection points.
+6) Do NOT use markdown headings like ###.
+7) Keep each clinical point on a new line and prefix each point with "- ".
 
 **SUBJECTIVE:**
-- Chief Complaint:
-- Current Symptoms (onset/duration):
-- Mood & Sleep:
-- Appetite & Energy:
-- Suicidal/Self-harm Ideation:
+मुख्य तक्रार (Chief Complaint):
+- Primary reason for visit in patient's own words.
+सध्याच्या आजाराचा इतिहास (HPI):
+- Symptom timeline, progression, triggers, relieving factors.
+आघाताचा इतिहास (Trauma History):
+- Past trauma, grief, deep regrets (if mentioned).
+मनोसामाजिक इतिहास (Psychosocial History):
+- Family, upbringing, relationships, social support.
+कार्यक्षम स्थिती (Functional Status):
+- Daily activities, hobbies, work/study impact.
 
 **OBJECTIVE:**
-- Appearance & Behavior:
-- Speech & Affect:
-- Thought Process:
-- Insight & Judgment:
+वैद्यकीय इतिहास (Medical History):
+- Relevant physical illnesses, comorbidities, medications.
+पूर्व मनोरुग्ण इतिहास (Past Psychiatric History):
+- Previous diagnoses, treatments, admissions, adherence.
+जैविक निरीक्षणे (Biological Observations):
+- Sleep, appetite, energy, somatic/psychomotor observations.
+मानसिक स्थिती तपासणी (Mental Status Exam):
+- Appearance, behavior, speech, mood/affect, thought process/content, insight/judgment.
+Structured Scores:
 - PHQ-8: {phq8_score} ({severity})
 
 **ASSESSMENT:**
-- Primary Diagnosis (DSM-5):
-- Risk Level:
-- Key Contributing Factors:
+Diagnostic Formulation:
+- Most likely diagnosis and clinical reasoning from transcript evidence.
+Risk Formulation:
+- Suicide/self-harm/violence risk level, risk factors, protective factors.
+Key Contributing Factors:
+- Biological, psychological, social maintaining factors.
 
 **PLAN:**
-- Therapy:
-- Medication (if needed):
-- Safety Plan:
-- Follow-up:"""
+उपचार आणि सुरक्षा योजना (Treatment & Safety Plan):
+- Immediate next steps and crisis/safety guidance.
+Therapy Plan:
+- Modality/focus (e.g., CBT, supportive therapy), short-term goals.
+Medication Considerations:
+- If indicated, evaluation/referral and adherence counseling.
+Follow-up & Monitoring:
+- Timeframe, warning signs, measurable review checkpoints."""
 
     SECTION_HEADERS = {
         'subjective': re.compile(r'(?:\*\*)?\s*subjective\s*:?\s*(?:\*\*)?', re.IGNORECASE),
         'objective': re.compile(r'(?:\*\*)?\s*objective\s*:?\s*(?:\*\*)?', re.IGNORECASE),
         'assessment': re.compile(r'(?:\*\*)?\s*assessment\s*:?\s*(?:\*\*)?', re.IGNORECASE),
         'plan': re.compile(r'(?:\*\*)?\s*plan\s*:?\s*(?:\*\*)?', re.IGNORECASE),
+    }
+
+    SHORT_SECTION_HEADERS = {
+        'subjective': re.compile(r'^\s*(?:s|subj)\s*[:\-]\s*$', re.IGNORECASE),
+        'objective': re.compile(r'^\s*(?:o|obj)\s*[:\-]\s*$', re.IGNORECASE),
+        'assessment': re.compile(r'^\s*(?:a|assess?)\s*[:\-]\s*$', re.IGNORECASE),
+        'plan': re.compile(r'^\s*(?:p|pln)\s*[:\-]\s*$', re.IGNORECASE),
     }
 
     def __init__(self, model: str = "gemma2:2b", 
@@ -209,6 +236,7 @@ Rules:
             for key in sections:
                 val = parsed_json.get(key, '')
                 sections[key] = self._sanitize_section(str(val))
+            self._ensure_non_empty_sections(sections)
             return SOAPNote(
                 subjective=sections['subjective'],
                 objective=sections['objective'],
@@ -234,8 +262,20 @@ Rules:
                 chunk = re.sub(r'^(?:\*\*)?\s*' + name + r'\s*:?\s*(?:\*\*)?\s*', '', chunk, flags=re.IGNORECASE)
                 sections[name] = self._sanitize_section(chunk)
         else:
-            # Last fallback: keep full text in subjective so user sees output instead of blanks.
+            sections = self._parse_by_line_headers(text)
+
+        # If one or more sections are still empty, recover from line-wise parser.
+        if any(not v.strip() for v in sections.values()):
+            recovered = self._parse_by_line_headers(text)
+            for key in sections:
+                if not sections[key].strip() and recovered.get(key, '').strip():
+                    sections[key] = recovered[key]
+
+        # Last fallback: keep full text in subjective so user sees output instead of blanks.
+        if not any(v.strip() for v in sections.values()):
             sections['subjective'] = self._sanitize_section(text)
+
+        self._ensure_non_empty_sections(sections)
         
         return SOAPNote(
             subjective=sections['subjective'],
@@ -260,10 +300,54 @@ Rules:
             return None
         return None
 
+    def _parse_by_line_headers(self, text: str) -> Dict[str, str]:
+        """Parse SOAP sections line-by-line, including short headers like S:/O:/A:/P:."""
+        buckets = {'subjective': [], 'objective': [], 'assessment': [], 'plan': []}
+        current = None
+
+        lines = text.splitlines()
+        for raw in lines:
+            line = raw.strip()
+            if not line:
+                continue
+
+            matched = None
+            for name, pattern in self.SECTION_HEADERS.items():
+                if pattern.fullmatch(line) or pattern.match(line):
+                    matched = name
+                    break
+
+            if not matched:
+                for name, pattern in self.SHORT_SECTION_HEADERS.items():
+                    if pattern.match(line):
+                        matched = name
+                        break
+
+            if matched:
+                current = matched
+                continue
+
+            if current:
+                buckets[current].append(line)
+
+        return {k: self._sanitize_section('\n'.join(v)) for k, v in buckets.items()}
+
+    def _ensure_non_empty_sections(self, sections: Dict[str, str]) -> None:
+        """Guarantee all SOAP fields are non-empty for stable UI rendering."""
+        default_text = "- Not clearly elicited from interview."
+        for key in ('subjective', 'objective', 'assessment', 'plan'):
+            if not sections.get(key, '').strip():
+                sections[key] = default_text
+
     def _sanitize_section(self, text: str) -> str:
-        """Remove heading leakage/noise and normalize bullet formatting."""
+        """Remove heading leakage/noise and enforce one clinical point per line without markdown headings."""
         if not text:
             return ""
+
+        # Flatten markdown heading markers from noisy model output.
+        text = re.sub(r'\s*#{3,}\s*', '\n', text)
+        # Ensure bullet-like separators begin on fresh lines.
+        text = re.sub(r'\s+[•●]\s*', '\n- ', text)
 
         lines = []
         seen = set()
@@ -278,9 +362,16 @@ Rules:
             if low.startswith('```'):
                 continue
 
-            # Normalize bullets
-            if not line.startswith('-'):
+            # Remove any residual markdown heading prefix.
+            line = re.sub(r'^#{1,6}\s*', '', line).strip()
+
+            is_heading = bool(re.match(r'^[\u0900-\u097FA-Za-z][^\n]{2,120}:$', line))
+
+            # Preserve headings; normalize everything else to bullets
+            if not is_heading and not line.startswith('-'):
                 line = f"- {line}"
+            elif line.startswith('-'):
+                line = '- ' + line.lstrip('-').strip()
 
             dedupe_key = re.sub(r'\s+', ' ', line.lower())
             if dedupe_key in seen:

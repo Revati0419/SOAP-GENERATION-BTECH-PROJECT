@@ -10,22 +10,31 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-lg border-b border-slate-200 px-6 py-4">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="bg-brand-600 p-2 rounded-xl text-white shadow-lg shadow-brand-200">
+    <nav className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/70 px-4 py-3 backdrop-blur-xl md:px-8">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4">
+        <Link to="/" className="flex items-center gap-3">
+          <div className="rounded-2xl bg-brand-600 p-2.5 text-white shadow-lg shadow-brand-200/70">
             <Stethoscope size={24} />
           </div>
-          <span className="font-black text-2xl tracking-tighter">SOAP<span className="text-brand-600">.ai</span></span>
+          <div>
+            <span className="block text-2xl font-black tracking-tighter text-slate-900">
+              SOAP<span className="text-brand-600">.ai</span>
+            </span>
+            <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Clinical Assistant
+            </span>
+          </div>
         </Link>
 
-        <div className="flex bg-slate-100 p-1 rounded-2xl gap-1">
+        <div className="hidden gap-1 rounded-2xl border border-slate-200 bg-white/80 p-1.5 shadow-sm md:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-bold transition-all ${
-                location.pathname === item.path ? 'bg-white text-brand-600 shadow-sm' : 'text-slate-500 hover:text-slate-900'
+              className={`flex items-center gap-2 rounded-xl px-5 py-2 text-sm font-bold transition-all ${
+                location.pathname === item.path
+                  ? 'bg-brand-600 text-white shadow-lg shadow-brand-200/60'
+                  : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
               }`}
             >
               <item.icon size={18} /> {item.label}
@@ -33,12 +42,35 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
-          <button className="p-2 text-slate-400 hover:text-brand-600 transition"><Bell size={20}/></button>
-          <div className="h-10 w-10 rounded-full bg-brand-100 border-2 border-white shadow-sm overflow-hidden">
-             <img src="https://ui-avatars.com/api/?name=Dr+Arjun&background=e0effe&color=2563eb" alt="avatar" />
+        <div className="flex items-center gap-3">
+          <button className="rounded-xl border border-slate-200 bg-white p-2 text-slate-500 transition hover:text-brand-600">
+            <Bell size={18} />
+          </button>
+          <div className="hidden text-right md:block">
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">Signed in</p>
+            <p className="text-sm font-bold text-slate-800">Dr. Arjun</p>
+          </div>
+          <div className="h-10 w-10 overflow-hidden rounded-full border-2 border-white bg-brand-100 shadow-sm">
+            <img src="https://ui-avatars.com/api/?name=Dr+Arjun&background=e0effe&color=2563eb" alt="avatar" />
           </div>
         </div>
+      </div>
+
+      <div className="mx-auto mt-3 flex w-full max-w-7xl gap-1 rounded-2xl border border-slate-200 bg-white p-1 md:hidden">
+        {navItems.map((item) => (
+          <Link
+            key={item.path}
+            to={item.path}
+            className={`flex flex-1 items-center justify-center gap-1 rounded-xl px-2 py-2 text-xs font-bold transition ${
+              location.pathname === item.path
+                ? 'bg-brand-600 text-white'
+                : 'text-slate-600 hover:bg-slate-100'
+            }`}
+          >
+            <item.icon size={15} />
+            {item.label}
+          </Link>
+        ))}
       </div>
     </nav>
   );

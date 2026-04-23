@@ -58,7 +58,11 @@ export default function UploadPage() {
       return;
     }
 
-    const effectiveTargetLang = targetLang || generatedResult.target_language || 'marathi';
+    const effectiveTargetLang =
+      generatedResult?.target_language ||
+      generatedResult?.metadata?.target_language ||
+      targetLang ||
+      'marathi';
     const soapEnglish = generatedResult.soap_english || {};
     const soapTarget = generatedResult[`soap_${effectiveTargetLang}`] || {};
 
@@ -68,7 +72,7 @@ export default function UploadPage() {
         source_type: sourceType,
         transcript: transcriptText || '',
         target_lang: effectiveTargetLang,
-        input_lang: generatedResult.input_language || asrLanguage || null,
+  input_lang: generatedResult.input_language || generatedResult?.metadata?.input_language || asrLanguage || null,
         soap_english: soapEnglish,
         soap_target: soapTarget,
         full_result: generatedResult,
@@ -286,22 +290,23 @@ export default function UploadPage() {
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto p-12">
+    <div className="mx-auto w-full max-w-6xl">
   <LoadingAnimation isOpen={loading && showSoapLoading} />
       {loading && (
-        <div className="fixed top-6 right-6 bg-white/90 px-3 py-2 rounded-lg shadow-sm text-sm font-medium">
+        <div className="fixed right-6 top-6 rounded-xl border border-slate-200 bg-white/95 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur">
           Time: {liveElapsed}
         </div>
       )}
 
       {!result ? (
-        <div className="space-y-8 animate-in fade-in duration-500">
-          <div className="text-center">
-            <h1 className="text-4xl font-black text-slate-900 tracking-tight">Pipeline Session Analysis</h1>
-            <p className="text-slate-500 font-medium mt-2 tracking-wide">Upload session JSON or audio to generate clinical SOAP notes.</p>
+        <div className="animate-in fade-in duration-500 space-y-7">
+          <div className="surface-card rounded-[2rem] p-8 text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-600">Clinical Workflow</p>
+            <h1 className="mt-2 text-4xl font-black tracking-tight text-slate-900">Pipeline Session Analysis</h1>
+            <p className="mt-2 font-medium tracking-wide text-slate-600">Upload session JSON or audio to generate clinically structured SOAP notes.</p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm">
+          <div className="surface-card rounded-2xl p-5">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div className="flex-1">
                 <label className="block text-sm font-bold text-slate-600 mb-2">Patient for this session</label>
@@ -312,7 +317,7 @@ export default function UploadPage() {
                     setError(null);
                     setSaveNotice(null);
                   }}
-                  className="w-full p-3 border rounded-xl"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50/70 p-3 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-200"
                 >
                   <option value="">Select patient</option>
                   {patients.map((p) => (
@@ -338,13 +343,13 @@ export default function UploadPage() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-3">
+          <div className="mx-auto flex w-fit items-center gap-2 rounded-2xl border border-slate-200 bg-white p-1.5 shadow-sm">
             <button
               onClick={() => {
                 setMode('json');
                 setError(null);
               }}
-              className={`px-5 py-2 rounded-xl font-bold ${mode === 'json' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'}`}
+              className={`rounded-xl px-6 py-2 text-sm font-bold transition ${mode === 'json' ? 'bg-brand-600 text-white shadow-md shadow-brand-100' : 'text-slate-600 hover:bg-slate-100'}`}
             >
               JSON Session
             </button>
@@ -353,17 +358,17 @@ export default function UploadPage() {
                 setMode('audio');
                 setError(null);
               }}
-              className={`px-5 py-2 rounded-xl font-bold ${mode === 'audio' ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'}`}
+              className={`rounded-xl px-6 py-2 text-sm font-bold transition ${mode === 'audio' ? 'bg-brand-600 text-white shadow-md shadow-brand-100' : 'text-slate-600 hover:bg-slate-100'}`}
             >
               Audio
             </button>
           </div>
 
-          <div className="bg-white p-12 rounded-[3rem] border-2 border-slate-100 shadow-2xl shadow-slate-200/50 flex flex-col items-center">
+          <div className="surface-card flex flex-col items-center rounded-[2.2rem] border p-10 shadow-[0_16px_40px_rgba(15,23,42,0.08)]">
             {mode === 'json' ? (
               <>
                 {!jsonFile ? (
-                  <label className="w-full h-80 flex flex-col items-center justify-center border-4 border-dashed border-slate-100 rounded-[2.5rem] cursor-pointer hover:bg-brand-50 hover:border-brand-200 transition-all group">
+                  <label className="group flex h-80 w-full cursor-pointer flex-col items-center justify-center rounded-[2.2rem] border-4 border-dashed border-slate-200 bg-slate-50/50 transition-all hover:border-brand-200 hover:bg-brand-50/60">
                     <div className="bg-brand-100 text-brand-600 p-6 rounded-3xl mb-4 group-hover:scale-110 transition">
                       <UploadCloud size={48} />
                     </div>
@@ -372,7 +377,7 @@ export default function UploadPage() {
                     <input type="file" className="hidden" accept=".json" onChange={handleJsonFileChange} />
                   </label>
                 ) : (
-                  <div className="w-full bg-slate-50 rounded-[2rem] p-10 border border-slate-200 flex flex-col items-center">
+                  <div className="flex w-full flex-col items-center rounded-[2rem] border border-slate-200 bg-slate-50 p-10">
                     <div className="bg-white p-4 rounded-2xl shadow-sm mb-4">
                       <FileJson size={40} className="text-brand-600" />
                     </div>
@@ -386,7 +391,7 @@ export default function UploadPage() {
 
                 <div className="w-full mt-6">
                   <label className="block text-sm font-bold text-slate-600 mb-2">Target language</label>
-                  <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full p-3 border rounded-xl">
+                  <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full rounded-xl border border-slate-200 bg-slate-50/70 p-3 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-200">
                     <option value="marathi">Marathi</option>
                     <option value="hindi">Hindi</option>
                     <option value="english">English</option>
@@ -396,7 +401,7 @@ export default function UploadPage() {
                 <button
                   disabled={loading || !jsonFile || !selectedPatientId}
                   onClick={handleGenerateFromJson}
-                  className="w-full mt-10 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
+                  className="mt-10 flex w-full items-center justify-center gap-3 rounded-3xl bg-brand-600 py-5 text-lg font-black text-white shadow-xl shadow-brand-100 transition hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400"
                 >
                   {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24} />}
                   {loading ? loadingText : 'Start Pipeline Analysis'}
@@ -405,7 +410,7 @@ export default function UploadPage() {
             ) : (
               <>
                 {!audioFile ? (
-                  <label className="w-full h-64 flex flex-col items-center justify-center border-4 border-dashed border-slate-100 rounded-[2.5rem] cursor-pointer hover:bg-brand-50 hover:border-brand-200 transition-all group">
+                  <label className="group flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-[2.2rem] border-4 border-dashed border-slate-200 bg-slate-50/50 transition-all hover:border-brand-200 hover:bg-brand-50/60">
                     <div className="bg-brand-100 text-brand-600 p-5 rounded-3xl mb-3 group-hover:scale-110 transition">
                       <UploadCloud size={42} />
                     </div>
@@ -414,7 +419,7 @@ export default function UploadPage() {
                     <input type="file" className="hidden" accept=".mp3,.wav,.m4a,.flac,.ogg,audio/*" onChange={handleAudioFileChange} />
                   </label>
                 ) : (
-                  <div className="w-full bg-slate-50 rounded-[2rem] p-8 border border-slate-200 flex flex-col items-center">
+                  <div className="flex w-full flex-col items-center rounded-[2rem] border border-slate-200 bg-slate-50 p-8">
                     <div className="bg-white p-4 rounded-2xl shadow-sm mb-4">
                       <UploadCloud size={36} className="text-brand-600" />
                     </div>
@@ -428,13 +433,13 @@ export default function UploadPage() {
                 <div className="w-full mt-6 grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-slate-600 mb-2">ASR language</label>
-                    <select value={asrLanguage} disabled className="w-full p-3 border rounded-xl bg-slate-100 text-slate-600 cursor-not-allowed">
+                    <select value={asrLanguage} disabled className="w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-100 p-3 text-slate-600">
                       <option value="english">English</option>
                     </select>
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-slate-600 mb-2">Target language</label>
-                    <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full p-3 border rounded-xl">
+                    <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full rounded-xl border border-slate-200 bg-slate-50/70 p-3 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-200">
                       <option value="marathi">Marathi</option>
                       <option value="hindi">Hindi</option>
                       <option value="english">English</option>
@@ -445,14 +450,14 @@ export default function UploadPage() {
                 <button
                   disabled={loading || !audioFile || !selectedPatientId}
                   onClick={handleTranscribeAudio}
-                  className="w-full mt-6 bg-slate-800 text-white py-4 rounded-2xl font-black flex items-center justify-center gap-3 hover:bg-black disabled:bg-slate-200 disabled:text-slate-400 transition"
+                  className="mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-slate-800 py-4 font-black text-white transition hover:bg-black disabled:bg-slate-200 disabled:text-slate-400"
                 >
                   {loading ? <Loader2 className="animate-spin" /> : <UploadCloud size={20} />}
                   {loading ? loadingText : 'Transcribe Audio'}
                 </button>
 
                 {transcript && !result && (
-                  <div className="w-full mt-5 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+                  <div className="mt-5 w-full rounded-2xl border border-blue-200 bg-blue-50/80 p-4">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
                       <h4 className="text-sm font-black text-blue-800 uppercase tracking-wider">Transcription Output</h4>
                       <span className="text-xs font-semibold text-blue-700">
@@ -468,7 +473,7 @@ export default function UploadPage() {
                 <button
                   disabled={loading || !audioFile || !selectedPatientId}
                   onClick={handleGenerateFromAudioEndToEnd}
-                  className="w-full mt-4 bg-brand-600 text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
+                  className="mt-4 flex w-full items-center justify-center gap-3 rounded-2xl bg-brand-600 py-5 text-lg font-black text-white shadow-xl shadow-brand-100 transition hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400"
                 >
                   {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={22} />}
                   {loading ? loadingText : 'Run End-to-End (Audio → SOAP)'}
@@ -480,7 +485,7 @@ export default function UploadPage() {
                     value={transcript}
                     onChange={(e) => setTranscript(e.target.value)}
                     rows={10}
-                    className="w-full p-3 border rounded-xl"
+                    className="w-full rounded-xl border border-slate-200 bg-white p-3 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-200"
                     placeholder="Transcript will appear here after ASR. You can edit it before SOAP generation."
                   />
                 </div>
@@ -488,7 +493,7 @@ export default function UploadPage() {
                 <button
                   disabled={loading || !transcript.trim() || !selectedPatientId}
                   onClick={handleGenerateFromTranscript}
-                  className="w-full mt-8 bg-brand-600 text-white py-6 rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400 transition shadow-xl shadow-brand-100"
+                  className="mt-8 flex w-full items-center justify-center gap-3 rounded-3xl bg-brand-600 py-6 text-lg font-black text-white shadow-xl shadow-brand-100 transition hover:bg-brand-700 disabled:bg-slate-100 disabled:text-slate-400"
                 >
                   {loading ? <Loader2 className="animate-spin" /> : <Wand2 size={24} />}
                   {loading ? loadingText : 'Generate SOAP from Transcript'}
@@ -502,36 +507,36 @@ export default function UploadPage() {
           </div>
 
           {error && (
-            <div className="bg-red-50 border border-red-200 text-red-700 rounded-2xl px-5 py-4 font-semibold">
+            <div className="rounded-2xl border border-red-200 bg-red-50 px-5 py-4 font-semibold text-red-700">
               {error}
             </div>
           )}
           {saveNotice && (
-            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-emerald-50 border border-emerald-200 text-emerald-800'}`}>
+            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'border border-amber-200 bg-amber-50 text-amber-800' : 'border border-emerald-200 bg-emerald-50 text-emerald-800'}`}>
               {saveNotice}
             </div>
           )}
         </div>
       ) : (
-        <div className="space-y-10 animate-in slide-in-from-bottom-10 duration-700">
+        <div className="animate-in slide-in-from-bottom-10 duration-700 space-y-8">
           <button
             onClick={() => {
               setResult(null);
               setError(null);
             }}
-            className="font-black text-slate-400 hover:text-brand-600 flex items-center gap-2 transition uppercase text-xs tracking-widest"
+            className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-500 transition hover:text-brand-600"
           >
             ← Analyze Another File
           </button>
           <SoapNoteViewer data={result} />
-          <div className="rounded-2xl border border-indigo-200 bg-indigo-50 px-5 py-4">
+          <div className="surface-card rounded-2xl border border-indigo-200/80 bg-indigo-50/60 px-5 py-4">
             <p className="text-xs font-black uppercase tracking-wider text-indigo-700">Session → SOAP Time</p>
             <p className="text-lg font-black text-indigo-900">
               {result?.metadata?.session_to_soap_time || result?.metadata?.processing_time || '—'}
             </p>
           </div>
           {saveNotice && (
-            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'bg-amber-50 border border-amber-200 text-amber-800' : 'bg-emerald-50 border border-emerald-200 text-emerald-800'}`}>
+            <div className={`rounded-2xl px-5 py-4 font-semibold ${saveNotice.toLowerCase().includes('failed') ? 'border border-amber-200 bg-amber-50 text-amber-800' : 'border border-emerald-200 bg-emerald-50 text-emerald-800'}`}>
               {saveNotice}
             </div>
           )}

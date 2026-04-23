@@ -34,14 +34,8 @@ class MultilingualSOAPNote:
     target_language_code: str
 
     def to_dict(self) -> Dict:
-        """
-        Returns BILINGUAL output — no duplicate keys:
-          'soap_english'        → English SOAP  (always present)
-          'soap_<target_lang>'  → Target language SOAP
-          'metadata'            → input_language, target_language
-        """
+        """Return SINGLE-LANGUAGE output (input/session language only)."""
         return {
-            'soap_english': self.english.to_dict(),
             f'soap_{self.target_language_code}': self.target_language.to_dict(),
             'metadata': {
                 'input_language':  self.input_language,
@@ -170,13 +164,10 @@ class MultilingualSOAPGenerator:
         if has_english:
             # PHASE 1: bilingual — feed text_en to Gemma (better quality),
             # but record true_session_lang as input_language in metadata.
-            print("📋 Phase 1 pipeline  (text_en present → direct to Gemma)")
-            print(f"   Session language : {true_session_lang}  (from `text` field)")
             conversation       = self._format_turns_english(turns)
             gemma_input_lang   = 'english'          # what Gemma actually receives
         else:
             # PHASE 2: Marathi-only — text field is the only source
-            print("📋 Phase 2 pipeline  (Marathi-only → IndicNER + RAG + translate)")
             conversation       = self._format_turns_marathi(turns)
             gemma_input_lang   = true_session_lang  # Marathi goes through NLLB first
 
@@ -211,13 +202,8 @@ class MultilingualSOAPGenerator:
         detected_lang = _detected_lang_override or LanguageDetector.detect_language(conversation)
         # True session lang — what the patient actually spoke
         session_lang  = _session_lang_override or detected_lang
-        # Default: output in the same language the patient spoke
-        if target_lang is None:
-            target_lang = session_lang
-
-        print(f"🌍 Session language: {session_lang}  (what patient spoke)")
-        print(f"⚙️  Gemma input    : {detected_lang}  (what we feed LLM)")
-        print(f"🎯 Target language : {target_lang}")
+        # Enforce output in the same language the patient/session used.
+        target_lang = session_lang
 
         ner_context = ""
         rag_context = ""
@@ -227,7 +213,6 @@ class MultilingualSOAPGenerator:
 
             # Step 1 — IndicNER: extract medical entities from Marathi text
             if self.ner:
-                print("🔍 IndicNER: extracting entities from Marathi text...")
                 try:
                     entities = self.ner.extract_entities(conversation)
                     if entities:
@@ -237,15 +222,13 @@ class MultilingualSOAPGenerator:
                         ner_context = "\n\nExtracted Medical Entities (from Marathi):\n"
                         for label, items in by_type.items():
                             ner_context += f"  {label}: {', '.join(dict.fromkeys(items))}\n"
-                        print(f"   ✅ Entity types found: {list(by_type.keys())}")
                 except Exception as e:
-                    print(f"   ⚠️ NER failed: {e}")
+                    print(f"⚠️ NER failed: {e}")
 
             # Step 2 — RAG: retrieve clinical terminology context
             # (activate via config: use_rag=True and _rag_store=<ClinicalVectorStore>)
             rag_store = self.config.get('_rag_store') if self.config.get('use_rag') else None
             if rag_store:
-                print("📚 RAG: retrieving clinical terminology...")
                 try:
                     results = rag_store.search(conversation[:400], n_results=5)
                     if results:
@@ -256,13 +239,11 @@ class MultilingualSOAPGenerator:
                                 f"MR: {r.get('marathi', '')}  "
                                 f"HI: {r.get('hindi', '')}\n"
                             )
-                        print(f"   ✅ Retrieved {len(results)} clinical terms")
                 except Exception as e:
-                    print(f"   ⚠️ RAG failed: {e}")
+                    print(f"⚠️ RAG failed: {e}")
 
             # Step 3 — NLLB: Marathi → English conversation
             if self.translator:
-                print("🔄 NLLB: translating Marathi conversation → English...")
                 try:
                     conversation = self.translator.translate(
                         conversation,
@@ -270,7 +251,7 @@ class MultilingualSOAPGenerator:
                         target_lang='english',
                     )
                 except Exception as e:
-                    print(f"   ⚠️ Translation failed: {e}")
+                    print(f"⚠️ Translation failed: {e}")
 
         # ── BOTH PHASES: Gemma generates English SOAP ──────────────────────
         enriched_conversation = conversation + ner_context + rag_context
