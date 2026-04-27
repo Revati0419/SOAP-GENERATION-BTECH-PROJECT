@@ -11,7 +11,7 @@ Uses Ollama for local inference with models like:
 import json
 import re
 import requests
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 
 
@@ -32,6 +32,116 @@ class SOAPNote:
             'plan': self.plan,
             'raw': self.raw_output
         }
+
+    def to_parametric_dict(self) -> Dict[str, Dict[str, str]]:
+        """Return a subsection-wise structured view of SOAP content."""
+        parametric = {
+            "subjective": self._extract_subjective_params(self.subjective),
+            "objective": self._extract_objective_params(self.objective),
+            "assessment": self._extract_assessment_params(self.assessment),
+            "plan": self._extract_plan_params(self.plan),
+        }
+        return self._ensure_parametric_defaults(parametric)
+
+    @staticmethod
+    def _ensure_parametric_defaults(parametric: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, str]]:
+        """Guarantee all subsection fields are non-empty for stable API/UI usage."""
+        default = "- Not clearly elicited from interview."
+        for section in ("subjective", "objective", "assessment", "plan"):
+            values = parametric.get(section, {})
+            for field, value in values.items():
+                if not isinstance(value, str) or not value.strip():
+                    values[field] = default
+            parametric[section] = values
+        return parametric
+
+    @staticmethod
+    def _extract_subjective_params(text: str) -> Dict[str, str]:
+        return {
+            "chief_complaint": SOAPNote._extract_by_aliases(text, ["chief complaint", "mukhya takrar", "मुख्य तक्रार"]),
+            "hpi": SOAPNote._extract_by_aliases(text, ["history of present illness", "hpi", "सध्याच्या आजाराचा इतिहास"]),
+            "trauma_history": SOAPNote._extract_by_aliases(text, ["trauma history", "आघाताचा इतिहास"]),
+            "psychosocial_history": SOAPNote._extract_by_aliases(text, ["psychosocial history", "मनोसामाजिक इतिहास"]),
+            "functional_status": SOAPNote._extract_by_aliases(text, ["functional status", "कार्यक्षम स्थिती"]),
+        }
+
+    @staticmethod
+    def _extract_objective_params(text: str) -> Dict[str, str]:
+        return {
+            "medical_history": SOAPNote._extract_by_aliases(text, ["medical history", "वैद्यकीय इतिहास"]),
+            "past_psych_history": SOAPNote._extract_by_aliases(text, ["past psychiatric history", "पूर्व मनोरुग्ण इतिहास"]),
+            "biological_observations": SOAPNote._extract_by_aliases(text, ["biological observations", "जैविक निरीक्षणे"]),
+            "mental_status_exam": SOAPNote._extract_by_aliases(text, ["mental status exam", "मानसिक स्थिती तपासणी"]),
+            "structured_scores": SOAPNote._extract_by_aliases(text, ["structured scores", "phq-8", "phq8"]),
+        }
+
+    @staticmethod
+    def _extract_assessment_params(text: str) -> Dict[str, str]:
+        return {
+            "diagnostic_formulation": SOAPNote._extract_by_aliases(text, ["diagnostic formulation", "निदान"]),
+            "risk_formulation": SOAPNote._extract_by_aliases(text, ["risk formulation", "जोखीम मूल्यांकन"]),
+            "contributing_factors": SOAPNote._extract_by_aliases(text, ["key contributing factors", "contributing factors", "योगदान देणारे घटक"]),
+        }
+
+    @staticmethod
+    def _extract_plan_params(text: str) -> Dict[str, str]:
+        return {
+            "treatment_safety_plan": SOAPNote._extract_by_aliases(text, ["treatment & safety plan", "treatment and safety plan", "उपचार आणि सुरक्षा योजना"]),
+            "therapy_plan": SOAPNote._extract_by_aliases(text, ["therapy plan", "मानसोपचार योजना"]),
+            "medication_considerations": SOAPNote._extract_by_aliases(text, ["medication considerations", "औषधोपचार"]),
+            "followup_monitoring": SOAPNote._extract_by_aliases(text, ["follow-up & monitoring", "follow up & monitoring", "follow-up", "पाठपुरावा"]),
+        }
+
+    @staticmethod
+    def _normalize_heading(line: str) -> str:
+        cleaned = line.strip().strip("*")
+        cleaned = cleaned.rstrip(":").strip().lower()
+        cleaned = re.sub(r"\s+", " ", cleaned)
+        return cleaned
+
+    @staticmethod
+    def _parse_section_pairs(text: str) -> List[Tuple[str, List[str]]]:
+        """Parse section text into (heading, bullet-lines) pairs."""
+        pairs: List[Tuple[str, List[str]]] = []
+        current_heading: Optional[str] = None
+        current_lines: List[str] = []
+
+        for raw in text.splitlines():
+            line = raw.strip()
+            if not line:
+                continue
+            if line.endswith(":") and not line.startswith("-"):
+                if current_heading is not None:
+                    pairs.append((current_heading, current_lines))
+                current_heading = SOAPNote._normalize_heading(line)
+                current_lines = []
+                continue
+            if current_heading is None:
+                continue
+            cleaned_line = line
+            if cleaned_line.startswith("-"):
+                cleaned_line = "- " + cleaned_line.lstrip("-").strip()
+            current_lines.append(cleaned_line)
+
+        if current_heading is not None:
+            pairs.append((current_heading, current_lines))
+
+        return pairs
+
+    @staticmethod
+    def _extract_by_aliases(text: str, aliases: List[str]) -> str:
+        """Extract subsection content by matching heading aliases."""
+        default = "- Not clearly elicited from interview."
+        if not text or not text.strip():
+            return default
+
+        normalized_aliases = [re.sub(r"\s+", " ", a.strip().lower()) for a in aliases]
+        for heading, lines in SOAPNote._parse_section_pairs(text):
+            if any(alias in heading for alias in normalized_aliases):
+                value = "\n".join(lines).strip()
+                return value or default
+
+        return default
 
 
 class SOAPGenerator:
@@ -110,6 +220,39 @@ Follow-up & Monitoring:
         'objective': re.compile(r'^\s*(?:o|obj)\s*[:\-]\s*$', re.IGNORECASE),
         'assessment': re.compile(r'^\s*(?:a|assess?)\s*[:\-]\s*$', re.IGNORECASE),
         'plan': re.compile(r'^\s*(?:p|pln)\s*[:\-]\s*$', re.IGNORECASE),
+    }
+
+    CLINICAL_HEADING_MAP = {
+        'subjective': [
+            'chief complaint',
+            'history of present illness',
+            'hpi',
+            'review of systems',
+        ],
+        'objective': [
+            'physical examination',
+            'physical exam',
+            'examination',
+            'results',
+            'investigations',
+            'labs',
+            'imaging',
+            'vitals',
+        ],
+        'assessment': [
+            'assessment',
+            'impression',
+            'diagnosis',
+            'diagnostic impression',
+            'assessment and plan',
+        ],
+        'plan': [
+            'plan',
+            'treatment plan',
+            'recommendations',
+            'follow-up',
+            'follow up',
+        ],
     }
 
     def __init__(self, model: str = "gemma2:2b", 
@@ -271,6 +414,13 @@ Follow-up & Monitoring:
                 if not sections[key].strip() and recovered.get(key, '').strip():
                     sections[key] = recovered[key]
 
+        # Additional fallback for clinical-note style outputs without SOAP headers.
+        if any(not v.strip() for v in sections.values()):
+            recovered = self._parse_by_clinical_headings(text)
+            for key in sections:
+                if not sections[key].strip() and recovered.get(key, '').strip():
+                    sections[key] = recovered[key]
+
         # Last fallback: keep full text in subjective so user sees output instead of blanks.
         if not any(v.strip() for v in sections.values()):
             sections['subjective'] = self._sanitize_section(text)
@@ -329,6 +479,61 @@ Follow-up & Monitoring:
 
             if current:
                 buckets[current].append(line)
+
+        return {k: self._sanitize_section('\n'.join(v)) for k, v in buckets.items()}
+
+    def _match_clinical_heading(self, line: str) -> Optional[str]:
+        normalized = re.sub(r'[^a-z0-9 ]+', ' ', line.lower()).strip()
+        normalized = re.sub(r'\s+', ' ', normalized)
+
+        for section, aliases in self.CLINICAL_HEADING_MAP.items():
+            for alias in aliases:
+                if normalized == alias or normalized.startswith(alias + ' '):
+                    return section
+        return None
+
+    def _is_plan_like_line(self, line: str) -> bool:
+        low = line.lower()
+        plan_terms = [
+            'medical treatment',
+            'treatment',
+            'additional testing',
+            'order',
+            'patient education',
+            'counseling',
+            'follow-up',
+            'follow up',
+            'recommend',
+            'referral',
+            'monitor',
+        ]
+        return any(term in low for term in plan_terms)
+
+    def _parse_by_clinical_headings(self, text: str) -> Dict[str, str]:
+        """Parse clinical notes that use headings like CHIEF COMPLAINT / HPI / PHYSICAL EXAM."""
+        buckets = {'subjective': [], 'objective': [], 'assessment': [], 'plan': []}
+        current: Optional[str] = None
+        in_assessment_plan_block = False
+
+        for raw in text.splitlines():
+            line = raw.strip()
+            if not line:
+                continue
+
+            matched = self._match_clinical_heading(line.rstrip(':'))
+            if matched:
+                current = matched
+                in_assessment_plan_block = line.lower().strip().rstrip(':') == 'assessment and plan'
+                continue
+
+            if not current:
+                continue
+
+            target_section = current
+            if in_assessment_plan_block and self._is_plan_like_line(line):
+                target_section = 'plan'
+
+            buckets[target_section].append(line)
 
         return {k: self._sanitize_section('\n'.join(v)) for k, v in buckets.items()}
 

@@ -9,7 +9,7 @@ Uses open-source models:
 Now includes comprehensive Marathi regex patterns for rule-based extraction.
 """
 
-from typing import List, Dict, Tuple, Optional
+from typing import Any, Dict, List, Optional, Tuple
 from dataclasses import dataclass
 import re
 
@@ -196,13 +196,38 @@ class MedicalNER:
         if self.ner_pipeline:
             try:
                 results = self.ner_pipeline(text)
+                if not isinstance(results, list):
+                    results = []
+
                 for r in results:
+                    if not isinstance(r, dict):
+                        continue
+
+                    word = r.get("word")
+                    entity_group = r.get("entity_group")
+                    start = r.get("start")
+                    end = r.get("end")
+                    score = r.get("score")
+
+                    if not isinstance(word, str) or not isinstance(entity_group, str):
+                        continue
+                    if not isinstance(start, int) or not isinstance(end, int):
+                        continue
+
+                    if isinstance(score, (int, float, str)):
+                        try:
+                            confidence = float(score)
+                        except ValueError:
+                            confidence = 0.0
+                    else:
+                        confidence = 0.0
+
                     entities.append(Entity(
-                        text=r['word'],
-                        label=r['entity_group'],
-                        start=r['start'],
-                        end=r['end'],
-                        confidence=r['score']
+                        text=word,
+                        label=entity_group,
+                        start=start,
+                        end=end,
+                        confidence=confidence,
                     ))
             except Exception as e:
                 print(f"NER error: {e}")

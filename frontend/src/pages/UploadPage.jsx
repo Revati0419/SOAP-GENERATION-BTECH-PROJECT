@@ -16,7 +16,7 @@ export default function UploadPage() {
   const [jsonFile, setJsonFile] = useState(null);
   const [audioFile, setAudioFile] = useState(null);
   const [transcript, setTranscript] = useState('');
-  const [targetLang, setTargetLang] = useState('marathi');
+  const [targetLang] = useState('marathi');
   const [asrLanguage] = useState('english');
   const DEFAULT_ASR_MODEL = import.meta.env.VITE_ASR_BASE_MODEL || 'muktan174/whisper-medium-ekacare-medical';
   const [loading, setLoading] = useState(false);
@@ -58,13 +58,9 @@ export default function UploadPage() {
       return;
     }
 
-    const effectiveTargetLang =
-      generatedResult?.target_language ||
-      generatedResult?.metadata?.target_language ||
-      targetLang ||
-      'marathi';
-    const soapEnglish = generatedResult.soap_english || {};
-    const soapTarget = generatedResult[`soap_${effectiveTargetLang}`] || {};
+    const effectiveTargetLang = 'marathi';
+    const soapEnglish = {};
+    const soapTarget = generatedResult.soap_marathi || {};
 
     try {
       await createSession({
@@ -390,12 +386,8 @@ export default function UploadPage() {
                 )}
 
                 <div className="w-full mt-6">
-                  <label className="block text-sm font-bold text-slate-600 mb-2">Target language</label>
-                  <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full rounded-xl border border-slate-200 bg-slate-50/70 p-3 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-200">
-                    <option value="marathi">Marathi</option>
-                    <option value="hindi">Hindi</option>
-                    <option value="english">English</option>
-                  </select>
+                  <label className="block text-sm font-bold text-slate-600 mb-2">SOAP Output Language</label>
+                  <input value="Marathi" disabled className="w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-100 p-3 text-slate-600" />
                 </div>
 
                 <button
@@ -438,12 +430,8 @@ export default function UploadPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-slate-600 mb-2">Target language</label>
-                    <select value={targetLang} onChange={(e) => setTargetLang(e.target.value)} className="w-full rounded-xl border border-slate-200 bg-slate-50/70 p-3 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-200">
-                      <option value="marathi">Marathi</option>
-                      <option value="hindi">Hindi</option>
-                      <option value="english">English</option>
-                    </select>
+                    <label className="block text-sm font-bold text-slate-600 mb-2">SOAP Output Language</label>
+                    <input value="Marathi" disabled className="w-full cursor-not-allowed rounded-xl border border-slate-200 bg-slate-100 p-3 text-slate-600" />
                   </div>
                 </div>
 

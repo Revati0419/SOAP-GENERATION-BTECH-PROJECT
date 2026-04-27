@@ -54,6 +54,7 @@ class TranscriptInput(BaseModel):
     severity: Optional[str] = "unknown"
     gender: Optional[str] = "unknown"
     target_lang: Optional[str] = None  # Auto-detect if not provided
+    llm_model: Optional[str] = None
 
 
 class PatientCreate(BaseModel):
@@ -122,7 +123,8 @@ def _build_session_from_transcript(
                 scores[speaker] += 0.5
 
         if scores:
-            return max(scores, key=scores.get)
+            # Choose the speaker with the highest heuristic score.
+            return max(scores.items(), key=lambda item: item[1])[0]
 
         for row in chunk_rows:
             sp = row.get("speaker")
@@ -272,11 +274,17 @@ async def generate_from_transcript(input_data: TranscriptInput):
         print(f"🚀 Processing transcript (length: {len(input_data.conversation)} chars)")
         
         # Generate using new multilingual generator
+        phq8_score = input_data.phq8_score if input_data.phq8_score is not None else 0
+        severity = input_data.severity if input_data.severity is not None else "unknown"
+        gender = input_data.gender if input_data.gender is not None else "unknown"
+        if input_data.llm_model:
+            multilingual_generator.set_model(input_data.llm_model)
+
         result = multilingual_generator.generate_from_transcript(
             conversation=input_data.conversation,
-            phq8_score=input_data.phq8_score,
-            severity=input_data.severity,
-            gender=input_data.gender,
+            phq8_score=phq8_score,
+            severity=severity,
+            gender=gender,
             target_lang=input_data.target_lang
         )
         
@@ -354,14 +362,15 @@ async def list_recent_sessions(limit: int = 100):
 @app.get("/api/stats")
 async def get_stats():
     stats = repo.get_stats()
-    stats["timestamp"] = time.time()
+    stats["timestamp"] = int(time.time())
     return stats
 
 
 @app.post("/api/generate-from-json")
 async def generate_from_json(
     file: UploadFile = File(...),
-    target_lang: str = Form("marathi")
+    target_lang: str = Form("marathi"),
+    llm_model: Optional[str] = Form(None),
 ):
     """
     UPDATED: Generate SOAP from structured JSON file
@@ -373,6 +382,8 @@ async def generate_from_json(
         session_data = json.loads(contents)
 
         print(f"🚀 Processing JSON file: {file.filename}")
+        if llm_model:
+            multilingual_generator.set_model(llm_model)
         
         # 2. Use new multilingual generator
         result = multilingual_generator.generate_from_session(
@@ -474,6 +485,7 @@ async def generate_from_audio(
     phq8_score: int = Form(0),
     severity: str = Form("unknown"),
     gender: str = Form("unknown"),
+    llm_model: Optional[str] = Form(None),
 ):
     """One-shot flow: audio -> transcription -> SOAP generation."""
     try:
@@ -519,6 +531,9 @@ async def generate_from_audio(
             gender=gender,
             chunks=asr_result.get("chunks", []),
         )
+
+        if llm_model:
+            multilingual_generator.set_model(llm_model)
 
         note = multilingual_generator.generate_from_session(
             session_data=session_data,

@@ -1,15 +1,14 @@
-// Example React component for the new multilingual API
+// Example React component for Marathi SOAP API
 
 import { useState } from 'react';
 import LoadingAnimation from './LoadingAnimation';
 import { apiUrl } from '../lib/api';
 
-export default function MultilingualSOAPGenerator() {
+export default function MarathiSOAPGenerator() {
   const [transcript, setTranscript] = useState('');
   const [phq8Score, setPhq8Score] = useState(0);
   const [severity, setSeverity] = useState('unknown');
   const [gender, setGender] = useState('unknown');
-  const [targetLang, setTargetLang] = useState('marathi');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -30,7 +29,7 @@ export default function MultilingualSOAPGenerator() {
           phq8_score: parseInt(phq8Score),
           severity: severity,
           gender: gender,
-          target_lang: targetLang,
+          target_lang: 'marathi',
         }),
       });
 
@@ -49,7 +48,7 @@ export default function MultilingualSOAPGenerator() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Multilingual SOAP Generator</h1>
+      <h1 className="text-3xl font-bold mb-6">Marathi SOAP Generator</h1>
       
       {/* Loading Animation Overlay */}
       <LoadingAnimation isOpen={loading} />
@@ -125,20 +124,9 @@ Patient: I'm not sleeping well at night.`}
           </div>
         </div>
 
-        {/* Target Language */}
         <div>
-          <label className="block text-sm font-medium mb-2">Output Language</label>
-          <select
-            value={targetLang}
-            onChange={(e) => setTargetLang(e.target.value)}
-            className="w-full p-2 border rounded"
-          >
-            <option value="marathi">Marathi (मराठी)</option>
-            <option value="hindi">Hindi (हिन्दी)</option>
-          </select>
-          <p className="text-sm text-gray-500 mt-1">
-            English SOAP note will always be included
-          </p>
+          <label className="block text-sm font-medium mb-2">SOAP Output Language</label>
+          <input value="Marathi (मराठी)" disabled className="w-full p-2 border rounded bg-gray-100 text-gray-600" />
         </div>
 
         {/* Submit Button */}
@@ -164,70 +152,36 @@ Patient: I'm not sleeping well at night.`}
           {/* Metadata */}
           <div className="bg-blue-50 p-4 rounded-lg">
             <h3 className="font-semibold mb-2">Detection Info</h3>
-            <p>Detected Language: <strong>{result.input_language}</strong></p>
-            <p>Output Language: <strong>{result.target_language}</strong></p>
+            <p>Detected Language: <strong>{result.input_language || result.metadata?.input_language}</strong></p>
+            <p>SOAP Output Language: <strong>{result.metadata?.target_language || 'marathi'}</strong></p>
             <p>Processing Time: <strong>{result.metadata?.processing_time}</strong></p>
           </div>
 
-          {/* English SOAP */}
           <div className="border rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">English SOAP Note</h2>
+            <h2 className="text-2xl font-bold mb-4">मराठी SOAP नोट</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-green-700">SUBJECTIVE</h3>
-                <p className="whitespace-pre-wrap">{result.soap_english?.subjective}</p>
+                <h3 className="text-lg font-semibold text-green-700">व्यक्तिनिष्ठ</h3>
+                <p className="whitespace-pre-wrap">{result.soap_marathi?.subjective}</p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-blue-700">OBJECTIVE</h3>
-                <p className="whitespace-pre-wrap">{result.soap_english?.objective}</p>
+                <h3 className="text-lg font-semibold text-blue-700">वस्तुनिष्ठ</h3>
+                <p className="whitespace-pre-wrap">{result.soap_marathi?.objective}</p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-orange-700">ASSESSMENT</h3>
-                <p className="whitespace-pre-wrap">{result.soap_english?.assessment}</p>
+                <h3 className="text-lg font-semibold text-orange-700">मूल्यांकन</h3>
+                <p className="whitespace-pre-wrap">{result.soap_marathi?.assessment}</p>
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-purple-700">PLAN</h3>
-                <p className="whitespace-pre-wrap">{result.soap_english?.plan}</p>
+                <h3 className="text-lg font-semibold text-purple-700">योजना</h3>
+                <p className="whitespace-pre-wrap">{result.soap_marathi?.plan}</p>
               </div>
             </div>
           </div>
-
-          {/* Translated SOAP */}
-          {result[`soap_${targetLang}`] && targetLang !== 'english' && (
-            <div className="border rounded-lg p-6 bg-yellow-50">
-              <h2 className="text-2xl font-bold mb-4">
-                {targetLang === 'marathi' ? 'मराठी SOAP नोट' : 'हिन्दी SOAP नोट'}
-              </h2>
-              
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-green-700">
-                    {targetLang === 'marathi' ? 'व्यक्तिनिष्ठ' : 'व्यक्तिपरक'}
-                  </h3>
-                  <p className="whitespace-pre-wrap">{result[`soap_${targetLang}`]?.subjective}</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-lg font-semibold text-blue-700">वस्तुनिष्ठ</h3>
-                  <p className="whitespace-pre-wrap">{result[`soap_${targetLang}`]?.objective}</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-lg font-semibold text-orange-700">मूल्यांकन</h3>
-                  <p className="whitespace-pre-wrap">{result[`soap_${targetLang}`]?.assessment}</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-lg font-semibold text-purple-700">योजना</h3>
-                  <p className="whitespace-pre-wrap">{result[`soap_${targetLang}`]?.plan}</p>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>

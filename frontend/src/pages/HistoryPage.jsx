@@ -95,7 +95,7 @@ export default function HistoryPage() {
                 <div className="rounded-xl border border-slate-200/80 bg-slate-50/90 p-3">
                   <p className="mb-1 text-[10px] font-black uppercase tracking-widest text-slate-500">SOAP Snapshot</p>
                   <p className="whitespace-pre-wrap text-sm text-slate-700">
-                    {(s.soap_english?.assessment || s.soap_english?.subjective || '').trim() || 'No SOAP summary available.'}
+                    {(s.soap_target?.assessment || s.soap_target?.subjective || s.soap_english?.assessment || s.soap_english?.subjective || '').trim() || 'No SOAP summary available.'}
                   </p>
                 </div>
                 <div className="rounded-xl border border-amber-200/70 bg-amber-50/70 p-3">
