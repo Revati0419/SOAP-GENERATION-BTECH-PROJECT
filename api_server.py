@@ -9,6 +9,7 @@ import asyncio
 import subprocess
 import tempfile
 import sys
+import os
 from pathlib import Path
 from typing import Any, Dict, Optional
 from collections import defaultdict
@@ -19,6 +20,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from scripts.run_pipeline import SOAPPipeline
 from src.generation import MultilingualSOAPGenerator
 from src.clinic_db import ClinicRepository
+from src.rag.clinical_rag import ClinicalVectorStore, KnowledgeRouter
+from src.ner import MedicalNER, get_ner_model
 
 app = FastAPI(title="Multilingual SOAP Generation API")
 
@@ -30,19 +33,30 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize your pipeline exactly how you do in your script
+# Initialize Components for World-Class Clinical Intelligence
+print("🧠 Initializing Clinical Intelligence Systems...")
+vector_store = ClinicalVectorStore()
+knowledge_router = KnowledgeRouter(vector_store)
+ner_model = get_ner_model(model_type='rule_based')
+
+# Initialize pipeline with RAG store handshake
 config = {
-    'llm_model': 'gemma2:2b', # Make sure this matches your Ollama model
+    'llm_model': 'gemma2:2b',
     'use_ner': True,
     'use_rag': True,
     'use_translation': True,
-    'translator_type': 'nllb',  # Use NLLB instead of gated IndicTrans2
-    'device': 'cpu' 
+    'translator_type': 'nllb',
+    'device': 'cpu',
+    '_rag_store': vector_store,  # CRITICAL HANDSHAKE
+    '_knowledge_router': knowledge_router,
+    '_ner_model': ner_model
 }
 pipeline = SOAPPipeline(config)
 
-# Initialize new multilingual generator
+# Initialize generator with pre-injected intelligence
 multilingual_generator = MultilingualSOAPGenerator(config)
+multilingual_generator._ner = ner_model
+multilingual_generator._ner_loaded = True
 
 repo = ClinicRepository(Path("data/clinic.db"))
 
@@ -62,6 +76,14 @@ class PatientCreate(BaseModel):
     age: Optional[int] = None
     gender: Optional[str] = "unknown"
     phone: Optional[str] = None
+    email: Optional[str] = None
+    address: Optional[str] = None
+    emergency_contact_name: Optional[str] = None
+    emergency_contact_phone: Optional[str] = None
+    primary_complaint: Optional[str] = None
+    baseline_phq8: Optional[int] = None
+    baseline_severity: Optional[str] = None
+    preferred_language: Optional[str] = None
     notes: Optional[str] = None
 
 
@@ -312,6 +334,8 @@ async def create_patient(patient: PatientCreate):
         raise HTTPException(status_code=400, detail="full_name is required")
     if patient.age is not None and (patient.age < 0 or patient.age > 130):
         raise HTTPException(status_code=400, detail="age must be between 0 and 130")
+    if patient.baseline_phq8 is not None and (patient.baseline_phq8 < 0 or patient.baseline_phq8 > 24):
+        raise HTTPException(status_code=400, detail="baseline_phq8 must be between 0 and 24")
     created = repo.create_patient(patient.model_dump())
     return {"patient": created}
 
@@ -581,4 +605,5 @@ async def generate_from_audio(
         raise HTTPException(status_code=500, detail=str(e))
     
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

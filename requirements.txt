@@ -1,38 +1,36 @@
-# SOAP Generation Pipeline - Dependencies
-# All open-source packages
+--extra-index-url https://download.pytorch.org/whl/cpu
 
-# Core
-requests>=2.31.0
-tqdm>=4.66.0
-pyyaml>=6.0
+# Web Framework
+fastapi==0.135.1
+uvicorn==0.41.0
+python-multipart==0.0.22
 
-# NLP & ML
-torch>=2.0.0
-transformers>=4.30.0
-sentence-transformers>=2.2.0
+# Core ML & NLP
+torch==2.3.0+cpu
+transformers==4.40.0
+accelerate==0.29.3
 
-# Translation (Open-source)
-# IndicTrans2 - Best for Indian languages (AI4Bharat)
-# Install: pip install git+https://github.com/AI4Bharat/IndicTrans2.git
-# Or use NLLB-200 (included in transformers)
+# Translation & NER
+spacy==3.8.7
+langchain==0.3.27
+langchain-community==0.3.27
+langchain-huggingface==0.3.1
 
-# Vector Database (RAG)
-chromadb>=0.4.0
+# RAG & Vector Store
+chromadb==1.5.2
+sentence-transformers==5.1.0
 
-# Optional: Lightweight offline translation
-# argostranslate>=1.9.0
+# Data Processing
+numpy==1.26.4
+pandas==1.5.3
+pydantic==2.11.7
+pydantic-settings==2.10.1
 
-# Legacy (keeping for old pipeline scripts)
-deep-translator>=1.11.4
+# Database
+SQLAlchemy==2.0.42
 
-# Web API (FastAPI Backend)
-fastapi>=0.104.0
-uvicorn[standard]>=0.24.0
-python-multipart>=0.0.6
+# Utilities
+python-dotenv==1.0.1
+requests==2.32.4
+PyYAML==6.0.2
 
-# Development
-pytest>=7.0.0
-
-# Jupyter (for notebooks)
-jupyter>=1.0.0
-ipykernel>=6.0.0
